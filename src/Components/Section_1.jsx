@@ -3,12 +3,12 @@ import gsap from 'gsap';
 import vector_down from '../assets/Icons/vector_down.svg';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-import Person_loan_icon from '../assets/Icons/section_1Icons/Person_loan_Selected.svg'
-import Credit_cards_icon from '../assets/Icons/section_1Icons/Credit_cards_Selected.svg'
-import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_Selected.svg'
-import Home_purchase_icon from '../assets/Icons/section_1Icons/Home_purchase_Selected.svg'
-import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_Selected.svg'
-import Business_loan_icon from '../assets/Icons/section_1Icons/Business_loans_Selected.svg'
+import Person_loan_icon from '../assets/Icons/section_1Icons/Person_loan_selected.svg'
+import Credit_cards_icon from '../assets/Icons/section_1Icons/Credit_cards_selected.svg'
+import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selected.svg'
+import Home_purchase_icon from '../assets/Icons/section_1Icons/Home_purchase_selected.svg'
+import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
+import Business_loan_icon from '../assets/Icons/section_1Icons/Business_loans_selected.svg'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Credit_Cards from '../assets/Icons/section_1Icons/Credit_Cards.svg';
