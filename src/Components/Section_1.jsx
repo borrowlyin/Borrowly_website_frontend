@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import vector_down from '../Assets/Icons/vector_down.svg';
+import vector_down from '../assets/Icons/vector_down.svg';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import Person_loan_icon from '../assets/Icons/section_1Icons/Person_loan_Selected.svg'
