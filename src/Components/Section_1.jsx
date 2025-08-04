@@ -8,7 +8,7 @@ import Credit_cards_icon from '../assets/Icons/section_1Icons/Credit_cards_selec
 import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selected.svg'
 import Home_purchase_icon from '../assets/Icons/section_1Icons/Home_purchase_selected.svg'
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
-import Business_loan_icon from '../assets/Icons/section_1Icons/Business_loans_selected.svg'
+import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Credit_Cards from '../assets/Icons/section_1Icons/Credit_Cards.svg';
