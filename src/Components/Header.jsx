@@ -1,5 +1,5 @@
 import { FaChevronDown, FaBars, FaSun, FaMoon } from 'react-icons/fa';
-import Arrowup from '../assets/icons/Arrow-up.svg';
+import Arrowup from '../assets/Icons/Arrow-up.svg';
 import ThemeToggle from './ThemeToggle';
 
 
