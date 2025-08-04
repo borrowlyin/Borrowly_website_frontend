@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'PovetaracSansBold';
+  src: url('../assets/fonts/PovetaracSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PovetaracSansBlack';
+  src: url('../assets/fonts/PovetaracSans-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PovetaracSansHeavy';
+  src: url('../assets/fonts/PovetaracSans-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PovetaracSansBold';
+  src: url('../assets/fonts/PovetaracSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
