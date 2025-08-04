@@ -11,14 +11,14 @@ import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.sv
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
-import Credit_Cards from '../assets/Icons/section_1Icons/Credit_Cards.svg';
-import Home_Equity from '../assets/Icons/section_1Icons/Home_Equity.svg';
-import Home_Purchase from '../assets/Icons/section_1Icons/Home_Purchase.svg';
+import Credit_Cards from '../assets/Icons/section_1Icons/Credit_cards.svg';
+import Home_Equity from '../assets/Icons/section_1Icons/Home_equity.svg';
+import Home_Purchase from '../assets/Icons/section_1Icons/Home_purchase.svg';
 import Insurance from '../assets/Icons/section_1Icons/Insurance.svg';
 import Person_loan from '../assets/Icons/section_1Icons/Person_loan.svg';
 
 import Downarrow from '../assets/Icons/section_1Icons/Downarrow.svg';
-import more_icon from '../assets/Icons/section_1Icons/More_icon.svg';
+import more_icon from '../assets/Icons/section_1Icons/More_Icon.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg'; 
 import Download_icon from '../assets/Icons/Download_icon.svg'; 
 
