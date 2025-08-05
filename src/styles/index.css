@@ -29,3 +29,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+
+@font-face {
+  font-family: 'PovetaracSanslight';
+  src: url('../assets/fonts/PovetaracSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

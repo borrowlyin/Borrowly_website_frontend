@@ -126,48 +126,40 @@ const [menulist, setMenulist] = useState([
     Selected_icon: Person_loan_icon,
     Normal_icon: Person_loan,
     id: 1,
-    headline: 'Find the right personal loan rate for you',
-    description: 'Need to consolidate debt or make a large purchase? We bring the lenders to you so you can shop and compare personal loan offers in minutes.'
+    headline: 'Smart Loan Choices, Trusted Support — Today and Always.',
+    description: 'Need funds for something important? Whether it’s a personal milestone or an unexpected need, our loans are designed around you. At Borrowly, we go beyond approval — we build lasting trust. Let’s grow your financial confidence together.'
   },
   {
-    name: 'Home Equity',
+    name: 'Home Loan',
     Selected_icon: Home_equity_icon,
     Normal_icon: Home_Equity,
     id: 2,
-    headline: 'Tap into your home’s value',
-    description: 'Access funds by leveraging the equity in your home. Great for renovations, large expenses, or debt consolidation.'
+    headline: 'Turning Blueprints Into Reality — With Trust and Ease',
+    description: 'At Borrowly, we believe a home loan is more than just financing — it’s the foundation of a future well-lived. Whether it’s your first home or your next big move, we make the process seamless with personalized support, transparent guidance, and rates that bring your dream home closer than ever.'
   },
   {
-    name: 'Credit Cards',
-    Selected_icon: Credit_cards_icon,
-    Normal_icon: Credit_Cards,
+    name: 'Business Loan',
+    Selected_icon: Business_loan_icon,
+    Normal_icon: Business_Loan,
     id: 3,
-    headline: 'Compare and choose the best credit card',
-    description: 'Find credit cards that fit your lifestyle—from cash back and rewards to balance transfers and low interest rates.'
+    headline: 'For Every Leap You Take, We’re Right Behind You.',
+    description: `Your business deserves more than just funding — it deserves a partner. At Borrowly, our business loans are built around your goals. Whether you're expanding operations, hiring talent, or investing in equipment, we provide tailored solutions, fast approvals, and relationship-driven support that grows with you.`
   },
   {
-    name: 'Home Purchase',
+    name: 'Education Loan',
     Selected_icon: Home_purchase_icon,
     Normal_icon: Home_Purchase,
     id: 4,
-    headline: 'Your dream home starts here',
-    description: 'Compare mortgage rates and loan options to make your home buying journey smooth and affordable.'
+    headline: 'Turning Study Abroad Plans Into Reality.',
+    description: 'Studying overseas is a life-changing experience — we make it financially possible. At Borrowly, our Foreign Education Loans cover tuition, living costs, travel, and more, with fast approvals and expert guidance every step of the way. Start your global journey with us.'
   },
   {
     name: 'Insurance',
     Selected_icon: Insurance_icon,
     Normal_icon: Insurance,
     id: 5,
-    headline: 'Protect what matters most',
-    description: 'Explore insurance plans for health, life, auto, and more—designed to give you peace of mind.'
-  },
-  {
-    name: 'Business Loan',
-    Selected_icon: Business_loan_icon,
-    Normal_icon: Business_Loan,
-    id: 6,
-    headline: 'Fuel your business growth',
-    description: 'Whether you\'re starting up or scaling operations, find financing solutions tailored to your business needs.'
+    headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
+    description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   }
 ]);
 
@@ -178,7 +170,7 @@ const [menulist, setMenulist] = useState([
   const selectedItem = menulist.find(item => item.id === selectedId);
 
   return (
-    <div className={`h-auto pt-36 flex items-end pb-10 cursor-default justify-center`}>
+    <div className={`pt-36 flex items-end pb-10 cursor-default justify-center`}>
       <div className="w-full lg:container mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title  */}
@@ -218,7 +210,7 @@ const [menulist, setMenulist] = useState([
                    </div>
                 </div>
               </div>
-<div className='relative w-full max-w-[1150px] h-[500px] flex flex-col lg:flex-row overflow-visible mx-auto rounded-2xl'>
+<div className='relative w-full max-w-[1150px] h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
   <div className='flex-1 p-5 flex flex-col justify-center'>
     <p
       style={{ fontFamily: 'PovetaracSansBold' }}
@@ -228,7 +220,7 @@ const [menulist, setMenulist] = useState([
     </p>
     <h1
       style={{ fontFamily: 'PovetaracSansBlack' }}
-      className={`text-left mt-4 text-[28px] lg:text-[40px] leading-[1.1] ${
+      className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
         isDarkMode ? 'text-white' : 'text-black'
       }`}
     >
@@ -236,7 +228,7 @@ const [menulist, setMenulist] = useState([
     </h1>
     <p
       style={{ fontFamily: 'PovetaracSansBold' }}
-      className={`text-left mt-2 text-[14px] lg:text-lg text-[#696868] ${
+      className={`text-left mt-2 text-[14px] lg:text-[14px] xl:text-lg text-[#696868] ${
         isDarkMode ? 'text-[#CCCCCC]' : 'text-black'
       }`}
     >
@@ -245,15 +237,15 @@ const [menulist, setMenulist] = useState([
     <div className='flex items-center gap-2 mt-4'>
       <button
         style={{ fontFamily: 'PovetaracSansHeavy' }}
-        className='flex-1 py-3 bg-[#00C2CC] flex items-center justify-center text-white text-[16px] lg:text-[18px] rounded-lg'
+        className='flex-1 py-3 bg-[#00C2CC] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] rounded-lg'
       >
         <span className='mt-1'>Apply Loan</span>
         <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
       </button>
       <button
         style={{ fontFamily: 'PovetaracSansHeavy' }}
-        className={`flex-1 ${
-          isDarkMode ? 'text-white border border-[#ffffff]' : 'text-black border border-[#55575B]'
+        className={`flex-1 cursor-pointer hover:scale-102 ${
+          isDarkMode ? 'text-white  border border-[#ffffff]' : 'text-black border border-[#55575B]'
         } flex items-center justify-center py-3 bg-transparent text-[16px] lg:text-[18px] rounded-lg`}
       >
         <img src={Download_icon} alt='Download Icon' className='inline w-[22px] mr-2' />
