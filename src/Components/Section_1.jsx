@@ -1,28 +1,28 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import vector_down from '../assets/Icons/vector_down.svg';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import Person_loan_icon from '../assets/Icons/section_1Icons/Person_loan_Selected.svg'
-import Credit_cards_icon from '../assets/Icons/section_1Icons/Credit_cards_selected.svg'
+import Education_loan_icon from '../assets/Icons/section_1Icons/Education_Loans.svg'
 import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selected.svg'
-import Home_purchase_icon from '../assets/Icons/section_1Icons/Home_purchase_selected.svg'
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
+import Vechicle_loan_icon from '../assets/Icons/section_1Icons/Vechicle_loan_selected.svg'
+
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
-import Credit_Cards from '../assets/Icons/section_1Icons/Credit_cards.svg';
+import Education_loan from '../assets/Icons/section_1Icons/Education_Loans_selected.svg'
 import Home_Equity from '../assets/Icons/section_1Icons/Home_equity.svg';
-import Home_Purchase from '../assets/Icons/section_1Icons/Home_purchase.svg';
 import Insurance from '../assets/Icons/section_1Icons/Insurance.svg';
 import Person_loan from '../assets/Icons/section_1Icons/Person_loan.svg';
+import Vechicle_loan from '../assets/Icons/section_1Icons/Vechicle_loan.svg'
 
 import Downarrow from '../assets/Icons/section_1Icons/Downarrow.svg';
 import more_icon from '../assets/Icons/section_1Icons/More_Icon.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg'; 
 import Download_icon from '../assets/Icons/Download_icon.svg'; 
 
-import Privacy_icon from '../assets/Icons/Privacy_icon.svg';
 
 import Personal_loan_banner from '../assets/Icons/section_1Icons/Person_loan_Banner.png';
 
@@ -50,20 +50,10 @@ const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
 
   return (
     <div className="border border-[#C5D3E5] bg-[#F4F6FA] rounded-xl overflow-hidden">
-      <div
-        onClick={onToggle}
-        className="flex items-center justify-between px-4 py-3 cursor-pointer"
-      >
+      <div onClick={onToggle} className="flex items-center justify-between px-4 py-3 cursor-pointer">
         <div className="flex items-center gap-3">
-          <img
-            src={isExpanded ? item.Normal_icon : item.Normal_icon}
-            alt={`${item.name} Icon`}
-            className="w-[40px] h-[40px]"
-          />
-          <span
-            style={{ fontFamily: 'PovetaracSansBold' }}
-            className={`text-[16px] mt-1 ${isExpanded ? 'text-[#3C3B3B]' : 'text-[#3C3B3B]'}`}
-          >
+          <img src={isExpanded ? item.Normal_icon : item.Normal_icon} alt={`${item.name} Icon`} className="w-[40px] h-[40px]" />
+          <span style={{ fontFamily: 'PovetaracSansBold' }} className={`text-[16px] mt-1 ${isExpanded ? 'text-[#3C3B3B]' : 'text-[#3C3B3B]'}`}>
             {item.name}
           </span>
         </div>
@@ -147,17 +137,25 @@ const [menulist, setMenulist] = useState([
   },
   {
     name: 'Education Loan',
-    Selected_icon: Home_purchase_icon,
-    Normal_icon: Home_Purchase,
+    Selected_icon: Education_loan,
+    Normal_icon:  Education_loan_icon,
     id: 4,
     headline: 'Turning Study Abroad Plans Into Reality.',
     description: 'Studying overseas is a life-changing experience — we make it financially possible. At Borrowly, our Foreign Education Loans cover tuition, living costs, travel, and more, with fast approvals and expert guidance every step of the way. Start your global journey with us.'
+  },
+   {
+    name: 'Vehicle Loan',
+    Selected_icon: Vechicle_loan_icon,
+    Normal_icon: Vechicle_loan,
+    id: 5,
+    headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
+    description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   },
   {
     name: 'Insurance',
     Selected_icon: Insurance_icon,
     Normal_icon: Insurance,
-    id: 5,
+    id: 6,
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   }
@@ -210,67 +208,64 @@ const [menulist, setMenulist] = useState([
                    </div>
                 </div>
               </div>
-<div className='relative w-full max-w-[1150px] h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
-  <div className='flex-1 p-5 flex flex-col justify-center'>
-    <p
-      style={{ fontFamily: 'PovetaracSansBold' }}
-      className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'
-    >
-      {selectedItem?.name}
-    </p>
-    <h1
-      style={{ fontFamily: 'PovetaracSansBlack' }}
-      className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
-        isDarkMode ? 'text-white' : 'text-black'
-      }`}
-    >
-      {selectedItem?.headline}
-    </h1>
-    <p
-      style={{ fontFamily: 'PovetaracSansBold' }}
-      className={`text-left mt-2 text-[14px] lg:text-[14px] xl:text-lg text-[#696868] ${
-        isDarkMode ? 'text-[#CCCCCC]' : 'text-black'
-      }`}
-    >
-      {selectedItem?.description}
-    </p>
-    <div className='flex items-center gap-2 mt-4'>
-      <button
-        style={{ fontFamily: 'PovetaracSansHeavy' }}
-        className='flex-1 py-3 bg-[#00C2CC] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] rounded-lg'
-      >
-        <span className='mt-1'>Apply Loan</span>
-        <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
-      </button>
-      <button
-        style={{ fontFamily: 'PovetaracSansHeavy' }}
-        className={`flex-1 cursor-pointer hover:scale-102 ${
-          isDarkMode ? 'text-white  border border-[#ffffff]' : 'text-black border border-[#55575B]'
-        } flex items-center justify-center py-3 bg-transparent text-[16px] lg:text-[18px] rounded-lg`}
-      >
-        <img src={Download_icon} alt='Download Icon' className='inline w-[22px] mr-2' />
-        <span className='mt-1'>Download</span>
-      </button>
-    </div>
-    <div className='flex flex-row items-center pt-12 gap-1 opacity-40'>
-      <img src={Privacy_icon} alt='Privacy Icon' />
-      <h1 className='text-center mt-0.5 text-[12px] md:text-[14px] lg:text-[16px]'>
-        Privacy Secured | Advertising Disclosures
-      </h1>
-    </div>
-  </div>
-  <div className='flex-1'>
-    
-      <img
-        src={Personal_loan_banner} // Optional: Update this too if you have different banners per item
-        alt={`${selectedItem?.name} Banner`}
-        className='w-[750px] mx-auto lg:w-full  h-full object-cover rounded-2xl'
-      />
-   
-  </div>
-</div>
+              <div className='relative w-full max-w-[1150px] h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
+                <div className='flex-1 p-5 flex flex-col justify-center'>
+                  <p
+                    style={{ fontFamily: 'PovetaracSansBold' }}
+                    className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'
+                  >
+                    {selectedItem?.name}
+                  </p>
+                  <h1
+                    style={{ fontFamily: 'PovetaracSansBlack' }}
+                    className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
+                      isDarkMode ? 'text-white' : 'text-black'
+                    }`}
+                  >
+                    {selectedItem?.headline}
+                  </h1>
+                  <p
+                    style={{ fontFamily: 'PovetaracSansBold' }}
+                    className={`text-left mt-2 text-[14px] lg:text-[14px] xl:text-[16px] text-[#696868] ${
+                      isDarkMode ? 'text-[#CCCCCC]' : 'text-black'
+                    }`}
+                  >
+                    {selectedItem?.description}
+                  </p>
+                  <div className='flex items-center gap-2 mt-4'>
+                    <button
+                      style={{ fontFamily: 'PovetaracSansHeavy' }}
+                      className='flex-1 py-3 bg-[#00C2CC] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] rounded-lg'
+                    >
+                      <span className='mt-1'>Apply Loan</span>
+                      <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
+                    </button>
+                    <button
+                      style={{ fontFamily: 'PovetaracSansHeavy' }}
+                      className={`flex-1 cursor-pointer hover:scale-102 ${
+                        isDarkMode ? 'text-white  border border-[#ffffff]' : 'text-black border border-[#55575B]'
+                      } flex items-center justify-center py-3 bg-transparent text-[16px] lg:text-[18px] rounded-lg`}
+                    >
+                      <img src={Download_icon} alt='Download Icon' className='inline w-[22px] mr-2' />
+                      <span className='mt-1'>Download</span>
+                    </button>
+                  </div>
+                  <div className='flex flex-row items-center pt-12 gap-1'>
+                    <h1 className={`text-center mt-0.5 text-[12px] md:text-[14px] lg:text-[16px] ${isDarkMode ?'text-white  opacity-80':'text-black  opacity-40'} `}>
+                      Privacy Secured | Advertising Disclosures
+                    </h1>
+                  </div>
+                </div>
+                <div className='flex-1'>
+                  
+                    <img src={Personal_loan_banner} 
+                      alt={`${selectedItem?.name} Banner`}
+                      className='w-[750px] mx-auto lg:w-full  h-full object-cover rounded-2xl'
+                    />
+                 
+                </div>
+              </div>
 
-              
           </div>
           {/* Mobile Accordion List */}
              <div className="w-full md:hidden mt-6 pb-5 space-y-0.75">
@@ -296,9 +291,8 @@ const [menulist, setMenulist] = useState([
                       </button>
                     </div>
                   )}
-                  <div className='flex flex-row items-center justify-center gap-1 opacity-40'>
-                    <img src={Privacy_icon} alt="Privacy Icon" className='' />
-                    <h1 className='text-center mt-0.5 text-[12px] md:text-[14px] lg:text-[16px]'>Privacy Secured | Advertising Disclosures</h1>
+                  <div className='flex flex-row items-center justify-center gap-1 '>
+                    <h1 className={`text-center mt-0.5 text-[12px] md:text-[14px] lg:text-[16px]  ${isDarkMode ?'text-white opacity-80':'text-black opacity-40'}`}>Privacy Secured | Advertising Disclosures</h1>
                   </div>
              </div>
           </div>

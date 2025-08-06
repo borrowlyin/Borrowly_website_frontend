@@ -77,13 +77,9 @@ const Section_2 = ({ isDarkMode }) => {
       <img src={bgImage} alt="Background" className="absolute top-0 left-0 w-full h-full object-cover opacity-70"/>
       <div className="relative container mx-auto h-full z-10 flex flex-col items-center justify-center">
 
-        <h1
-  ref={headingRef}
-  style={{ fontFamily: 'PovetaracSansBold' }}
-  className={`text-4xl text-center ${isDarkMode?'text-black':'text-white'}`}
->
-  Trusted Lending — <br className="block md:hidden" /> From Day One
-</h1>
+        <h1 ref={headingRef} style={{ fontFamily: 'PovetaracSansBold' }} className={`text-4xl text-center ${isDarkMode?'text-black':'text-white'}`}>
+           Trusted Lending — <br className="block md:hidden" /> From Day One
+        </h1>
         <div className="text-center py-3 px-2 flex items-center justify-center flex-wrap mt-8 gap-14">
           {numbers.map((item, index) => (
             <div key={index} className={`${isDarkMode?'text-black':'text-white'}`}>
