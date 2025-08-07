@@ -215,47 +215,20 @@ const Section_6 = ({ isDarkMode }) => {
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="relative cursor-default h-[100dvh] overflow-hidden]"
-    >
+    <div  ref={sectionRef} className="relative pb-24 cursor-default flex items-center overflow-hidden]">
       {/* Patches */}
-      <div
-        ref={leftPatchRef}
-        className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0"
-        style={{ backgroundColor: patchColor }}
-      />
-      <div
-        ref={rightPatchRef}
-        className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0"
-        style={{ backgroundColor: patchColor }}
-      />
-
+      <div ref={leftPatchRef} className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
+      <div ref={rightPatchRef} className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
+ 
       {/* Scroll-animated content */}
-      <div
-        ref={contentRef}
-        className="relative z-10 lg:container mx-auto md:py-24 flex flex-col items-center h-full"
-      >
-        <p
-          style={{ fontFamily: "PovetaracSansBold" }}
-          className="text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5"
-        >
+      <div ref={contentRef} className="relative z-10 lg:container mx-auto md:py-24 flex flex-col items-center h-full">
+        <p style={{ fontFamily: "PovetaracSansBold" }} className="text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5" >
           Our Customers Say
         </p>
-        <h1
-          style={{ fontFamily: "PovetaracSansBlack" }}
-          className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
-            isDarkMode ? "text-white" : "text-black"
-          }`}
-        >
+        <h1 style={{ fontFamily: "PovetaracSansBlack" }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? "text-white" : "text-black" }`} >
           Why do thousands of users love Borrowly
         </h1>
-        <p
-          style={{ fontFamily: "PovetaracSansBold" }}
-          className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg ${
-            isDarkMode ? "text-[#CCCCCC]" : "text-[#696868]"
-          }`}
-        >
+        <p style={{ fontFamily: "PovetaracSansBold" }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg ${  isDarkMode ? "text-[#CCCCCC]" : "text-[#696868]" }`} >
           Because we connect you with top lenders fast, fair, and transparent.
         </p>
         <div className="h-[500px] w-full px-5 max-w-[1000px]">

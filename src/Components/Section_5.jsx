@@ -97,7 +97,7 @@ const affiliateBenefits = [
                 </div>
             </div>
         </div>
-        <div className="lg:container mx-auto py-24 md:py-12 lg:py-0  flex flex-col md:pb-24 items-center justify-center h-full">
+        <div className="lg:container mx-auto pt-24 md:py-12 lg:py-0  flex flex-col md:pb-24 items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>Affiliate Rewards</p>
             <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}>How the Borrowly Affiliate Program Works</h1>
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
