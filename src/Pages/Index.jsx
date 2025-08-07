@@ -6,7 +6,12 @@ import EmiCalculator from '../Components/Section_4'
 import Section_5 from '../Components/Section_5'
 import Section_6 from '../Components/Section_6'
 import Section_7 from '../Components/Section_7' 
-
+import Section_8 from '../Components/Section_8' 
+import Section_9 from '../Components/Section_9' 
+import Section_10 from '../Components/Section_10' 
+import Section_11 from '../Components/Section_11' 
+import Banner_section from '../Components/Banner_section'
+import Footer from '../Components/Footer'
 
 const Index = ({isDarkMode}) => {
   return (
@@ -18,6 +23,12 @@ const Index = ({isDarkMode}) => {
       <Section_5 isDarkMode={isDarkMode}/>
       <Section_6 isDarkMode={isDarkMode}/>
       <Section_7 isDarkMode={isDarkMode}/>
+      <Section_8 isDarkMode={isDarkMode}/>
+      <Section_9 isDarkMode={isDarkMode}/>
+      <Section_10 isDarkMode={isDarkMode}/>
+      <Section_11 isDarkMode={isDarkMode}/>
+      <Banner_section isDarkMode={isDarkMode}/>
+      <Footer isDarkMode={isDarkMode}/>
     </div>
   )
 }
