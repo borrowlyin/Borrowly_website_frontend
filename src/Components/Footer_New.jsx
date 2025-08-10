@@ -164,7 +164,7 @@ const [openSections, setOpenSections] = useState({});
           </div>
          </div>
 
-         <div className='py-5 pb-10 md:px-5'>
+         <div className='md:py-5 pb-5 md:pb-10 md:px-5'>
              <hr style={{ borderTop: '0.1px solid #BDBDBD' }} className='opacity-40'/>
          </div>
 
@@ -253,7 +253,7 @@ const [openSections, setOpenSections] = useState({});
               </div>
             )}
           </div>
-            <div className='py-5 md:px-5'>
+            <div className='md:py-5 md:px-5'>
              <hr style={{ borderTop: '0.1px solid #BDBDBD' }} className='opacity-40'/>
          </div>
          </>
@@ -261,7 +261,7 @@ const [openSections, setOpenSections] = useState({});
       })}
     </div>
 
-        <div clas style={{ fontFamily: "PovetaracSansBlack" }} className='text-[#BDBDBD] py-3 gap-3 text-[14px] md:px-5  flex flex-wrap md:items-center md:gap-10'>
+        <div clas style={{ fontFamily: "PovetaracSansBlack" }} className='text-[#BDBDBD] pt-6 py-3 gap-3 text-[14px] md:px-5  flex flex-wrap md:items-center md:gap-10'>
              <h1 className=''>Terms</h1>
              <h1  className=''>© 2025 Borrowly</h1>
              <h1  className=''>Borrowly will act as a lending service provider as per RBI classification</h1>
@@ -281,7 +281,7 @@ const [openSections, setOpenSections] = useState({});
              <hr style={{ borderTop: '0.1px solid #BDBDBD' }} className='opacity-40'/>
          </div>
          <div>
-            <h1 style={{ fontFamily: "PovetaracSansBold" }}  className='flex items-center py-3 justify-center text-[#BDBDBD]/30 text-9xl '>MADE IN INDIA</h1>
+            <h1 style={{ fontFamily: "PovetaracSansBold" }}  className='flex items-center py-3 justify-center text-[#BDBDBD]/30 text-4xl lg:text-9xl '>MADE IN INDIA</h1>
          </div>
         
        </div>

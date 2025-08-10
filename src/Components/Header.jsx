@@ -1,6 +1,7 @@
 import { FaChevronDown, FaBars, FaSun, FaMoon } from 'react-icons/fa';
 import Arrowup from '../assets/Icons/Arrow-up.svg';
 import ThemeToggle from './ThemeToggle';
+import { Link } from 'react-router-dom';
 
 
 const Header = ({ isDarkMode, toggleTheme }) => {
@@ -30,7 +31,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
         {/* Right Buttons */}
         <div className="w-full max-w-[320px] items-center justify-end hidden lg:flex">
           <div className="flex items-center gap-6">
-            <h1 style={{ fontFamily: 'PovetaracSansBold' }} className={`text-lg underline underline-offset-8 ${isDarkMode ? 'text-white' : 'text-black'}`}> Login</h1>
+            <Link to='/login' style={{ fontFamily: 'PovetaracSansBold' }} className={`text-lg underline underline-offset-8 ${isDarkMode ? 'text-white' : 'text-black'}`}> Login</Link>
             <button style={{ fontFamily: 'PovetaracSansBold' }}className={` ${isDarkMode?'bg-[#00C2CC]':'bg-[#013476]'} border border-[#55575B] py-2 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`}>
               <span>Apply Now</span>
               <img src={Arrowup} alt="Arrow Up" className="mb-1 ml-2" />
