@@ -12,7 +12,7 @@ import Section_10 from '../Components/Section_10'
 import Section_11 from '../Components/Section_11' 
 import Banner_section from '../Components/Banner_section'
 import Footer from '../Components/Footer'
-
+import Footer_New from '../Components/Footer_New'
 const Index = ({isDarkMode}) => {
   return (
     <div className={` ${isDarkMode ? 'bg-gradient-to-r from-[#111827] via-[#111827] to-[#0E3846]' : 'bg-white'}`}>
@@ -28,7 +28,8 @@ const Index = ({isDarkMode}) => {
       <Section_10 isDarkMode={isDarkMode}/>
       <Section_11 isDarkMode={isDarkMode}/>
       <Banner_section isDarkMode={isDarkMode}/>
-      <Footer isDarkMode={isDarkMode}/>
+      {/* <Footer isDarkMode={isDarkMode}/> */}
+      <Footer_New/>
     </div>
   )
 }
