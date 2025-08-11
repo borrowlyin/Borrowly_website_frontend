@@ -69,6 +69,7 @@ const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
         className="px-4 text-[14px] text-[#3C3B3B] overflow-hidden h-0 opacity-0"
       >
         <div className="py-4">
+
           <h1  style={{ fontFamily: 'PovetaracSansHeavy' }} className='text-left text-[18px] pb-2'>{item.headline}</h1>
           <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-left text-[14px] text-[#7c7c7c]'>{item.description}</p>
           <div className='flex items-center gap-2 mt-4'>
@@ -80,6 +81,9 @@ const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
               <img src={Download_icon} alt="Download Icon" className='inline w-[22px] mr-2' />
                Download
             </button>
+          </div>
+          <div>
+             <img src={Personal_loan_banner}   alt={`${item?.name} Banner`}  className='w-[450px] mx-auto lg:w-full  h-full object-cover rounded-2xl'/>
           </div>
         </div>
       </div>

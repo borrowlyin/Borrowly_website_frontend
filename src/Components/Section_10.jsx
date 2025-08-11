@@ -1,20 +1,71 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import {FaTimesCircle } from 'react-icons/fa';
 import India_Map from '../assets/Icons/India_Map.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaUserCircle } from 'react-icons/fa'; // icon like in your image
+
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 const cityData = [
-  { name: 'Hyderabad', x: 341, y: 578, available: true },
-  { name: 'Delhi', x: 303, y: 281, available: true },
+  { name: 'Delhi', x: 303, y: 281, available: true, loanType: 'Personal Loan', amount: 35000, description: 'Used to study a digital course' },
+  { name: 'Kurnool', x: 328, y: 652, available: true, loanType: 'Business Loan', amount: 50000, description: 'Startup investment' },
+  { name: 'Bangalore', x: 305, y: 725, available: true, loanType: 'Education Loan', amount: 42000, description: 'College tuition fees' },
 ];
+
+
+
 
 const Section_10 = ({ isDarkMode }) => {
   const [hovered, setHovered] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const autoCycleRef = useRef();
   const interactionTimeout = useRef();
+
+
+  const [stats, setStats] = useState({
+  installs: 0,
+  transactions: 0,
+  credit: 0,
+});
+
+const statsRef = useRef(null);
+
+useEffect(() => {
+  if (!statsRef.current) return;
+
+  const targets = {
+    installs: 0,
+    transactions: 0,
+    credit: 0
+  };
+
+  ScrollTrigger.create({
+    trigger: statsRef.current,
+    start: "top 80%",
+    onEnter: () => {
+      gsap.to(targets, {
+        duration: 2,
+        installs: 10,         // 10 Lac
+        transactions: 1,      // 1 Cr
+        credit: 500,          // ₹500 Cr
+        ease: "power1.out",
+        onUpdate: () => {
+          setStats({
+            installs: Math.floor(targets.installs),
+            transactions: Math.floor(targets.transactions),
+            credit: Math.floor(targets.credit)
+          });
+        }
+      });
+    },
+    once: true // Animate only once
+  });
+}, []);
+
+
 
   useEffect(() => {
     const checkTouchDevice = () => {
@@ -123,7 +174,7 @@ const Section_10 = ({ isDarkMode }) => {
 
   return (
     <div ref={sectionRef} className="relative cursor-default px-5 pt-12 md:mt-24">
-  <div ref={leftPatchRef} className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
+     <div ref={leftPatchRef} className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
       <div ref={rightPatchRef} className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
       <div className="lg:container mx-auto py-12 md:py-18 flex flex-col items-center justify-center h-full">
         <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${  isDarkMode ? 'text-white' : 'text-black' }`}>
@@ -135,41 +186,66 @@ const Section_10 = ({ isDarkMode }) => {
       </div>
 
       {/* Map */}
-      <div className="relative max-w-[900px] mx-auto">
+      <div className='flex flex-col gap-16 md:gap-0 md:flex-row px-10 container mx-auto'>
+        <div ref={statsRef} className='flex-1 flex flex-col items-center justify-center'>
+           <div className='text-center pb-5 md:pb-10 w-full'>
+             <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-4xl lg:text-5xl ${isDarkMode?'text-white':'text-black'}`}>
+               {stats.installs}+ Lac.
+             </h1>
+             <h1 style={{ fontFamily: 'PovetaracSansBold' }} className={`text-xl lg:text-3xl ${isDarkMode?'text-white':'text-black'}`}>
+               App Installs
+             </h1>
+           </div>
+           <div className='text-center py-5 w-full'>
+             <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-4xl lg:text-5xl ${isDarkMode?'text-white':'text-black'}`}>
+               {stats.transactions}+ Cr.
+             </h1>
+             <h1 style={{ fontFamily: 'PovetaracSansBold' }} className={`text-xl lg:text-3xl ${isDarkMode?'text-white':'text-black'}`}>
+               Credit Transactions
+             </h1>
+           </div>
+           <div className='text-center pt-5 md:pt-10 w-full'>
+             <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-4xl lg:text-5xl ${isDarkMode?'text-white':'text-black'}`}>
+               ₹{stats.credit}+ Cr.
+             </h1>
+             <h1 style={{ fontFamily: 'PovetaracSansBold' }} className={`text-xl lg:text-3xl ${isDarkMode?'text-white':'text-black'}`}>
+               Credit Disbursed
+             </h1>
+           </div>
+         </div>
+         
+         <div className='flex-1'>
+          <div className="relative max-w-[700px] mx-auto">
         <img src={India_Map} alt="India Map" className="w-full h-auto" />
 
         {cityData.map((city, index) => {
           const isActive = hovered === index;
-
           return (
             <div key={index} className="absolute group" style={{  left: `${(city.x / 900) * 100}%`, top: `${(city.y / 900) * 100}%`, transform: 'translate(-50%, -50%)',  }}
-              onMouseEnter={() => !isMobile && handleInteraction(index)}
-              onMouseLeave={() => !isMobile && setHovered(null)}
-              onClick={() => handleInteraction(index)}
-            >
-              <div className="w-3 h-3 bg-white rounded-full cursor-pointer border-2 border-white shadow-lg" />
-              {isActive && (
-                <div className="absolute z-10 bg-[#B2EDF1] text-black px-3 py-1 text-xs rounded-md shadow-md mt-2 whitespace-nowrap flex items-center gap-2">
-                  {city.available ? (
-                    <div className="flex flex-col">
-                      <h1 style={{ fontFamily: 'PovetaracSansBold' }} className="text-sm -mb-1" >
-                        Now Live in
-                      </h1>
-                      <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-2xl">
-                        {city.name}
-                      </h1>
-                    </div>
-                  ) : (
-                    <>
-                      <FaTimesCircle className="text-red-600 w-4 h-4" />
-                      <span> Coming Soon: <strong>{city.name}</strong> </span>
-                    </>
-                  )}
-                </div>
-              )}
+              onClick={() => handleInteraction(index)} >
+              <div className="md:w-6 md:h-6 bg-[#ffffff] rounded-full cursor-pointer border-6 border-[#00C2CC] shadow-lg" />
+               {isActive && (
+                 <div className="absolute z-40 bg-white text-black rounded-lg shadow-lg mt-2 w-[220px] p-3 flex flex-col ">
+                   <div className="flex justify-between items-center">
+                     <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px]">
+                       {city.loanType}
+                     </h1>
+                     <FaUserCircle className="text-[#00C2CC] w-8 h-8" />
+                   </div>
+                   <h2 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-2xl font-bold">
+                     ₹{city.amount.toLocaleString()}
+                   </h2>
+                   <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-sm text-gray-500">
+                     {city.description}
+                   </p>
+                 </div>
+               )}
+
             </div>
           );
         })}
+      </div>
+         </div>
       </div>
     </div>
   );
