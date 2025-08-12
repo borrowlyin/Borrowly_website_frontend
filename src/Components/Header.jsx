@@ -159,25 +159,25 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
         <div className='bg-gray-100 lg:hidden p-2 rounded-2xl'>
         <svg
-  xmlns="http://www.w3.org/2000/svg"
-  className={`cursor-pointer ${isDarkMode ? 'text-white' : 'text-black'}`}
-  width="28"
-  height="28"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2.5"
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  onClick={() => {
-    setMobileOpen(true);
-    window.scrollTo(0, 0);
-  }}
->
-  <line x1="3" y1="6" x2="21" y2="6" />
-  <line x1="3" y1="12" x2="21" y2="12" />
-  <line x1="3" y1="18" x2="21" y2="18" />
-</svg>
+            xmlns="http://www.w3.org/2000/svg"
+            className={`cursor-pointer ${isDarkMode ? 'text-white' : 'text-black'}`}
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            onClick={() => {
+              setMobileOpen(true);
+              window.scrollTo(0, 0);
+            }}
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
 
         </div>
 
@@ -233,7 +233,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
             {/* Buttons at Bottom */}
             <div className="mt-6 flex flex-row gap-1.5">
-              <button  onClick={() => {  setMobileOpen(false); window.scrollTo(0, 0);}} style={{ fontFamily: 'PovetaracSansBlack' }} className={`${  isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#00C2CC]' } flex-1 py-4 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`} >
+              <button  onClick={() => { navigate('/login'); window.scrollTo(0, 0);}} style={{ fontFamily: 'PovetaracSansBlack' }} className={`${  isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#00C2CC]' } flex-1 py-4 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`} >
                 <span>Login</span>
               </button>
               <button style={{ fontFamily: 'PovetaracSansBlack' }} className={`${  isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#013476]' } border border-[#55575B] py-4 flex-1 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`} >
