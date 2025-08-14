@@ -34,24 +34,20 @@ const Section_5 = ({isDarkMode}) => {
     description: "Get ₹500 credited to your account for every verified loan disbursal from your referral — with no earning cap."
   }
 ];
+ 
+ const affiliateSubFeatures = [
+   { icon: Affiliate_Sub_icon1, title: "Secure System" },
+   { icon: Affiliate_Sub_icon2, title: "Easy Setup" },
+   { icon: Affiliate_Sub_icon3, title: "Real-Time Dashboard" },
+   { icon: Affiliate_Sub_icon4, title: "Performance Based" },
+   { icon: Affiliate_Sub_icon5, title: "Track Earnings" },
+   { icon: Affiliate_Sub_icon6, title: "Passive Income" },
+   { icon: Affiliate_Sub_icon7, title: "Instant Notifications" },
+ ];
 
-const affiliateSubFeatures = [
-  { icon: Affiliate_Sub_icon1, title: "Secure System" },
-  { icon: Affiliate_Sub_icon2, title: "Easy Setup" },
-  { icon: Affiliate_Sub_icon3, title: "Real-Time Dashboard" },
-  { icon: Affiliate_Sub_icon4, title: "Performance Based" },
-  { icon: Affiliate_Sub_icon5, title: "Track Earnings" },
-  { icon: Affiliate_Sub_icon6, title: "Passive Income" },
-  { icon: Affiliate_Sub_icon7, title: "Instant Notifications" },
-];
-
-const affiliateBenefits = [
-  "50% Commission on Agent/Course Referrals",
-  "Guaranteed Payouts on Every Loan Disbursal",
-  "Lifetime Affiliate Earnings",
-  "Fully Digital Tracking & Support",
-];
-
+ const affiliateBenefits = [
+  "50% Commission on Agent/Course Referrals","Guaranteed Payouts on Every Loan Disbursal","Lifetime Affiliate Earnings","Fully Digital Tracking & Support",
+ ];
 
   return (
     <div className="cursor-default">
@@ -105,7 +101,7 @@ const affiliateBenefits = [
             </p>
            <div className="w-full max-w-[1200px] px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
               {affiliateSteps.map((step, index) => (
-                <div  key={index} className="border border-[#DEDEDE] p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center w-full sm:w-[48%] md:w-[30%]">
+                <div  key={index} className={` ${index==0?('bg-[#FFFAEE]'):(index==1?('bg-[#F8F1FF]'):('bg-[#ECF9FE]'))} p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center w-full sm:w-[48%] md:w-[30%]`}>
                   <img src={step.icon} alt="" className="w-16" />
                   <h1 style={{ fontFamily: "PovetaracSansBlack" }} className={`text-center mt-4 text-[28px] lg:text-2xl leading-[1.1] ${  isDarkMode ? "text-white" : "text-black"  }`}>
                     {step.title}

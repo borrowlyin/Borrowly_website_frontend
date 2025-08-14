@@ -10,7 +10,6 @@ import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.sv
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 import Vechicle_loan_icon from '../assets/Icons/section_1Icons/Vechicle_loan_selected.svg'
 
-
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Education_loan from '../assets/Icons/section_1Icons/Education_Loans_selected.svg'
 import Home_Equity from '../assets/Icons/section_1Icons/Home_equity.svg';
@@ -114,7 +113,7 @@ const Section_1 = ({ isDarkMode }) => {
   }, []);
 
   const [selectedId, setSelectedId] = useState(1);
-const [menulist, setMenulist] = useState([
+  const [menulist, setMenulist] = useState([
   {
     name: 'Personal Loan',
     Selected_icon: Person_loan_icon,
@@ -163,7 +162,7 @@ const [menulist, setMenulist] = useState([
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   }
-]);
+  ]);
 
 
   const [showAll, setShowAll] = useState(false);
@@ -172,7 +171,7 @@ const [menulist, setMenulist] = useState([
   const selectedItem = menulist.find(item => item.id === selectedId);
 
   return (
-    <div className={`pt-36 flex items-end pb-10 cursor-default justify-center`}>
+    <div className={`pt-18 flex items-end pb-10 cursor-default justify-center`}>
       <div className="w-full lg:container mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title  */}
@@ -189,15 +188,15 @@ const [menulist, setMenulist] = useState([
           </div>
           {/* Selection */}
           <div className='w-full hidden  md:block lg:container  mx-auto mt-10'>
-             <div className='relative w-full max-w-[1150px] flex overflow-visible  h-[130px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-2xl'>
+             <div className='relative w-full max-w-[1150px] flex overflow-visible  h-[120px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-lg'>
                 {menulist.map((item) => {
                   const isSelected = selectedId === item.id;
                   return (
                     <div key={item.id} onClick={() => setSelectedId(item.id)} className={`relative cursor-pointer flex-1 h-full`}>
                       <div className={`flex flex-col items-center justify-center h-full gap-3 transition-all duration-300 
-                      ${item.id === 1 ? 'rounded-l-2xl' : ''} 
+                      ${item.id === 1 ? 'rounded-l-lg' : ''} 
                       ${ isSelected ? 'bg-[#00C2CC] text-white' : 'text-[#3C3B3B]' }`} >
-                        <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[50px] mx-auto' />
+                        <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[40px] mx-auto' />
                         <h1 style={{ fontFamily: 'PovetaracSansBold' }} className='text-[14px] lg:text-[16px]'> {item.name}</h1>
                       </div>
                      {isSelected && (
@@ -207,13 +206,13 @@ const [menulist, setMenulist] = useState([
                 })}
                 <div className='flex-1 border-l border-[#55575B]'>
                    <div className='flex flex-col items-center justify-center cursor-pointer h-full gap-3 transition-all duration-300 '>
-                     <img  src={more_icon} alt={`more_icon Icon`} className='w-[40px] md:w-[50px] mx-auto' />
+                     <img  src={more_icon} alt={`more_icon Icon`} className='w-[35px] md:w-[40px] mx-auto' />
                      <h1 style={{ fontFamily: 'PovetaracSansHeavy' }} className='text-[16px]  hidden lg:block'>More Options</h1>
                    </div>
                 </div>
               </div>
               <div className='relative w-full max-w-[1150px] h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
-                <div className='flex-1 p-5 flex flex-col justify-center'>
+                <div className='p-5 w-[550px] flex flex-col justify-center'>
                   <p
                     style={{ fontFamily: 'PovetaracSansBold' }}
                     className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'
@@ -222,7 +221,7 @@ const [menulist, setMenulist] = useState([
                   </p>
                   <h1
                     style={{ fontFamily: 'PovetaracSansBlack' }}
-                    className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
+                    className={`text-left mt-4 text-[28px] lg:text-[30px] leading-[1.1] ${
                       isDarkMode ? 'text-white' : 'text-black'
                     }`}
                   >
@@ -230,7 +229,7 @@ const [menulist, setMenulist] = useState([
                   </h1>
                   <p
                     style={{ fontFamily: 'PovetaracSansBold' }}
-                    className={`text-left mt-2 text-[14px] lg:text-[14px] xl:text-[16px] text-[#696868] ${
+                    className={`text-left mt-2 text-[14px] text-[#696868] ${
                       isDarkMode ? 'text-[#CCCCCC]' : 'text-black'
                     }`}
                   >
@@ -260,13 +259,8 @@ const [menulist, setMenulist] = useState([
                     </h1>
                   </div>
                 </div>
-                <div className='flex-1'>
-                  
-                    <img src={Personal_loan_banner} 
-                      alt={`${selectedItem?.name} Banner`}
-                      className='w-[750px] mx-auto lg:w-full  h-full object-cover rounded-2xl'
-                    />
-                 
+                <div className='felx-1'>
+                    <img src={Personal_loan_banner}  alt={`${selectedItem?.name} Banner`} className=' mx-auto lg:w-full  h-full rounded-2xl' />
                 </div>
               </div>
 

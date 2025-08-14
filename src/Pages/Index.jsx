@@ -15,7 +15,7 @@ import Footer from '../Components/Footer'
 import Footer_New from '../Components/Footer_New'
 const Index = ({isDarkMode}) => {
   return (
-    <div className={` ${isDarkMode ? 'bg-gradient-to-r from-[#111827] via-[#111827] to-[#0E3846]' : 'bg-white'}`}>
+    <div className={` ${isDarkMode ? 'bg-gradient-to-r from-[#111827] via-[#111827] to-[#112E4B]' : 'bg-white'}`}>
       <Section_1 isDarkMode={isDarkMode} />
       <Section_2 isDarkMode={isDarkMode} />
       <Section_3 isDarkMode={isDarkMode} />

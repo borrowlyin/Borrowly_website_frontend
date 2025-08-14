@@ -30,7 +30,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [isOtpModalOpen, setIsOtpModalOpen] = useState(false);
 
-
   // GSAP animation for toggle highlight
   useEffect(() => {
     if (!isForgot) {

@@ -35,8 +35,8 @@ const Section_8 = ({ isDarkMode }) => {
   }, [currentIndex]);
 
   return (
-    <div className="cursor-default md:h-[50dvh] lg:h-[80dvh]">
-      <div className="lg:container mx-auto pt-12 flex flex-col md:flex-row md:items-center justify-center h-full px-5 md:px-10">
+    <div className="cursor-default bg-[#F0F0F0] ">
+      <div className="lg:container mx-auto py-26 flex flex-col md:flex-row md:items-center justify-center h-full px-5 md:px-10">
         <div className="flex-1">
           <p
             style={{ fontFamily: 'PovetaracSansBold' }}

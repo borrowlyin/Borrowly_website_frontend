@@ -71,12 +71,10 @@ const Section_2 = ({ isDarkMode }) => {
   }, []);
 
   const headingRef = useRef(null);
-
   return (
     <div ref={containerRef} className={`${isDarkMode ? 'bg-white' : 'bg-[#001C40]'} relative py-14 w-full overflow-hidden border`}>
       <img src={bgImage} alt="Background" className="absolute top-0 left-0 w-full h-full object-cover opacity-70"/>
       <div className="relative container mx-auto h-full z-10 flex flex-col items-center justify-center">
-
         <h1 ref={headingRef} style={{ fontFamily: 'PovetaracSansBold' }} className={`text-4xl text-center ${isDarkMode?'text-black':'text-white'}`}>
            Trusted Lending — <br className="block md:hidden" /> From Day One
         </h1>

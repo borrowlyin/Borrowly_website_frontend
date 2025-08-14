@@ -74,24 +74,28 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <>
-      <div className="cursor-default p-2 md:p-0 px-2 absolute top-0 w-full">
+      <div className="cursor-default sticky top-0 bg-white p-2 border border-b-[#d4d4d4] md:p-0 px-2 z-50  w-full">
         <div className="px-3 lg:container mx-auto flex justify-between items-center h-full">
           {/* Logo */}
-          <div className="flex items-center gap-2 xl:w-full xl:max-w-[320px]">
-            <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[70px] md:h-auto" />
+          <div className="flex items-center overflow-hidden gap-2 pr-2">
+            <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[60px] md:-mt-2.5 md:h-[100px]" />
           </div>
 
           {/* Main Navigation */}
-          <div className="flex-1 hidden lg:block">
+          <div className="flex-1  hidden lg:flex flex-row ">
+            <div className="px-5 py-5">
+              <div style={{ width: "2.5px", height: "40px", backgroundColor: "rgba(0, 0, 0, 0.2)" }}></div>
+            </div>
+            
             <ul
               style={{ fontFamily: 'PovetaracSansBold' }}
-              className="flex text-[#111111] justify-center items-center gap-6 relative"
+              className="flex text-[#111111] justify-left  items-center gap-6 relative"
             >
               {menuItems.map(({ label, dropdown }) => (
                 <li
                   key={label}
-                  className={`text-[18px] py-4 cursor-pointer flex items-center gap-2 relative ${
-                    isDarkMode ? 'text-white' : 'text-black'
+                  className={`text-[16px] py-4 cursor-pointer flex items-center gap-2 relative ${
+                    isDarkMode ? 'text-black' : 'text-black'
                   }`}
                   onMouseEnter={() => setOpenDropdown(label)}
                   onMouseLeave={() => setOpenDropdown(null)}
@@ -100,7 +104,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                   <FaChevronDown
                     className={`w-3 h-3 stroke-[1.5] transition-transform duration-300 ${
                       openDropdown === label ? 'rotate-180' : 'rotate-0'
-                    } ${isDarkMode ? 'text-[#ffffff]' : 'text-[#000000]'}`}
+                    } ${isDarkMode ? 'text-[#000]' : 'text-[#000000]'}`}
                   />
 
                   {/* Dropdown with Framer Motion */}
@@ -111,20 +115,20 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                         animate="visible"
                         exit="hidden"
                         variants={dropdownVariants}
-                        className="absolute top-full left-0 text-lg z-50 bg-white dark:bg-[#1a1a1a] overflow-hidden rounded-lg shadow-lg w-80 border border-[#ebf0f5] text-black dark:text-white font-normal"
+                        className="absolute top-full left-0 text-[16px] z-50 bg-white dark:bg-[#1a1a1a] overflow-hidden rounded-lg shadow-lg w-80 border border-[#ebf0f5] text-black dark:text-white font-normal"
                         style={{ fontFamily: 'PovetaracSansBold' }}
                       >
                         {dropdown.map(({ title, desc }) => (
                           <li
                             key={title}
-                            className={`group px-4 py-2 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
+                            className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
                               selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
                             }`}
                             onClick={() => setSelectedDropdownItem(title)}
                           >
                             {title}
                             <p
-                              className={`text-sm ${
+                              className={`text-[14px] ${
                                 selectedDropdownItem === title
                                   ? 'text-white'
                                   : 'text-[#707070] dark:text-gray-400 group-hover:text-white'
@@ -148,7 +152,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
               <Link
                 to="/login"
                 style={{ fontFamily: 'PovetaracSansBold' }}
-                className={`text-lg underline underline-offset-8 ${isDarkMode ? 'text-white' : 'text-black'}`}
+                className={`text-[16px] underline underline-offset-8 ${isDarkMode ? 'text-black' : 'text-black'}`}
               >
                 Login
               </Link>
@@ -156,7 +160,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                 style={{ fontFamily: 'PovetaracSansBold' }}
                 className={`${
                   isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#013476]'
-                } border border-[#55575B] py-2 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`}
+                } py-2 flex items-center justify-center px-6 text-[16px] cursor-pointer rounded-xl text-white`}
               >
                 <span>Apply Now</span>
                 <img src={Arrowup} alt="Arrow Up" className="mb-1 ml-2" />

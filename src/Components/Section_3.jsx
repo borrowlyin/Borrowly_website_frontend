@@ -54,7 +54,7 @@ const Section_3 = ({ isDarkMode }) => {
   ));
 
   return (
-    <div ref={sectionRef} className="md:h-[100dvh] md:px-5 flex items-center">
+    <div ref={sectionRef} className="py-24 md:px-5 flex items-center">
       <div className="lg:container mx-auto flex flex-col lg:flex-row items-center gap-5">
         <div className="flex-1 p-10">
           <img src={CIBIL_Home_image} alt="" className="" />
