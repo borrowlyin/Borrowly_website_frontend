@@ -47,7 +47,7 @@ const Section_8 = ({ isDarkMode }) => {
           <h1
             style={{ fontFamily: 'PovetaracSansBlack' }}
             className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${
-              isDarkMode ? 'text-white' : 'text-black'
+              isDarkMode ? 'text-black' : 'text-black'
             }`}
           >
             Recognitions & Awards
@@ -55,7 +55,7 @@ const Section_8 = ({ isDarkMode }) => {
           <p
             style={{ fontFamily: 'PovetaracSansBold' }}
             className={`mt-2 w-full max-w-[800px] text-[14px] text-left lg:text-[14px] xl:text-xl ${
-              isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]'
+              isDarkMode ? 'text-[#696868]' : 'text-[#696868]'
             }`}
           >
             Great things happen when trust meets excellence! Olyv has been recognized for making finance simpler,

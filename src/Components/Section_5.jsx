@@ -13,7 +13,7 @@ import Affiliate_Sub_icon5 from '../assets/Icons/Affiliate_Sub_Icon_5.svg'
 import Affiliate_Sub_icon6 from '../assets/Icons/Affiliate_Sub_Icon_6.svg'
 import Affiliate_Sub_icon7 from '../assets/Icons/Affiliate_Sub_Icon_7.svg'
 
-
+import { motion } from "framer-motion";
 
 const Section_5 = ({isDarkMode}) => {
 
@@ -59,7 +59,6 @@ const Section_5 = ({isDarkMode}) => {
             </p>
              <div className="w-full max-w-[1200px] px-5 pt-6 gap-5 flex flex-col md:flex-row md:py-16">
                 <div className='flex-1'>
-                    <img src={wallet_icon} alt="" className='w-16'/>
                       <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}>
                         Turn Your Network into a Passive Income Engine
                       </h1>
@@ -99,19 +98,42 @@ const Section_5 = ({isDarkMode}) => {
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
              Get paid for every successful loan disbursal and course sign-up. It's easy, transparent, and built to scale.
             </p>
-           <div className="w-full max-w-[1200px] px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
-              {affiliateSteps.map((step, index) => (
-                <div  key={index} className={` ${index==0?('bg-[#FFFAEE]'):(index==1?('bg-[#F8F1FF]'):('bg-[#ECF9FE]'))} p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center w-full sm:w-[48%] md:w-[30%]`}>
-                  <img src={step.icon} alt="" className="w-16" />
-                  <h1 style={{ fontFamily: "PovetaracSansBlack" }} className={`text-center mt-4 text-[28px] lg:text-2xl leading-[1.1] ${  isDarkMode ? "text-white" : "text-black"  }`}>
-                    {step.title}
-                  </h1>
-                  <p style={{ fontFamily: "PovetaracSansBold" }} className={`px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[16px] ${ isDarkMode ? "text-[#CCCCCC]" : "text-[#696868]" }`}>
-                    {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+<div className="w-full max-w-[1200px] px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
+  {affiliateSteps.map((step, index) => (
+    <motion.div
+      key={index}
+      className={`${index === 0
+        ? "bg-[#FFFAEE]"
+        : index === 1
+        ? "bg-[#F8F1FF]"
+        : "bg-[#ECF9FE]"
+      } p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center w-full sm:w-[48%] md:w-[30%]`}
+      
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.3,
+        ease: "easeOut"
+      }}
+      viewport={{ once: false, amount: 0.4 }} // 👈 animate every time it enters
+    >
+      <img src={step.icon} alt="" className="w-16" />
+      <h1
+        style={{ fontFamily: "PovetaracSansBlack" }}
+        className={`text-center mt-4 text-[28px] lg:text-2xl leading-[1.1] ${isDarkMode ? "text-black" : "text-black"}`}
+      >
+        {step.title}
+      </h1>
+      <p
+        style={{ fontFamily: "PovetaracSansBold" }}
+        className={`px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[16px] ${isDarkMode ? "text-[#696868]" : "text-[#696868]"}`}
+      >
+        {step.description}
+      </p>
+    </motion.div>
+  ))}
+</div>
             <div className="w-full max-w-[1200px] px-5 gap-5 flex flex-wrap py-16 justify-center">
               {affiliateSubFeatures.map((feature, index) => (
                 <div  key={index} style={{ fontFamily: "PovetaracSansBlack" }}  className={`w-fit flex text-[14px] items-center gap-2 ${  isDarkMode ? "text-white" : "text-black"  } hover:scale-102  border border-[#DEDEDE] py-3 px-3 md:px-6 rounded-2xl`}  >

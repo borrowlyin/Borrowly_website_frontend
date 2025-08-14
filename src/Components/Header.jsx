@@ -78,7 +78,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
         <div className="px-3 lg:container mx-auto flex justify-between items-center h-full">
           {/* Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
-            <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[60px] md:-mt-2.5 md:h-[100px]" />
+            <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[60px] md:-mt-2.5 md:h-[90px]" />
           </div>
 
           {/* Main Navigation */}

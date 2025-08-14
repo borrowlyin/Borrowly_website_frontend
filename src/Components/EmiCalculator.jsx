@@ -120,7 +120,7 @@ const EmiCalculator = ({isDarkMode}) => {
         <div className='flex pb-8 w-max gap-1 whitespace-nowrap'>
           {loanOptions.map((loan) => (
             <button key={loan.id} onClick={() => setSelectedLoan(loan)} style={{ fontFamily: 'PovetaracSansBold' }} className={`py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-full transition-all duration-200 ${
-                selectedLoan.id === loan.id ? 'bg-[#0162D9] border border-[#0162D9] text-white' : `border border-[#C4C4C4] bg-white cursor-pointer text-black` }`}>
+                selectedLoan.id === loan.id ? 'bg-[#0162D9] border border-[#0162D9]  text-white' : `border border-[#C4C4C4] bg-white cursor-pointer text-black` }`}>
               {loan.loanName}
             </button>
           ))}

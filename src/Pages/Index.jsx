@@ -27,7 +27,7 @@ const Index = ({isDarkMode}) => {
       <Section_9 isDarkMode={isDarkMode}/>
       <Section_10 isDarkMode={isDarkMode}/>
       <Section_11 isDarkMode={isDarkMode}/>
-      <Banner_section isDarkMode={isDarkMode}/>
+      {/* <Banner_section isDarkMode={isDarkMode}/> */}
       {/* <Footer isDarkMode={isDarkMode}/> */}
       <Footer_New/>
     </div>
