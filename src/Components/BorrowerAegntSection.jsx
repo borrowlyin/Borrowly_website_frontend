@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BorrowerSection from "./BorrowerSection";
 import BorrowAgentSection from "./BorrowAgentSection";
 
-const BorrowerAgentSection = () => {
+const BorrowerAegntSection = () => {
   const [selected,setSelected]=useState(true)
   return (
     <section className="py-10">
@@ -60,4 +60,4 @@ const BorrowerAgentSection = () => {
   );
 };
 
-export default BorrowerAgentSection;
+export default BorrowerAegntSection;
