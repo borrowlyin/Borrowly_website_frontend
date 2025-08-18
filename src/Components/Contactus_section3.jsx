@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import BorrowerSection from "./BorrowerSection";
-import BorrowAgentSection from "./BorrowAgentSection";
+import Contactus_section2 from "./Contactus_section2";
+import Contactus_section1 from "./Contactus_section1";
 
-const BorrowerAegntSection = () => {
+const Contactus_section3 = () => {
   const [selected,setSelected]=useState(true)
   return (
     <section className="py-10">
@@ -41,10 +41,10 @@ const BorrowerAegntSection = () => {
           <>
            <div className="flex flex-col md:grid lg:grid-cols-2 gap-10 md:gap-8">
              <div>
-               <BorrowerSection />
+               <Contactus_section2 />
              </div>
              <div>
-               <BorrowAgentSection />
+               <Contactus_section1 />
              </div>
            
            </div>
@@ -60,4 +60,4 @@ const BorrowerAegntSection = () => {
   );
 };
 
-export default BorrowerAegntSection;
+export default Contactus_section3;

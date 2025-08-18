@@ -1,7 +1,7 @@
 import React from "react";
 import ArrowIcon from '../assets/Icons/ArrowIcon.svg'
 
-const BorrowAgentSection = () => {
+const Contactus_section1 = () => {
   return (
     <div className="space-y-8 text-left lg:px-10 md:text-left">
       <div>
@@ -36,4 +36,4 @@ const BorrowAgentSection = () => {
   );
 };
 
-export default BorrowAgentSection;
+export default Contactus_section1;

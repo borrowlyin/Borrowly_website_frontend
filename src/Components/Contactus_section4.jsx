@@ -2,7 +2,7 @@
 import React from "react";
 import ArrowIcon from '../assets/Icons/ArrowIcon.svg'
 
-const SupportSection = () => {
+const Contactus_section4 = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-5 md:px-10 py-12 container mx-auto  text-left">
       {/* Apply for a Loan */}
@@ -43,4 +43,4 @@ const SupportSection = () => {
   );
 };
 
-export default SupportSection;
+export default Contactus_section4;

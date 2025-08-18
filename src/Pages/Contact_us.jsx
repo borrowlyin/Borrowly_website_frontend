@@ -1,9 +1,8 @@
 import Header_contactus from "../Components/Header_contactus";
-import SupportSection from "../Components/SupportSection";
-import BorrowerAegntSection from "../components/BorrowerAegntSection";
-import MobileApp from "../Components/MobileApp";
-import ServiceRequest from "../Components/ServiceRequest";
+import Contactus_section4 from "../Components/Contactus_section4";
+import Contactus_section3 from "../Components/Contactus_section3";
 import Footer_New from "../Components/Footer_New";
+import Contactus_section5 from "../Components/Contactus_section5";
 
 
 const Contact_us = () => {
@@ -14,15 +13,14 @@ const Contact_us = () => {
       </div>
 
       <div className="bg-[#F8F9F9] ">
-          <SupportSection />
+          <Contactus_section4 />
       </div>
 
       <div className="container mx-auto cursor-default">
         <div className="px-5 lg:px-12">
-          <BorrowerAegntSection />
+          <Contactus_section3 />
         </div>
-        <MobileApp />
-        <ServiceRequest /> 
+        <Contactus_section5 /> 
       </div>
       <div className="bg-[#111111] w-full">
         <Footer_New/>
