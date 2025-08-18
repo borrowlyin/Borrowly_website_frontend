@@ -101,7 +101,7 @@ const [openSections, setOpenSections] = useState({});
 
 
   return (
-    <div className='bg-[#111111] w-full py-5 cursor-default'>
+    <div className='w-full py-5 bg-[#111111] cursor-default'>
        <div className="py-12 px-5 w-full max-w-[1200px] mx-auto">
           
         <div className={`${ isDarkMode ? 'text-[#ffffff]' : 'text-[#000000]' } flex-1 flex flex-col md:flex-row md:gap-3 order-2 lg:order-1`}>

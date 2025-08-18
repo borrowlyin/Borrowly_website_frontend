@@ -4,7 +4,7 @@ import Header from './Components/Header'
 import Index from './Pages/Index'
 import Login from './Pages/Login'
 import Registration from './Pages/Registeration'
-
+import Contact_us from './Pages/Contact_us'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -19,6 +19,7 @@ function App() {
         <Route path="/" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Index  isDarkMode={isDarkMode}/></>} />
         <Route path="/login" element={<><Login  isDarkMode={isDarkMode}/></>} />
         <Route path="/Registration" element={<><Registration  isDarkMode={isDarkMode}/></>} />
+        <Route path="/Support" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Contact_us  isDarkMode={isDarkMode}/></>} />
       </Routes>
     </Router>
   )

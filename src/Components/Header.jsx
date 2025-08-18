@@ -9,39 +9,40 @@ const menuItems = [
   {
     label: 'Services',
     dropdown: [
-      { title: 'Personal Loan', desc: 'Quick funds for personal needs' },
-      { title: 'Home Loan', desc: 'Finance your dream home easily' },
-      { title: 'Business Loan', desc: 'Boost your business growth' },
-      { title: 'Education Loan', desc: 'Support your educational goals' },
-      { title: 'Vehicle Loan', desc: 'Get your new vehicle hassle-free' },
-      { title: 'Insurance', desc: 'Protect what matters most' },
+      { title: 'Personal Loan', desc: 'Quick funds for personal needs', link: '/' },
+      { title: 'Home Loan', desc: 'Finance your dream home easily', link: '/' },
+      { title: 'Business Loan', desc: 'Boost your business growth', link: '/' },
+      { title: 'Education Loan', desc: 'Support your educational goals', link: '' },
+      { title: 'Vehicle Loan', desc: 'Get your new vehicle hassle-free', link: '/' },
+      { title: 'Insurance', desc: 'Protect what matters most', link: '/' },
     ],
   },
   {
     label: 'Resources',
     dropdown: [
-      { title: 'Blog', desc: 'Latest updates and articles' },
-      { title: 'Guides', desc: 'Helpful loan guides' },
-      { title: 'Tools', desc: 'Financial calculators' },
+      { title: 'Blog', desc: 'Latest updates and articles', link: '/' },
+      { title: 'Guides', desc: 'Helpful loan guides', link: '/' },
+      { title: 'Tools', desc: 'Financial calculators', link: '/' },
     ],
   },
   {
     label: 'About',
     dropdown: [
-      { title: 'Company', desc: 'Learn about us' },
-      { title: 'Team', desc: 'Meet our team' },
-      { title: 'Careers', desc: 'Work with us' },
+      { title: 'Company', desc: 'Learn about us', link: '/' },
+      { title: 'Team', desc: 'Meet our team', link: '/' },
+      { title: 'Careers', desc: 'Work with us', link: '/' },
     ],
   },
   {
     label: 'Contact Us',
     dropdown: [
-      { title: 'Support', desc: 'Get help and support' },
-      { title: 'Locations', desc: 'Find a branch near you' },
-      { title: 'Feedback', desc: 'Tell us what you think' },
+      { title: 'Support', desc: 'Get help and support', link: '/Support' },
+      { title: 'Locations', desc: 'Find a branch near you', link: '/' },
+      { title: 'Feedback', desc: 'Tell us what you think', link: '/' },
     ],
   },
 ];
+
 
 const dropdownVariants = {
   hidden: { opacity: 0, y: -10, pointerEvents: 'none', transition: { duration: 0.2 } },
@@ -74,11 +75,11 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
   return (
     <>
-      <div className="cursor-default sticky top-0 bg-white p-2 border border-b-[#d4d4d4] md:p-0 px-2 z-50  w-full">
+      <div className="cursor-default sticky top-0 bg-white p-2 border border-t-0 border-l-0 border-r-0  border-b-[#d4d4d4] md:p-0 px-2 z-50  w-full">
         <div className="px-3 lg:container mx-auto flex justify-between items-center h-full">
           {/* Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
-            <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[60px] md:-mt-2.5 md:h-[90px]" />
+            <img src="/Company_icon.svg" onClick={()=>{navigate('/')}} alt="Logo" className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[90px]" />
           </div>
 
           {/* Main Navigation */}
@@ -118,13 +119,17 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                         className="absolute top-full left-0 text-[16px] z-50 bg-white dark:bg-[#1a1a1a] overflow-hidden rounded-lg shadow-lg w-80 border border-[#ebf0f5] text-black dark:text-white font-normal"
                         style={{ fontFamily: 'PovetaracSansBold' }}
                       >
-                        {dropdown.map(({ title, desc }) => (
+                        {dropdown.map(({ title, desc,link }) => (
                           <li
                             key={title}
                             className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
                               selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
                             }`}
-                            onClick={() => setSelectedDropdownItem(title)}
+                           onClick={() => {
+                             navigate(link);
+                             window.scrollTo(0, 0);
+                           }}
+                           
                           >
                             {title}
                             <p
@@ -257,11 +262,11 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                   {/* Expanded Dropdown */}
                   {expandedSection === label && (
                     <ul className="pb-6 bg-gray-50 px-5 rounded-b-2xl space-y-2">
-                      {dropdown.map(({ title }) => (
+                      {dropdown.map(({ title,link}) => (
                         <li
                           key={title}
                           className="text-[16px] cursor-pointer hover:text-[#00C2CC]"
-                          onClick={() => setMobileOpen(false)}
+                          onClick={() => {navigate(link);setMobileOpen(false)}}
                         >
                           {title}
                         </li>

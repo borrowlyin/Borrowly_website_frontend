@@ -14,7 +14,7 @@ import footer_craft from '../assets/Icons/Footer_Craft.svg'
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <div className="cursor-default pt-12 md:pt-24">
+    <div className="cursor-default  pt-12 md:pt-24">
       <div className={`lg:container mx-auto px-4 pb-10 flex flex-col md:flex-row flex-wrap gap-8`}>
 
         {/* Newsletter - FIRST on mobile, LAST on desktop */}
