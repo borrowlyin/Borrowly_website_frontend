@@ -221,7 +221,7 @@ const Section_6 = ({ isDarkMode }) => {
       <div ref={rightPatchRef} className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
  
       {/* Scroll-animated content */}
-      <div ref={contentRef} className="relative z-10 lg:container mx-auto md:py-24 flex flex-col items-center h-full">
+      <div ref={contentRef} className="relative z-10 max-w-screen-xl mx-auto md:py-24 flex flex-col items-center h-full">
         <p style={{ fontFamily: "PovetaracSansBold" }} className="text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5" >
           Our Customers Say
         </p>

@@ -172,7 +172,7 @@ const Section_1 = ({ isDarkMode }) => {
 
   return (
     <div className={`pt-18 flex items-end pb-10 cursor-default justify-center`}>
-      <div className="w-full lg:container mx-auto px-4">
+      <div className="w-full max-w-screen-xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title  */}
           <div className="flex flex-col items-center md:gap-3">
@@ -187,8 +187,8 @@ const Section_1 = ({ isDarkMode }) => {
             </div>
           </div>
           {/* Selection */}
-          <div className='w-full hidden  md:block lg:container  mx-auto mt-10'>
-             <div className='relative w-full max-w-[1150px] flex overflow-visible  h-[120px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-lg'>
+          <div className='w-full hidden  md:block max-w-screen-xl  mx-auto mt-10'>
+             <div className='relative w-full max-w-screen-lg flex overflow-visible  h-[120px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-lg'>
                 {menulist.map((item) => {
                   const isSelected = selectedId === item.id;
                   return (
@@ -211,7 +211,7 @@ const Section_1 = ({ isDarkMode }) => {
                    </div>
                 </div>
               </div>
-              <div className='relative w-full max-w-[1150px] h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
+              <div className='relative w-full max-w-screen-lg h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
                 <div className='p-5 w-[550px] flex flex-col justify-center'>
                   <p
                     style={{ fontFamily: 'PovetaracSansBold' }}
@@ -259,8 +259,8 @@ const Section_1 = ({ isDarkMode }) => {
                     </h1>
                   </div>
                 </div>
-                <div className='felx-1'>
-                    <img src={Personal_loan_banner}  alt={`${selectedItem?.name} Banner`} className=' mx-auto lg:w-full  h-full rounded-2xl' />
+                <div className='flex-1'>
+                    <img src={Personal_loan_banner}  alt={`${selectedItem?.name} Banner`} className=' mx-auto w-full object-contain h-full rounded-2xl' />
                 </div>
               </div>
 

@@ -7,8 +7,8 @@ import Contactus_section5 from "../Components/Contactus_section5";
 
 const Contact_us = () => {
   return (
-    <div>
-      <div className="container mx-auto cursor-default">
+    <div className="cursor-default">
+      <div className="max-w-screen-xl mx-auto cursor-default">
         <Header_contactus />
       </div>
 
@@ -16,7 +16,7 @@ const Contact_us = () => {
           <Contactus_section4 />
       </div>
 
-      <div className="container mx-auto cursor-default">
+      <div className="max-w-screen-xl mx-auto cursor-default">
         <div className="px-5 lg:px-12">
           <Contactus_section3 />
         </div>

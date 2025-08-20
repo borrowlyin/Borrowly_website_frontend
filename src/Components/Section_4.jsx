@@ -9,7 +9,7 @@ const Section_4 = ({isDarkMode}) => {
   return (
     <div className={`md:py-0 relative overflow-hidden ${isDarkMode?'bg-white':'bg-[#001C40]'}`}>
         <img src={bgImage} alt="Background" className="absolute top-0 left-0 w-full h-full object-cover opacity-20"/>
-        <div className="lg:container py-24 mx-auto flex flex-col items-center justify-center h-full">
+        <div className="max-w-screen-xl py-24 mx-auto flex flex-col items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>
                  FINANCE MADE EASY
             </p>
@@ -19,7 +19,7 @@ const Section_4 = ({isDarkMode}) => {
              <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-4 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? ' text-[#696868]' : 'text-[#CCCCCC]' }`}>
               Get real-time EMI estimates. Easily switch between Personal, Business, Home, or Education loans.
              </p>
-             <div className="w-full max-w-[1200px] pt-6 md:py-10">
+             <div className="w-full max-w-screen-xl pt-6 md:py-10">
               <EmiCalculator isDarkMode={isDarkMode}/>
              </div>
               <div className={`${ isDarkMode ? 'text-white' : 'text-black opacity-70'} flex flex-row items-center gap-1 px-5 pt-5 md:pt-0 `}>

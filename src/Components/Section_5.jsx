@@ -50,8 +50,8 @@ const Section_5 = ({isDarkMode}) => {
  ];
 
   return (
-    <div className="cursor-default">
-        <div className="lg:container mx-auto md:py-24 flex flex-col items-center justify-center h-full">
+    <div className="cursor-default mt-10 md:mt-5">
+        <div className="max-w-screen-xl  mx-auto md:py-24 flex flex-col items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>GROW WITH US</p>
             <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}> Earn with Borrowly</h1>
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
@@ -92,13 +92,13 @@ const Section_5 = ({isDarkMode}) => {
                 </div>
             </div>
         </div>
-        <div className="lg:container mx-auto pt-24 md:py-12 lg:py-0  flex flex-col md:pb-24 items-center justify-center h-full">
+        <div className="max-w-screen-xl  mx-auto pt-24 md:py-12 lg:py-0  flex flex-col md:pb-24 items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>Affiliate Rewards</p>
             <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}>How the Borrowly Affiliate Program Works</h1>
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
              Get paid for every successful loan disbursal and course sign-up. It's easy, transparent, and built to scale.
             </p>
-<div className="w-full max-w-[1200px] px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
+<div className="w-full max-w-screen-xl  px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
   {affiliateSteps.map((step, index) => (
     <motion.div
       key={index}
@@ -134,7 +134,7 @@ const Section_5 = ({isDarkMode}) => {
     </motion.div>
   ))}
 </div>
-            <div className="w-full max-w-[1200px] px-5 gap-5 flex flex-wrap py-16 justify-center">
+            <div className="w-full max-w-screen-xl  px-5 gap-5 flex flex-wrap py-16 justify-center">
               {affiliateSubFeatures.map((feature, index) => (
                 <div  key={index} style={{ fontFamily: "PovetaracSansBlack" }}  className={`w-fit flex text-[14px] items-center gap-2 ${  isDarkMode ? "text-white" : "text-black"  } hover:scale-102  border border-[#DEDEDE] py-3 px-3 md:px-6 rounded-2xl`}  >
                   <img src={feature.icon} alt={feature.title} className="w-8" />

@@ -10,8 +10,6 @@ import Section_8 from '../Components/Section_8'
 import Section_9 from '../Components/Section_9' 
 import Section_10 from '../Components/Section_10' 
 import Section_11 from '../Components/Section_11' 
-import Banner_section from '../Components/Banner_section'
-import Footer from '../Components/Footer'
 import Footer_New from '../Components/Footer_New'
 const Index = ({isDarkMode}) => {
   return (

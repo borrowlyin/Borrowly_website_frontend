@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Aboutus_section3 = () => {
   const items = [
@@ -19,21 +20,55 @@ const Aboutus_section3 = () => {
     },
   ];
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <section className="max-w-[1200px] mx-auto px-6 md:px-12 py-10 grid md:grid-cols-3 gap-6">
-      {items.map((item) => (
-        <div key={item.id} className="flex gap-4 items-start">
+    <section className="max-w-screen-xl cursor-default mx-auto px-6 md:px-12 py-10 grid md:grid-cols-3 gap-6">
+      {items.map((item, index) => (
+        <motion.div
+          key={item.id}
+          className="flex gap-4 items-start"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          custom={index}
+        >
           {/* Number */}
-          <div className="bg-blue-100 text-black font-bold w-25 h-10 flex items-center justify-center rounded-md">
-            {item.id}
+          <div
+            style={{ fontFamily: "PovetaracSansBlack" }}
+            className="bg-blue-100 text-black font-bold w-24 h-10 flex items-center justify-center rounded-md"
+          >
+            <span className="mt-0.5">{item.id}</span>
           </div>
 
           {/* Text */}
           <div>
-            <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+            <h3
+              style={{ fontFamily: "PovetaracSansBlack" }}
+              className="text-xl mb-1"
+            >
+              {item.title}
+            </h3>
+            <p
+              style={{ fontFamily: "PovetaracSansBold" }}
+              className="text-gray-600 text-[16px] leading-relaxed"
+            >
+              {item.desc}
+            </p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );

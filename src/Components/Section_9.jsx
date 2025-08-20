@@ -20,7 +20,7 @@ const Section_9 = ({ isDarkMode }) => {
 
   return (
     <div className="cursor-default">
-      <div className="lg:container mx-auto py-12 md:py-18 flex flex-col items-center justify-center h-full">
+      <div className="max-w-screen-xl mx-auto py-12 md:py-18 flex flex-col items-center justify-center h-full">
         <p style={{ fontFamily: 'PovetaracSansBold' }}  className="text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5" >
           OUR NETWORK
         </p>

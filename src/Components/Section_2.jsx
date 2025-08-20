@@ -73,15 +73,14 @@ const Section_2 = ({ isDarkMode }) => {
   const headingRef = useRef(null);
   return (
     <div ref={containerRef} className={`${isDarkMode ? 'bg-white' : 'bg-[#001C40]'} relative py-14 w-full overflow-hidden border`}>
-      <img src={bgImage} alt="Background" className="absolute top-0 left-0 w-full h-full object-cover opacity-70"/>
-      <div className="relative container mx-auto h-full z-10 flex flex-col items-center justify-center">
+      <div className="relative max-w-screen-xl mx-auto h-full z-10 flex flex-col items-center justify-center">
         <h1 ref={headingRef} style={{ fontFamily: 'PovetaracSansBold' }} className={`text-4xl text-center ${isDarkMode?'text-black':'text-white'}`}>
            Trusted Lending — <br className="block md:hidden" /> From Day One
         </h1>
         <div className="text-center py-3 px-2 flex items-center justify-center flex-wrap mt-8 gap-14">
           {numbers.map((item, index) => (
             <div key={index} className={`${isDarkMode?'text-black':'text-white'}`}>
-              <h1 ref={(el) => (statsRef.current[index] = el)} style={{ fontFamily: 'PovetaracSansBold' }} className="text-5xl md:text-6xl">0{item.suffix}</h1>
+              <h1 ref={(el) => (statsRef.current[index] = el)} style={{ fontFamily: 'PovetaracSansBold' }} className="text-4xl md:text-5xl">0{item.suffix}</h1>
               <p style={{ fontFamily: 'PovetaracSansbold' }} className="text-xl md:text-2xl text-[#686666]">{item.label}</p>
             </div>
           ))}

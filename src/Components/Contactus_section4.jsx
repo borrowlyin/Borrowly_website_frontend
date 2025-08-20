@@ -4,7 +4,7 @@ import ArrowIcon from '../assets/Icons/ArrowIcon.svg'
 
 const Contactus_section4 = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-5 md:px-10 py-12 container mx-auto  text-left">
+    <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 px-5 md:px-10 py-12 max-w-screen-xl mx-auto  text-left">
       {/* Apply for a Loan */}
       <div className="pb-6 border-b md:border-b-0 md:pb-0">
         <h3 style={{ fontFamily: 'PovetaracSansblack' }} className="text-lg">APPLY FOR A LOAN</h3>

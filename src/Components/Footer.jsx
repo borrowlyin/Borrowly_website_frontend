@@ -15,7 +15,7 @@ import footer_craft from '../assets/Icons/Footer_Craft.svg'
 const Footer = ({ isDarkMode }) => {
   return (
     <div className="cursor-default  pt-12 md:pt-24">
-      <div className={`lg:container mx-auto px-4 pb-10 flex flex-col md:flex-row flex-wrap gap-8`}>
+      <div className={`max-w-screen-xl mx-auto px-4 pb-10 flex flex-col md:flex-row flex-wrap gap-8`}>
 
         {/* Newsletter - FIRST on mobile, LAST on desktop */}
         <div className={`${ isDarkMode ? 'text-[#ffffff]' : 'text-[#000000]' } w-full md:max-w-full lg:max-w-md order-1 lg:order-4`}>
@@ -99,7 +99,7 @@ const Footer = ({ isDarkMode }) => {
         
       </div>
       <div className='px-5 md:px-0'>
-         <hr className={` lg:container mx-auto px-4 pb-4 flex flex-col md:flex-row flex-wrap ${ isDarkMode ? 'border-[#ffffff]' : 'border-[#000000]' } gap-8`}></hr>
+         <hr className={` max-w-screen-xl mx-auto px-4 pb-4 flex flex-col md:flex-row flex-wrap ${ isDarkMode ? 'border-[#ffffff]' : 'border-[#000000]' } gap-8`}></hr>
       </div>
       <div className='w-full'>
         <div style={{ fontFamily: 'PovetaracSansBold' }} className={` ${ isDarkMode ? 'text-[#ffffff]' : 'text-[#000000]' } pt-4 pb-5 text-center text-[12px] lg:text-[14px]`}>

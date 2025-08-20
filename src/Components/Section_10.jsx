@@ -176,7 +176,7 @@ useEffect(() => {
     <div ref={sectionRef} className="relative cursor-default px-5 pt-12 md:mt-24">
      <div ref={leftPatchRef} className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
       <div ref={rightPatchRef} className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
-      <div className="lg:container mx-auto py-12 md:py-18 flex flex-col items-center justify-center h-full">
+      <div className="max-w-screen-xl mx-auto py-12 md:py-18 flex flex-col items-center justify-center h-full">
         <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${  isDarkMode ? 'text-white' : 'text-black' }`}>
           Crafted in India, designed for Indians
         </h1>
@@ -186,7 +186,7 @@ useEffect(() => {
       </div>
 
       {/* Map */}
-      <div className='flex flex-col gap-16 md:gap-0 md:flex-row px-10 container mx-auto'>
+      <div className='flex flex-col gap-16 md:gap-0 md:flex-row px-10 max-w-screen-xl mx-auto'>
         <div ref={statsRef} className='flex-1 flex flex-col items-center justify-center'>
            <div className='text-center pb-5 md:pb-10 w-full'>
              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-4xl lg:text-5xl ${isDarkMode?'text-white':'text-black'}`}>

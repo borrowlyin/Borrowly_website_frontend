@@ -38,7 +38,7 @@ const menuItems = [
     dropdown: [
       { title: 'Support', desc: 'Get help and support', link: '/Support' },
       { title: 'Locations', desc: 'Find a branch near you', link: '/' },
-      { title: 'Feedback', desc: 'Tell us what you think', link: '/' },
+      { title: 'Contact', desc: 'Tell us what you think', link: '/' },
     ],
   },
 ];
@@ -76,7 +76,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
   return (
     <>
       <div className="cursor-default sticky top-0 bg-white p-2 border border-t-0 border-l-0 border-r-0  border-b-[#d4d4d4] md:p-0 px-2 z-50  w-full">
-        <div className="px-3 lg:container mx-auto flex justify-between items-center h-full">
+        <div className="px-3 max-w-screen-xl mx-auto flex justify-between items-center h-full">
           {/* Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
             <img src="/Company_icon.svg" onClick={()=>{navigate('/')}} alt="Logo" className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[90px]" />

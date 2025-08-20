@@ -4,7 +4,7 @@ import Banner_image from '../assets/Icons/Banner_icons.svg'
 const Banner_section = ({isDarkMode}) => {
   return (
       <div className="cursor-default">
-         <div className="lg:container mx-auto pb-10 px-5 flex flex-col items-center justify-center h-full">
+         <div className="max-w-screen-xl mx-auto pb-10 px-5 flex flex-col items-center justify-center h-full">
             <div className={`px-5 w-full flex flex-col md:flex-row max-w-[1200px]  overflow-hidden lg:h-[400px] rounded-4xl ${isDarkMode ? 'bg-[#EAEEF6] ':'bg-gradient-to-tl from-[#3750E7]  to-[#8092f5]'} `}>
                 <div className='flex-1 flex justify-center flex-col pt-6 lg:px-10'>
                      <p  style={{ fontFamily: 'PovetaracSansBlack' }}  className={`text-[14px] ${isDarkMode ? 'text-[#1556B7] bg-[#DEE8F6]':'bg-[#ffffff] text-black'} text-left rounded-lg w-fit px-4 py-1.5`} >

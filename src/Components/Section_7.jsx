@@ -3,7 +3,7 @@ import ReviewCard from './ReviewCard'
 const Section_7 = ({isDarkMode}) => {
   return (
     <div className="cursor-default">
-        <div className="lg:container mx-auto pt-12 flex flex-col md:flex-row md:items-center justify-center h-full px-5 md:px-10">
+        <div className="max-w-screen-xl mx-auto pt-12 flex flex-col md:flex-row md:items-center justify-center h-full px-5 md:px-10">
            <div className="flex-1">
               <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>Loved by Thousands</p>
               <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}>Review from Customer</h1>
