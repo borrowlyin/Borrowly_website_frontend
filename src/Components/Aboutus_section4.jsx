@@ -2,40 +2,47 @@ import React from "react";
 import { motion } from "framer-motion";
 import Arrowup from "../assets/Icons/Arrow-up.svg";
 
+import Service_icon_1 from '../assets/Icons/Service_icon_1.svg'
+import Service_icon_2 from '../assets/Icons/Service_icon_2.svg'
+import Service_icon_3 from '../assets/Icons/Service_icon_4.svg'
+import Service_icon_4 from '../assets/Icons/Service_icon_5.svg'
+import Service_icon_5 from '../assets/Icons/Service_icon_6.svg'
+import Service_icon_6 from '../assets/Icons/Service_icon_7.svg'
+
 const Aboutus_section4 = () => {
   const services = [
     {
-      icon: <img src="../src/assets/Icons/Service_icon_1.svg" alt="Easy Loan Applications" className="w-10" />,
+      icon: <img src={Service_icon_1} alt="Easy Loan Applications" className="w-10" />,
       title: "Easy Loan Applications",
       desc: "Apply online in minutes. No lengthy paperwork, no delays.",
       bg: "bg-[#A3343D]",
     },
     {
-      icon: <img src="../src/assets/Icons/Service_icon_2.svg" alt="Fast Approvals" className="w-10" />,
+      icon: <img src={Service_icon_2} alt="Fast Approvals" className="w-10" />,
       title: "Fast Approvals",
       desc: "Get loans verified and approved quickly with digital verification.",
       bg: "bg-[#FAAB63]",
     },
     {
-      icon: <img src="../src/assets/Icons/Service_icon_4.svg" alt="Flexible Repayment Options" className="w-10" />,
+      icon: <img src={Service_icon_3} alt="Flexible Repayment Options" className="w-10" />,
       title: "Flexible Repayment Options",
       desc: "Choose EMI plans that suit your budget. Pay conveniently every month.",
       bg: "bg-[#2881FC]",
     },
     {
-      icon: <img src="../src/assets/Icons/Service_icon_5.svg" alt="Secure & Transparent" className="w-10" />,
+      icon: <img src={Service_icon_4} alt="Secure & Transparent" className="w-10" />,
       title: "Secure & Transparent",
       desc: "Your data and transactions are always protected with bank-grade security.",
       bg: "bg-[#D81E5B]",
     },
     {
-      icon: <img src="../src/assets/Icons/Service_icon_6.svg" alt="24/7 Customer Support" className="w-10" />,
+      icon: <img src={Service_icon_5} alt="24/7 Customer Support" className="w-10" />,
       title: "24/7 Customer Support",
       desc: "We are here to guide you at every step — from applying to repayment.",
       bg: "bg-[#BA31CE]",
     },
     {
-      icon: <img src="../src/assets/Icons/Service_icon_7.svg" alt="Competitive Interest Rates" className="w-10" />,
+      icon: <img src={Service_icon_6} alt="Competitive Interest Rates" className="w-10" />,
       title: "Competitive Interest Rates",
       desc: "Borrowly offers affordable loan options with low interest rates, ensuring borrowers get the best value without hidden charges. Our goal is to make borrowing cost-effective and stress-free.",
       bg: "bg-[#33524A]",
