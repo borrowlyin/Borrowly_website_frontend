@@ -28,7 +28,7 @@ const menuItems = [
   {
     label: 'About',
     dropdown: [
-      { title: 'Company', desc: 'Learn about us', link: '/' },
+      { title: 'Company', desc: 'Learn about us', link: '/About_us' },
       { title: 'Team', desc: 'Meet our team', link: '/' },
       { title: 'Careers', desc: 'Work with us', link: '/' },
     ],
