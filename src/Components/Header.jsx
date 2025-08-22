@@ -30,7 +30,7 @@ const menuItems = [
     dropdown: [
       { title: 'Company', desc: 'Learn about us', link: '/About_us' },
       { title: 'Team', desc: 'Meet our team', link: '/' },
-      { title: 'Careers', desc: 'Work with us', link: '/' },
+      { title: 'Careers', desc: 'Work with us', link: '/Carriers' },
     ],
   },
   {
@@ -38,7 +38,7 @@ const menuItems = [
     dropdown: [
       { title: 'Support', desc: 'Get help and support', link: '/Support' },
       { title: 'Locations', desc: 'Find a branch near you', link: '/' },
-      { title: 'Contact', desc: 'Tell us what you think', link: '/' },
+      { title: 'Contact', desc: 'Tell us what you think', link: '/Contact_us' },
     ],
   },
 ];
