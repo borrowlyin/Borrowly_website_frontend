@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import Arrowup from '../assets/Icons/Arrow-up.svg';
 import ThemeToggle from './ThemeToggle';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const menuItems = [
@@ -22,7 +22,7 @@ const menuItems = [
     dropdown: [
       { title: 'Blog', desc: 'Latest updates and articles', link: '/' },
       { title: 'Guides', desc: 'Helpful loan guides', link: '/' },
-      { title: 'Tools', desc: 'Financial calculators', link: '/' },
+      { title: 'Tools', desc: 'Financial calculators', link: '/Tools' },
     ],
   },
   {
@@ -56,6 +56,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
   const [expandedSection, setExpandedSection] = useState(null);
 
   const navigate = useNavigate();
+   const location = useLocation();
 
   const toggleSection = (label) => {
     setExpandedSection(expandedSection === label ? null : label);
@@ -154,13 +155,13 @@ const Header = ({ isDarkMode, toggleTheme }) => {
           {/* Right Buttons */}
           <div className="w-full max-w-[320px] items-center justify-end hidden lg:flex">
             <div className="flex items-center gap-6">
-              <Link
+              {/* <Link
                 to="/login"
                 style={{ fontFamily: 'PovetaracSansBold' }}
                 className={`text-[16px] underline underline-offset-8 ${isDarkMode ? 'text-black' : 'text-black'}`}
               >
                 Login
-              </Link>
+              </Link> */}
               <button
                 style={{ fontFamily: 'PovetaracSansBold' }}
                 className={`${
@@ -170,7 +171,10 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                 <span>Apply Now</span>
                 <img src={Arrowup} alt="Arrow Up" className="mb-1 ml-2" />
               </button>
-              <ThemeToggle toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+              {
+                location.pathname == "/" && <ThemeToggle toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+              } 
+              
             </div>
           </div>
 
@@ -278,7 +282,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
 
               {/* Buttons at Bottom */}
               <div className="mt-6 flex flex-row gap-1.5">
-                <button
+                {/* <button
                   onClick={() => {
                     navigate('/login');
                     window.scrollTo(0, 0);
@@ -289,7 +293,7 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                   } flex-1 py-4 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`}
                 >
                   <span>Login</span>
-                </button>
+                </button> */}
                 <button
                   style={{ fontFamily: 'PovetaracSansBlack' }}
                   className={`${

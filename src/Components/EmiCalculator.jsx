@@ -63,7 +63,8 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
       const rect = bar.getBoundingClientRect();
       const relX = Math.min(Math.max(x - rect.left, 0), rect.width);
       const percent = relX / rect.width;
-      const newValue = Math.round((min + percent * (max - min)) / step) * step;
+ const newValue = Math.round((min + percent * (max - min)) / step) * step;
+
       setValue(newValue);
       gsap.to(fill, { width: `${percent * 100}%`, duration: 0.2 });
       gsap.to(thumb, { duration: 0.2 });
@@ -98,7 +99,7 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
   );
 };
 
-const EmiCalculator = ({isDarkMode}) => {
+const EmiCalculator = ({isDarkMode,options}) => {
   const [selectedLoan, setSelectedLoan] = useState(loanOptions[0]);
   const [loanAmount, setLoanAmount] = useState(8000);
   const [interestRate, setInterestRate] = useState(12);
@@ -107,23 +108,30 @@ const EmiCalculator = ({isDarkMode}) => {
   const annualInterestRate = interestRate;
   const months = emiMonths;
   
+
   const monthlyRate = annualInterestRate / 12 / 100;
-  const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) /(Math.pow(1 + monthlyRate, months) - 1);
-  const monthlyEMI = Math.round(emi);
-  const totalPayable = Math.round(monthlyEMI * months);
-  const totalInterest = totalPayable - principal;
-  
+const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+
+// choose ONE rounding rule and use it everywhere:
+const roundRupee = (x) => Math.round(x);   // or Math.ceil(x) to be conservative
+const monthlyEMI = roundRupee(emi);
+const totalPayable = roundRupee(emi * months); // <-- use emiRaw, not monthlyEMI
+const totalInterest = totalPayable - principal;
+
   
   return (
     <div className='px-5'>
       <div className='w-full overflow-x-auto hide-scrollbar'>
         <div className='flex pb-8 w-max gap-1 whitespace-nowrap'>
-          {loanOptions.map((loan) => (
+          {
+            options !=false &&  loanOptions.map((loan) => (
             <button key={loan.id} onClick={() => setSelectedLoan(loan)} style={{ fontFamily: 'PovetaracSansBold' }} className={`py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-full transition-all duration-200 ${
                 selectedLoan.id === loan.id ? 'bg-[#0162D9] border border-[#0162D9]  text-white' : `border border-[#C4C4C4] bg-white cursor-pointer text-black` }`}>
               {loan.loanName}
             </button>
-          ))}
+          ))
+          }
+         
         </div>
       </div>
       {/* Mobile Veriosn */}
@@ -201,18 +209,20 @@ const EmiCalculator = ({isDarkMode}) => {
       <div className={`border border-[#C4C4C4] bg-white hidden lg:flex h-[470px] gap-5 rounded-2xl p-5`}>
         <div className='flex-1 flex flex-col gap-6 py-4 px-5'>
           {/* Loan Amount */}
-          <div>
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex items-center'>
-              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className='text-xl'>Loan amount</h1>
-              <div className='border ml-auto border-[#e6e6e6] pt-2 pb-1 px-8 text-[18px] rounded-full'>
-                ₹{loanAmount.toLocaleString()}
-              </div>
-            </div>
-            <Slider min={8000} max={500000} value={loanAmount} setValue={setLoanAmount} />
-            <div className='flex justify-between text-[#838383] text-[18px]'>
-              <span>8k</span><span>5L</span>
-            </div>
-          </div>
+{/* Loan Amount */}
+<div>
+  <div className='flex items-center'>
+    <h1 className='text-[16px] md:text-xl font-bold'>Loan amount</h1>
+    <div style={{ fontFamily: 'PovetaracSansBold' }} className='border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full'>
+      ₹{loanAmount.toLocaleString()}
+    </div>
+  </div>
+  <Slider min={8000} max={500000} value={loanAmount} setValue={setLoanAmount} step={1000} />
+  <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
+    <span>8k</span><span>5L</span>
+  </div>
+</div>
+
 
           {/* Interest Rate */}
           <div>

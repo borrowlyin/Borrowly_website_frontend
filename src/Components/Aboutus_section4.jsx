@@ -8,8 +8,11 @@ import Service_icon_3 from '../assets/Icons/Service_icon_4.svg'
 import Service_icon_4 from '../assets/Icons/Service_icon_5.svg'
 import Service_icon_5 from '../assets/Icons/Service_icon_6.svg'
 import Service_icon_6 from '../assets/Icons/Service_icon_7.svg'
+import { useNavigate } from "react-router-dom";
 
 const Aboutus_section4 = () => {
+
+  const Navigate = useNavigate()
   const services = [
     {
       icon: <img src={Service_icon_1} alt="Easy Loan Applications" className="w-10" />,
@@ -70,8 +73,12 @@ const Aboutus_section4 = () => {
           We provide end-to-end support — from loan applications to EMI tracking and customer support.
         </p>
         <button
+           onClick={() => {
+        Navigate("/Contact_us");
+        window.scrollTo(0, 0);
+      }}
           style={{ fontFamily: "PovetaracSansBold" }}
-          className="px-8 py-3 bg-black flex items-center gap-2 text-lg text-white rounded-xl hover:bg-gray-800"
+          className="px-8 py-3 bg-black flex items-center gap-2 cursor-pointer hover:scale-105 text-lg text-white rounded-xl hover:bg-gray-800 transition-all duration-300 ease-in-out"
         >
           <span className="mt-1.25 mr-2">Contact us</span>
           <img src={Arrowup} alt="" className="w-4" />

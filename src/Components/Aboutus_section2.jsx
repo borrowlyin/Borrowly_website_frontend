@@ -34,7 +34,7 @@ const AnimatedCounter = ({ from = 0, to, suffix = "", duration = 2 }) => {
 
 const Aboutus_section2 = () => {
   return (
-    <section className="px-6 md:px-12 max-w-screen-xl mx-auto py-12 grid md:grid-cols-2 gap-10 items-center">
+    <section className="px-6 md:px-12 max-w-screen-xl mx-auto md:py-12 grid md:grid-cols-2 gap-10 items-center">
       
       {/* Left Images Grid */}
       <div className="grid grid-cols-2 gap-4">

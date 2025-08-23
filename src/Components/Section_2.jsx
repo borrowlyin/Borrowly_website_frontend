@@ -8,84 +8,125 @@ import section_3_light from '../assets/Icons/Section_2_DarkBG.svg';
 gsap.registerPlugin(ScrollTrigger);
 
 const Section_2 = ({ isDarkMode }) => {
+  // Use your client’s light/texture patterns here
   const bgImage = isDarkMode ? section_3_light : section_2_Dark;
 
-  const statsRef = useRef([]);
   const containerRef = useRef(null);
+  const statsRef = useRef([]);
+  const headingRef = useRef(null);
 
   const numbers = [
     { value: 18.7, suffix: '+', prefix: '₹', label: 'Cr Disbursed', decimal: true },
     { value: 2500, suffix: '+', prefix: '', label: 'Happy Customers' },
     { value: 30, suffix: '+', prefix: '', label: 'Cities Served' },
-    { value: 97, suffix: '%', prefix: '', label: 'Customer Satisfaction' }
+    { value: 97, suffix: '%', prefix: '', label: 'Customer Satisfaction' },
   ];
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    statsRef.current.forEach((el, index) => {
-      const { value, suffix, prefix, decimal } = numbers[index];
-      const obj = { count: value / 2 };
-
-
-      gsap.to(obj, {
-        count: value,
-        duration: 2,
-        ease: 'power1.out',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        onUpdate: () => {
-          if (el) {
-            el.innerText =
-              prefix +
-              (decimal
-                ? obj.count.toFixed(1)
-                : Math.floor(obj.count).toLocaleString()) +
-              suffix;
+    const ctx = gsap.context(() => {
+      // Animate heading
+      if (headingRef.current) {
+        gsap.fromTo(
+          headingRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: headingRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
           }
-        },
+        );
+      }
+
+      // Animate counters
+      statsRef.current.forEach((el, index) => {
+        if (!el) return;
+        const { value, suffix, prefix, decimal } = numbers[index];
+        const obj = { count: value / 2 };
+
+        gsap.to(obj, {
+          count: value,
+          duration: 2,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+          onUpdate: () => {
+            el.innerText =
+              (prefix || '') +
+              (decimal ? obj.count.toFixed(1) : Math.floor(obj.count).toLocaleString()) +
+              (suffix || '');
+          },
+        });
       });
-    });
+    }, containerRef);
 
-    if (headingRef.current) {
-  gsap.fromTo(
-    headingRef.current,
-    { y: 50, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: headingRef.current,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
-    }
-  );
-}
-
+    return () => {
+      ctx.revert(); // cleans up animations + ScrollTriggers
+    };
   }, []);
 
-  const headingRef = useRef(null);
   return (
-    <div ref={containerRef} className={`${isDarkMode ? 'bg-white' : 'bg-[#001C40]'} relative py-14 w-full overflow-hidden border`}>
+    <div
+      ref={containerRef}
+      className={`${isDarkMode ? 'bg-white' : 'bg-[#001C40]'} relative py-14 w-full overflow-hidden`}
+    >
+      {/* Background pattern layer */}
+      <img
+        src={bgImage}
+        alt=""
+        aria-hidden="true"
+        className={`pointer-events-none select-none absolute inset-0 w-full h-full object-cover 
+          ${isDarkMode ? 'opacity-20 mix-blend-multiply' : 'opacity-15 mix-blend-screen'}`}
+      />
+
+      {/* Optional soft gradient to keep text readable */}
+      <div
+        className={`absolute inset-0 ${
+          isDarkMode
+            ? 'bg-gradient-to-b from-transparent via-white/20 to-white/40'
+            : 'bg-gradient-to-b from-transparent via-[#001C40]/10 to-[#001C40]/30'
+        }`}
+        aria-hidden="true"
+      />
+
       <div className="relative max-w-screen-xl mx-auto h-full z-10 flex flex-col items-center justify-center">
-        <h1 ref={headingRef} style={{ fontFamily: 'PovetaracSansBold' }} className={`text-4xl text-center ${isDarkMode?'text-black':'text-white'}`}>
-           Trusted Lending — <br className="block md:hidden" /> From Day One
+        <h1
+          ref={headingRef}
+          style={{ fontFamily: 'PovetaracSansBold' }}
+          className={`text-4xl text-center ${isDarkMode ? 'text-black' : 'text-white'}`}
+        >
+          Trusted Lending — <br className="block md:hidden" /> From Day One
         </h1>
+
         <div className="text-center py-3 px-2 flex items-center justify-center flex-wrap mt-8 gap-14">
           {numbers.map((item, index) => (
-            <div key={index} className={`${isDarkMode?'text-black':'text-white'}`}>
-              <h1 ref={(el) => (statsRef.current[index] = el)} style={{ fontFamily: 'PovetaracSansBold' }} className="text-4xl md:text-5xl">0{item.suffix}</h1>
-              <p style={{ fontFamily: 'PovetaracSansbold' }} className="text-xl md:text-2xl text-[#686666]">{item.label}</p>
+            <div key={index} className={`${isDarkMode ? 'text-black' : 'text-white'}`}>
+              <h1
+                ref={(el) => (statsRef.current[index] = el)}
+                style={{ fontFamily: 'PovetaracSansBold' }}
+                className="text-4xl md:text-5xl"
+              >
+                0{item.suffix}
+              </h1>
+              <p
+                style={{ fontFamily: 'PovetaracSansbold' }}
+                className="text-xl md:text-2xl text-[#686666]"
+              >
+                {item.label}
+              </p>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

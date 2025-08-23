@@ -1,23 +1,55 @@
 import React from "react";
+import { motion } from "framer-motion";
 import mobileImg from "../assets/Images/mobile.png";
 import serviceImg from "../assets/Images/service.png";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.14, delayChildren: 0.06 },
+  },
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, x: -28 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 28 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+};
 
 const Contactus_section5 = () => {
   return (
     <section className="px-5 w-full max-w-[1200px] mx-auto py-10 flex flex-col gap-20">
       {/* ================= Mobile App Section ================= */}
-      <div className="flex flex-col lg:flex-row gap-10 items-center text-left">
+      <motion.div
+        className="flex flex-col lg:flex-row gap-10 items-center text-left"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }} // 👈 animates when this block is in view
+      >
         {/* Image */}
-        <div className="flex justify-center lg:w-[500px]">
-          <img
+        <motion.div className="flex justify-center lg:w-[500px]" variants={slideLeft}>
+          <motion.img
             src={mobileImg}
             alt="Mobile App"
             className="w-full rounded-3xl shadow-lg object-cover"
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 240, damping: 20 }}
           />
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className="flex-1">
+        <motion.div className="flex-1" variants={fadeUp}>
           <h2
             style={{ fontFamily: "PovetaracSansblack" }}
             className="text-2xl md:text-3xl mb-3"
@@ -29,10 +61,7 @@ const Contactus_section5 = () => {
             style={{ fontFamily: "PovetaracSansbold" }}
             className="text-gray-600 mb-4 text-sm sm:text-base"
           >
-            <strong
-              style={{ fontFamily: "PovetaracSansblack" }}
-              className="text-lg"
-            >
+            <strong style={{ fontFamily: "PovetaracSansblack" }} className="text-lg">
               Mobile Support Info
             </strong>
             <br />
@@ -44,10 +73,7 @@ const Contactus_section5 = () => {
             style={{ fontFamily: "PovetaracSansbold" }}
             className="text-gray-600 mb-6 text-sm sm:text-base"
           >
-            <strong
-              style={{ fontFamily: "PovetaracSansblack" }}
-              className="text-lg"
-            >
+            <strong style={{ fontFamily: "PovetaracSansblack" }} className="text-lg">
               Quick Smart App Access
             </strong>
             <br />
@@ -55,20 +81,29 @@ const Contactus_section5 = () => {
           </p>
 
           <div className="py-5">
-            <button
+            <motion.button
               style={{ fontFamily: "PovetaracSansbold" }}
               className="w-full lg:max-w-[300px] py-4 cursor-pointer bg-black text-white rounded-md hover:bg-gray-800 text-lg"
+              whileHover={{ y: -2, boxShadow: "0 10px 24px rgba(0,0,0,0.12)" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 320, damping: 22 }}
             >
               Download Now
-            </button>
+            </motion.button>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* ================= Service Request Section ================= */}
-      <div className="flex flex-col-reverse lg:flex-row gap-10 items-center text-left">
+      <motion.div
+        className="flex flex-col-reverse lg:flex-row gap-10 items-center text-left"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }} // 👈 animates when this block is in view
+      >
         {/* Left Content */}
-        <div className="flex-1">
+        <motion.div className="flex-1" variants={fadeUp}>
           <h2
             style={{ fontFamily: "PovetaracSansblack" }}
             className="text-xl sm:text-3xl mb-3"
@@ -88,10 +123,7 @@ const Contactus_section5 = () => {
             className="text-gray-600 mb-2 text-sm sm:text-base"
           >
             For support, contact us at{" "}
-            <a
-              href="mailto:Support@Borrowly.in"
-              className="text-blue-600 underline"
-            >
+            <a href="mailto:Support@Borrowly.in" className="text-blue-600 underline">
               Support@Borrowly.in
             </a>{" "}
             or call <span className="font-medium">+91 96060 45890</span>
@@ -103,24 +135,29 @@ const Contactus_section5 = () => {
           </p>
 
           <div className="py-5">
-            <button
+            <motion.button
               style={{ fontFamily: "PovetaracSansbold" }}
               className="w-full lg:max-w-[300px] py-4 cursor-pointer bg-black text-white rounded-md hover:bg-gray-800 text-lg"
+              whileHover={{ y: -2, boxShadow: "0 10px 24px rgba(0,0,0,0.12)" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 320, damping: 22 }}
             >
               Book Service Now
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Image */}
-        <div className="flex justify-center lg:w-[500px]">
-          <img
+        <motion.div className="flex justify-center lg:w-[500px]" variants={slideRight}>
+          <motion.img
             src={serviceImg}
             alt="Customer Support"
             className="w-full rounded-3xl shadow-lg object-cover"
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 240, damping: 20 }}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
