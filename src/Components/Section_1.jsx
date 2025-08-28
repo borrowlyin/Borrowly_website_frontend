@@ -4,6 +4,14 @@ import vector_down from '../assets/Icons/vector_down.svg';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import Person_loan_icon from '../assets/Icons/section_1Icons/Person_loan_Selected.svg'
+import Loan_image_1 from '../assets/Images/Loan_image_1.avif'
+import Loan_image_2 from '../assets/Images/Loan_image_2.avif'
+import Loan_image_3 from '../assets/Images/Loan_image_3.avif'
+import Loan_image_4 from '../assets/Images/Loan_image_4.avif'
+import Loan_image_5 from '../assets/Images/Loan_image_5.avif'
+import Loan_image_6 from '../assets/Images/Loan_image_6.avif'
+
+
 import Education_loan_icon from '../assets/Icons/section_1Icons/Education_Loans.svg'
 import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selected.svg'
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
@@ -18,12 +26,9 @@ import Person_loan from '../assets/Icons/section_1Icons/Person_loan.svg';
 import Vechicle_loan from '../assets/Icons/section_1Icons/Vechicle_loan.svg'
 
 import Downarrow from '../assets/Icons/section_1Icons/Downarrow.svg';
-import more_icon from '../assets/Icons/section_1Icons/More_Icon.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg'; 
 import Download_icon from '../assets/Icons/Download_icon.svg'; 
 
-
-import Personal_loan_banner from '../assets/Icons/section_1Icons/Person_loan_Banner.png';
 
 const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
   const contentRef = useRef();
@@ -52,12 +57,12 @@ const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
       <div onClick={onToggle} className="flex items-center justify-between px-4 py-3 cursor-pointer">
         <div className="flex items-center gap-3">
           <img src={isExpanded ? item.Normal_icon : item.Normal_icon} alt={`${item.name} Icon`} className="w-[40px] h-[40px]" />
-          <span style={{ fontFamily: 'PovetaracSansBold' }} className={`text-[16px] mt-1 ${isExpanded ? 'text-[#3C3B3B]' : 'text-[#3C3B3B]'}`}>
+          <span style={{ fontFamily: 'PovetaracSansBold' }} className={`text-lg mt-1 ${isExpanded ? 'text-[#3C3B3B]' : 'text-[#3C3B3B]'}`}>
             {item.name}
           </span>
         </div>
         {isExpanded ? (
-          <FaChevronUp className="text-[#00C2CC]" />
+          <FaChevronUp className="text-[#0CC066]" />
         ) : (
           <FaChevronDown className="text-[#3C3B3B]" />
         )}
@@ -68,22 +73,23 @@ const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
         className="px-4 text-[14px] text-[#3C3B3B] overflow-hidden h-0 opacity-0"
       >
         <div className="py-4">
+           <div className='pb-4'>
+             <img src={item.image}   alt={`${item?.name} Banner`}  className='w-[450px] mx-auto lg:w-full  h-full object-cover rounded-2xl'/>
+          </div>
 
-          <h1  style={{ fontFamily: 'PovetaracSansHeavy' }} className='text-left text-[18px] pb-2'>{item.headline}</h1>
+          <h1  style={{ fontFamily: 'PovetaracSansHeavy' }} className='text-left text-2xl pb-2'>{item.headline}</h1>
           <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-left text-[14px] text-[#7c7c7c]'>{item.description}</p>
           <div className='flex items-center gap-2 mt-4'>
-            <button style={{ fontFamily: 'PovetaracSansHeavy' }} className='flex-1 py-3 bg-[#00C2CC] flex items-center justify-center text-white text-[16px] rounded-lg'>
+            <button style={{ fontFamily: 'PovetaracSansHeavy' }} className='flex-1 py-3 bg-[#0CC066] flex items-center justify-center text-white text-[16px] '>
               Apply Loan
               <img src={Apply_arrow} alt="Apply Arrow" className='inline w-[22px] ml-2' />
             </button>
-            <button  style={{ fontFamily: 'PovetaracSansHeavy' }} className='flex-1 flex items-center justify-center py-3 bg-transparent border border-[#55575B] text-[16px] rounded-lg'>
+            <button  style={{ fontFamily: 'PovetaracSansHeavy' }} className='flex-1 flex items-center justify-center py-3 bg-transparent border border-[#55575B] text-[16px] '>
               <img src={Download_icon} alt="Download Icon" className='inline w-[22px] mr-2' />
                Download
             </button>
           </div>
-          <div>
-             <img src={Personal_loan_banner}   alt={`${item?.name} Banner`}  className='w-[450px] mx-auto lg:w-full  h-full object-cover rounded-2xl'/>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -117,6 +123,7 @@ const Section_1 = ({ isDarkMode }) => {
   {
     name: 'Personal Loan',
     Selected_icon: Person_loan_icon,
+    image: Loan_image_1,
     Normal_icon: Person_loan,
     id: 1,
     headline: 'Smart Loan Choices, Trusted Support — Today and Always.',
@@ -125,6 +132,7 @@ const Section_1 = ({ isDarkMode }) => {
   {
     name: 'Home Loan',
     Selected_icon: Home_equity_icon,
+     image: Loan_image_3,
     Normal_icon: Home_Equity,
     id: 2,
     headline: 'Turning Blueprints Into Reality — With Trust and Ease',
@@ -133,6 +141,7 @@ const Section_1 = ({ isDarkMode }) => {
   {
     name: 'Business Loan',
     Selected_icon: Business_loan_icon,
+     image: Loan_image_6,
     Normal_icon: Business_Loan,
     id: 3,
     headline: 'For Every Leap You Take, We’re Right Behind You.',
@@ -141,6 +150,7 @@ const Section_1 = ({ isDarkMode }) => {
   {
     name: 'Education Loan',
     Selected_icon: Education_loan,
+     image: Loan_image_4,
     Normal_icon:  Education_loan_icon,
     id: 4,
     headline: 'Turning Study Abroad Plans Into Reality.',
@@ -150,6 +160,7 @@ const Section_1 = ({ isDarkMode }) => {
     name: 'Vehicle Loan',
     Selected_icon: Vechicle_loan_icon,
     Normal_icon: Vechicle_loan,
+     image: Loan_image_2,
     id: 5,
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
@@ -157,6 +168,7 @@ const Section_1 = ({ isDarkMode }) => {
   {
     name: 'Insurance',
     Selected_icon: Insurance_icon,
+     image: Loan_image_5,
     Normal_icon: Insurance,
     id: 6,
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
@@ -171,7 +183,7 @@ const Section_1 = ({ isDarkMode }) => {
   const selectedItem = menulist.find(item => item.id === selectedId);
 
   return (
-    <div className={`pt-18 flex items-end pb-10 cursor-default justify-center`}>
+    <div className={` pt-8 md:pt-18 flex items-end pb-10 cursor-default justify-center`}>
       <div className="w-full max-w-screen-xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title  */}
@@ -195,7 +207,7 @@ const Section_1 = ({ isDarkMode }) => {
                     <div key={item.id} onClick={() => setSelectedId(item.id)} className={`relative cursor-pointer flex-1 h-full`}>
                       <div className={`flex flex-col items-center justify-center h-full gap-3 transition-all duration-300 
                       ${item.id === 1 ? 'rounded-l-lg' : ''} 
-                      ${ isSelected ? 'bg-[#00C2CC] text-white' : 'text-[#3C3B3B]' }`} >
+                      ${ isSelected ? 'bg-[#0CC066] text-white' : 'text-[#3C3B3B]' }`} >
                         <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[40px] mx-auto' />
                         <h1 style={{ fontFamily: 'PovetaracSansBold' }} className='text-[14px] lg:text-[16px]'> {item.name}</h1>
                       </div>
@@ -204,21 +216,19 @@ const Section_1 = ({ isDarkMode }) => {
                      </div>
                   );
                 })}
-                <div className='flex-1 border-l border-[#55575B]'>
+                {/* <div className='flex-1 border-l border-[#55575B]'>
                    <div className='flex flex-col items-center justify-center cursor-pointer h-full gap-3 transition-all duration-300 '>
                      <img  src={more_icon} alt={`more_icon Icon`} className='w-[35px] md:w-[40px] mx-auto' />
                      <h1 style={{ fontFamily: 'PovetaracSansHeavy' }} className='text-[16px]  hidden lg:block'>More Options</h1>
                    </div>
-                </div>
+                </div> */}
               </div>
               <div className='relative w-full max-w-screen-lg h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
                 <div className='p-5 w-[550px] flex flex-col justify-center'>
-                  <p
-                    style={{ fontFamily: 'PovetaracSansBold' }}
-                    className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'
-                  >
-                    {selectedItem?.name}
-                  </p>
+                <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-[#000000] text-[14px] border border-[#CFCCCC] rounded-full w-fit px-4 py-1.5 flex items-center justify-center">
+                   {selectedItem?.name}
+                 </p>
+                 
                   <h1
                     style={{ fontFamily: 'PovetaracSansBlack' }}
                     className={`text-left mt-4 text-[28px] lg:text-[30px] leading-[1.1] ${
@@ -238,7 +248,7 @@ const Section_1 = ({ isDarkMode }) => {
                   <div className='flex items-center gap-2 mt-4'>
                     <button
                       style={{ fontFamily: 'PovetaracSansHeavy' }}
-                      className='flex-1 py-3 bg-[#00C2CC] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] rounded-lg'
+                      className='flex-1 py-3 bg-[#0CC066] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] '
                     >
                       <span className='mt-1'>Apply Loan</span>
                       <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
@@ -247,7 +257,7 @@ const Section_1 = ({ isDarkMode }) => {
                       style={{ fontFamily: 'PovetaracSansHeavy' }}
                       className={`flex-1 cursor-pointer hover:scale-102 ${
                         isDarkMode ? 'text-white  border border-[#ffffff]' : 'text-black border border-[#55575B]'
-                      } flex items-center justify-center py-3 bg-transparent text-[16px] lg:text-[18px] rounded-lg`}
+                      } flex items-center justify-center py-3 bg-transparent text-[16px] lg:text-[18px] `}
                     >
                       <img src={Download_icon} alt='Download Icon' className='inline w-[22px] mr-2' />
                       <span className='mt-1'>Download</span>
@@ -260,7 +270,7 @@ const Section_1 = ({ isDarkMode }) => {
                   </div>
                 </div>
                 <div className='flex-1'>
-                    <img src={Personal_loan_banner}  alt={`${selectedItem?.name} Banner`} className=' mx-auto w-full object-contain h-full rounded-2xl' />
+                    <img src={selectedItem?.image}  alt={`${selectedItem?.name} Banner`} className=' mx-auto w-full object-contain h-full rounded-2xl' />
                 </div>
               </div>
 

@@ -46,11 +46,11 @@ const TestimonialCard = ({ shouldPlay }) => {
   const [isMuted, setIsMuted] = useState(true); // This is okay to track state
 
   return (
-    <div className="w-full flex justify-center relative">
+    <div className="w-full flex flex-col gap-5 justify-center relative">
       {/* Left arrow */}
-      <div className="flex items-center absolute z-10 -left-7 top-1/2 -translate-y-1/2">
-        <button className=" bg-white cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
-          <IoIosArrowBack className="text-black w-7 h-7" />
+      <div className=" items-center hidden md:flex absolute z-10 -left-7 top-1/2 -translate-y-1/2">
+        <button className=" bg-[#0C3B65] cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
+          <IoIosArrowBack className="text-white w-7 h-7" />
         </button>
       </div>
 
@@ -143,14 +143,30 @@ const TestimonialCard = ({ shouldPlay }) => {
       </div>
 
       {/* Right arrow */}
-      <div className="flex items-center absolute z-10 -right-7 top-1/2 -translate-y-1/2">
-        <button className="bg-white cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
-          <IoIosArrowForward className="text-black w-7 h-7" />
+      <div className="hidden md:flex items-center absolute z-10 -right-7 top-1/2 -translate-y-1/2">
+        <button className="bg-[#0C3B65] cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
+          <IoIosArrowForward className="text-white w-7 h-7" />
         </button>
+      </div>
+
+
+
+      <div className="flex  md:hidden px-5 gap-1 items-center justify-end">
+         <button className=" bg-[#0C3B65] cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
+          <IoIosArrowBack className="text-white w-7 h-7" />
+         </button>
+         <button className="bg-[#0C3B65] cursor-pointer w-14 h-14 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition">
+          <IoIosArrowForward className="text-white w-7 h-7" />
+         </button>
       </div>
     </div>
   );
 };
+
+
+
+
+
 
 const Section_6 = ({ isDarkMode }) => {
   const patchColor = isDarkMode ? "#006AEC" : "#25CBD3";
@@ -215,7 +231,7 @@ const Section_6 = ({ isDarkMode }) => {
   }, []);
 
   return (
-    <div  ref={sectionRef} className="relative pb-24 cursor-default flex items-center overflow-hidden]">
+    <div  ref={sectionRef} className="relative bg-[#F0F0F0] py-12 md:py-0 cursor-default flex items-center overflow-hidden]">
       {/* Patches */}
       <div ref={leftPatchRef} className="absolute top-[25%] left-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-2xl md:blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
       <div ref={rightPatchRef} className="absolute top-[25%] right-[5%] w-[200px] md:w-[400px] h-[400px] hidden md:block rounded-full blur-[140px] opacity-60 pointer-events-none z-0" style={{ backgroundColor: patchColor }}/>
@@ -228,11 +244,11 @@ const Section_6 = ({ isDarkMode }) => {
         <h1 style={{ fontFamily: "PovetaracSansBlack" }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? "text-white" : "text-black" }`} >
           Why do thousands of users love Borrowly
         </h1>
-        <p style={{ fontFamily: "PovetaracSansBold" }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg ${  isDarkMode ? "text-[#CCCCCC]" : "text-[#696868]" }`} >
+        <p style={{ fontFamily: "PovetaracSansBold" }} className={`mt-2 px-5 pb-8 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg ${  isDarkMode ? "text-[#CCCCCC]" : "text-[#696868]" }`} >
           Because we connect you with top lenders fast, fair, and transparent.
         </p>
-        <div className="h-[500px] w-full px-5 max-w-[1000px]">
-          <div className="w-full h-auto px-5 mt-10">
+        <div className="h-[550px] w-full px-2 md:px-5  md:max-w-[1000px]">
+          <div className="w-full h-auto md:px-5">
             <TestimonialCard shouldPlay={isInView} />
           </div>
         </div>

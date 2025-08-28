@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import CIBIL_Home_image from '../assets/Images/CIBIL_Home_image.png';
+import CIBIL_Home_image from '../assets/Images/CIBIL_Home_image_new.avif';
 import BlupIcon from '../assets/Icons/BlupIcon.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg';
 
@@ -54,18 +54,18 @@ const Section_3 = ({ isDarkMode }) => {
   ));
 
   return (
-    <div ref={sectionRef} className="py-24 md:px-5 flex items-center">
+    <div ref={sectionRef} className="md:py-24 cursor-default md:px-5 flex items-center">
       <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-5">
         <div className="flex-1 p-10">
           <img src={CIBIL_Home_image} alt="" className="" />
         </div>
         <div className="flex-1 px-5 md:px-10 lg:px-0">
-          <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5" >
-            CIBIL Check
-          </p>
+            <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-[#000000] text-[14px] border border-[#CFCCCC] rounded-full w-fit px-4 py-1.5 flex items-center justify-center">
+              CIBIL Check
+            </p>
           <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-left mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${  isDarkMode ? 'text-white' : 'text-black'}`} >
             Your{' '}
-            <span className="text-[33px] lg:text-[41px] xl:text-[45px] text-[#00C2CC] whitespace-nowrap">
+            <span className="text-[33px] lg:text-[41px] xl:text-[45px] text-[#0B3762] whitespace-nowrap">
               {animatedText}
             </span>{' '}
             in your hands. Stay informed, stay ahead.

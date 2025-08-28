@@ -92,8 +92,8 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
   return (
     <div className='py-5'>
       <div ref={barRef} className='w-full h-3 bg-gray-200 rounded-full relative cursor-pointer'>
-        <div ref={fillRef} className='h-3 bg-blue-600 rounded-full' style={{ width: `${((value - min) / (max - min)) * 100}%` }}></div>
-        <div ref={thumbRef} className="w-7 h-7 bg-white border-6 border-blue-600 rounded-full absolute top-1/2 -translate-y-1/2" style={{ transform: 'translateX(0%)' }}></div>
+        <div ref={fillRef} className='h-3 bg-[#08315C] rounded-full' style={{ width: `${((value - min) / (max - min)) * 100}%` }}></div>
+        <div ref={thumbRef} className="w-7 h-7 bg-white border-6 border-[#0CC066] rounded-full absolute top-1/2 -translate-y-1/2" style={{ transform: 'translateX(0%)' }}></div>
       </div>
     </div>
   );
@@ -102,7 +102,7 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
 const EmiCalculator = ({isDarkMode,options}) => {
   const [selectedLoan, setSelectedLoan] = useState(loanOptions[0]);
   const [loanAmount, setLoanAmount] = useState(8000);
-  const [interestRate, setInterestRate] = useState(12);
+  const [interestRate, setInterestRate] = useState(8);
   const [emiMonths, setEmiMonths] = useState(6);
   const principal = loanAmount;
   const annualInterestRate = interestRate;
@@ -125,18 +125,26 @@ const totalInterest = totalPayable - principal;
         <div className='flex pb-8 w-max gap-1 whitespace-nowrap'>
           {
             options !=false &&  loanOptions.map((loan) => (
-            <button key={loan.id} onClick={() => setSelectedLoan(loan)} style={{ fontFamily: 'PovetaracSansBold' }} className={`py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-full transition-all duration-200 ${
-                selectedLoan.id === loan.id ? 'bg-[#0162D9] border border-[#0162D9]  text-white' : `border border-[#C4C4C4] bg-white cursor-pointer text-black` }`}>
-              {loan.loanName}
-            </button>
+            <button
+  key={loan.id}
+  onClick={() => setSelectedLoan(loan)}
+  style={{ fontFamily: 'PovetaracSansBold' }}
+  className={`flex items-center justify-center py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-lg transition-all duration-200 ${
+    selectedLoan.id === loan.id
+      ? 'bg-[#1E6491] border border-[#1E6491] text-white'
+      : 'border border-[#C4C4C4] bg-white cursor-pointer text-black'
+  }`}
+>
+  {loan.loanName}
+</button>
           ))
           }
          
         </div>
       </div>
       {/* Mobile Veriosn */}
-       <div className={`border border-[#C4C4C4] block lg:hidden gap-5 rounded-2xl  overflow-hidden bg-white `}>
-          <div className='bg-[#E0EEFF] py-8 flex flex-col items-center gap-1.5 justify-center'>
+       <div className={`border border-[#C4C4C4] block lg:hidden gap-5 overflow-hidden bg-white `}>
+          <div className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white  py-8 flex flex-col items-center gap-1.5 justify-center'>
             <h1 className={` text-[14px] font-semibold`}>Your monthly instalment</h1>
             <h1 className='text-4xl font-bold'>₹{monthlyEMI.toLocaleString()}</h1>
           </div>
@@ -163,9 +171,9 @@ const totalInterest = totalPayable - principal;
                 {interestRate}%
               </div>
             </div>
-            <Slider min={12} max={30} value={interestRate} setValue={setInterestRate} />
+            <Slider min={8} max={30} value={interestRate} setValue={setInterestRate} />
              <div  style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
-              <span>12%</span><span>30%</span>
+              <span>8%</span><span>30%</span>
             </div>
           </div>
 
@@ -198,7 +206,7 @@ const totalInterest = totalPayable - principal;
                 <h1 className='text-[20px] font-bold'>₹{totalPayable.toLocaleString()}</h1>
               </div>
               <div className='pt-5'>
-                <button  style={{ fontFamily: 'PovetaracSansBold' }} className='w-full text-lg py-4 text-[#0162D9] rounded-2xl border border-[#0162D9] font-bold'>
+                <button className='w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold'>
                   Apply Now
                 </button>
               </div>
@@ -206,7 +214,7 @@ const totalInterest = totalPayable - principal;
        </div>
 
       {/* Desktop view */}
-      <div className={`border border-[#C4C4C4] bg-white hidden lg:flex h-[470px] gap-5 rounded-2xl p-5`}>
+      <div className={`border border-[#C4C4C4] bg-white hidden lg:flex h-[470px] gap-5 p-5`}>
         <div className='flex-1 flex flex-col gap-6 py-4 px-5'>
           {/* Loan Amount */}
 {/* Loan Amount */}
@@ -232,7 +240,7 @@ const totalInterest = totalPayable - principal;
                 {interestRate}%
               </div>
             </div>
-            <Slider min={12} max={30} value={interestRate} setValue={setInterestRate} />
+            <Slider min={8} max={30} value={interestRate} setValue={setInterestRate} />
             <div className='flex justify-between text-[#838383] text-[18px]'>
               <span>12%</span><span>30%</span>
             </div>
@@ -255,10 +263,10 @@ const totalInterest = totalPayable - principal;
 
         {/* Summary */}
         <div className='w-full max-w-[325px]'>
-          <div className='border border-[#C4C4C4] rounded-3xl overflow-hidden'>
-            <div  style={{ fontFamily: 'PovetaracSansBold' }} className='bg-[#E0EEFF] py-8 flex flex-col items-center gap-1.5 justify-center'>
+          <div className='border border-[#C4C4C4] overflow-hidden'>
+            <div  style={{ fontFamily: 'PovetaracSansBold' }} className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center'>
               <h1 className='text-[14px]'>Your monthly instalment</h1>
-              <h1 className='text-4xl'>₹{monthlyEMI.toLocaleString()}</h1>
+              <h1 className='text-5xl mt-2'>₹{monthlyEMI.toLocaleString()}</h1>
             </div>
             <div  style={{ fontFamily: 'PovetaracSansBold' }} className='py-6 px-5'>
               <div className='flex justify-between mb-2'>
@@ -275,7 +283,7 @@ const totalInterest = totalPayable - principal;
                 <h1 className='text-[20px] font-bold'>₹{totalPayable.toLocaleString()}</h1>
               </div>
               <div className='pt-5'>
-                <button className='w-full text-lg py-4 text-[#0162D9] rounded-2xl border border-[#0162D9] font-bold'>
+                <button className='w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold'>
                   Apply Now
                 </button>
               </div>

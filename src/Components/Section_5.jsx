@@ -1,10 +1,12 @@
-import wallet_icon from '../assets/Icons/section_1Icons/wallet_icon.svg'
+import {useEffect,useRef,useState} from 'react'
+
 import Home_Earn_image from '../assets/Images/Home_Earn_image.png'
 import tick from '../assets/Icons/Tick.svg'
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg';
 import Affiliate_Icon_1 from '../assets/Icons/Affiliate_Rewards_Icons_1.svg'
 import Affiliate_Icon_2 from '../assets/Icons/Affiliate_Rewards_Icons_2.svg'
 import Affiliate_Icon_3 from '../assets/Icons/Affiliate_Rewards_Icons_3.svg'
+
 import Affiliate_Sub_icon1 from '../assets/Icons/Affiliate_Sub_Icon_1.svg'
 import Affiliate_Sub_icon2 from '../assets/Icons/Affiliate_Sub_Icon_2.svg'
 import Affiliate_Sub_icon3 from '../assets/Icons/Affiliate_Sub_Icon_3.svg'
@@ -12,7 +14,6 @@ import Affiliate_Sub_icon4 from '../assets/Icons/Affiliate_Sub_Icon_4.svg'
 import Affiliate_Sub_icon5 from '../assets/Icons/Affiliate_Sub_Icon_5.svg'
 import Affiliate_Sub_icon6 from '../assets/Icons/Affiliate_Sub_Icon_6.svg'
 import Affiliate_Sub_icon7 from '../assets/Icons/Affiliate_Sub_Icon_7.svg'
-
 import { motion } from "framer-motion";
 
 const Section_5 = ({isDarkMode}) => {
@@ -34,6 +35,8 @@ const Section_5 = ({isDarkMode}) => {
     description: "Get ₹500 credited to your account for every verified loan disbursal from your referral — with no earning cap."
   }
 ];
+
+
  
  const affiliateSubFeatures = [
    { icon: Affiliate_Sub_icon1, title: "Secure System" },
@@ -45,13 +48,69 @@ const Section_5 = ({isDarkMode}) => {
    { icon: Affiliate_Sub_icon7, title: "Instant Notifications" },
  ];
 
+   const items = affiliateSubFeatures.concat(affiliateSubFeatures);
+
  const affiliateBenefits = [
   "50% Commission on Agent/Course Referrals","Guaranteed Payouts on Every Loan Disbursal","Lifetime Affiliate Earnings","Fully Digital Tracking & Support",
  ];
 
+
+
+
+   const viewportRef = useRef(null);
+  const [idx, setIdx] = useState(0);
+  const autoMs = 3500; 
+  const slideCount = affiliateSteps.length;
+
+  const goTo = (i) => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const clamped = (i + slideCount) % slideCount;
+    el.scrollTo({ left: clamped * el.clientWidth, behavior: "smooth" });
+    setIdx(clamped);
+  };
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const i = Math.round(el.scrollLeft / el.clientWidth);
+      setIdx(Math.min(Math.max(i, 0), slideCount - 1));
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [slideCount]);
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    let paused = false;
+    const pause = () => (paused = true);
+    const resume = () => (paused = false);
+
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume, { passive: true });
+
+    const id = setInterval(() => {
+      if (!paused) goTo(idx + 1);
+    }, autoMs);
+
+    return () => {
+      clearInterval(id);
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resume);
+    };
+  }, [idx, autoMs]);
+
+
   return (
     <div className="cursor-default mt-10 md:mt-5">
-        <div className="max-w-screen-xl  mx-auto md:py-24 flex flex-col items-center justify-center h-full">
+      <div className='bg-[#F0F0F0] py-12 md:py-0'>
+ <div className="max-w-screen-xl  mx-auto md:py-16 flex flex-col items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>GROW WITH US</p>
             <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}> Earn with Borrowly</h1>
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
@@ -92,59 +151,138 @@ const Section_5 = ({isDarkMode}) => {
                 </div>
             </div>
         </div>
-        <div className="max-w-screen-xl  mx-auto pt-24 md:py-12 lg:py-0  flex flex-col md:pb-24 items-center justify-center h-full">
+      </div>
+      <div className='py-12'>
+                <div className="max-w-screen-xl  mx-auto flex flex-col items-center justify-center h-full">
             <p style={{ fontFamily: 'PovetaracSansBold' }} className='text-[#084DB3] text-[14px] bg-[#DEE8F6] text-left rounded-full w-fit px-4 py-1.5'>Affiliate Rewards</p>
             <h1  style={{ fontFamily: 'PovetaracSansBlack' }} className={`text-center mt-4 text-[28px] lg:text-[36px] xl:text-[40px] leading-[1.1] ${ isDarkMode ? 'text-white' : 'text-black'}`}>How the Borrowly Affiliate Program Works</h1>
             <p style={{ fontFamily: 'PovetaracSansBold' }} className={`mt-2 px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[14px] xl:text-lg  ${ isDarkMode ? 'text-[#CCCCCC]' : 'text-[#696868]' }`}>
              Get paid for every successful loan disbursal and course sign-up. It's easy, transparent, and built to scale.
             </p>
-<div className="w-full max-w-screen-xl  px-5 pt-6 gap-5 flex flex-wrap md:pt-16 justify-center">
-  {affiliateSteps.map((step, index) => (
-    <motion.div
-      key={index}
-      className={`${index === 0
-        ? "bg-[#FFFAEE]"
-        : index === 1
-        ? "bg-[#F8F1FF]"
-        : "bg-[#ECF9FE]"
-      } p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center w-full sm:w-[48%] md:w-[30%]`}
-      
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.3,
-        ease: "easeOut"
-      }}
-      viewport={{ once: false, amount: 0.4 }} // 👈 animate every time it enters
-    >
-      <img src={step.icon} alt="" className="w-16" />
-      <h1
-        style={{ fontFamily: "PovetaracSansBlack" }}
-        className={`text-center mt-4 text-[28px] lg:text-2xl leading-[1.1] ${isDarkMode ? "text-black" : "text-black"}`}
-      >
-        {step.title}
-      </h1>
-      <p
-        style={{ fontFamily: "PovetaracSansBold" }}
-        className={`px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[16px] ${isDarkMode ? "text-[#696868]" : "text-[#696868]"}`}
-      >
-        {step.description}
-      </p>
-    </motion.div>
-  ))}
-</div>
-            <div className="w-full max-w-screen-xl  px-5 gap-5 flex flex-wrap py-16 justify-center">
-              {affiliateSubFeatures.map((feature, index) => (
-                <div  key={index} style={{ fontFamily: "PovetaracSansBlack" }}  className={`w-fit flex text-[14px] items-center gap-2 ${  isDarkMode ? "text-white" : "text-black"  } hover:scale-102  border border-[#DEDEDE] py-3 px-3 md:px-6 rounded-2xl`}  >
-                  <img src={feature.icon} alt={feature.title} className="w-8" />
-                  <span className="mt-1">{feature.title}</span>
-                </div>
-              ))}
+    <div className="w-full max-w-screen-xl px-5">
+      {/* Mobile: swipeable carousel */}
+      <div className="md:hidden pt-6">
+        <div
+          ref={viewportRef}
+          className="relative w-full overflow-x-auto scroll-smooth snap-x snap-mandatory flex touch-pan-x"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {affiliateSteps.map((step, i) => (
+            <div
+              key={i}
+              className={`snap-start shrink-0 w-full px-1`}
+              style={{ scrollSnapAlign: "start" }}
+            >
+              <div
+                className={`${i === 0 ? "bg-[#BB2FD2]" : i === 1 ? "bg-[#2B80FF]" : "bg-[#34524A]"}
+                  p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center`}
+              >
+                <img src={step.icon} alt="" className="w-16" />
+                <h1
+                  style={{ fontFamily: "PovetaracSansBlack" }}
+                  className="text-center mt-4 text-[28px] leading-[1.1] text-white"
+                >
+                  {step.title}
+                </h1>
+                <p
+                  style={{ fontFamily: "PovetaracSansBold" }}
+                  className="px-5 w-full max-w-[800px] text-[14px] text-center text-white"
+                >
+                  {step.description}
+                </p>
+              </div>
             </div>
+          ))}
+        </div>
+
+        {/* Dots */}
+        <div className="mt-4 flex items-center justify-center gap-2">
+          {affiliateSteps.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300
+                ${idx === i ? "w-6 bg-black" : "w-2 bg-black/50"}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop/Tablet: original grid */}
+      <div className="hidden md:flex w-full max-w-screen-xl pt-16 gap-5 flex-wrap justify-center">
+        {affiliateSteps.map((step, index) => (
+          <motion.div
+            key={index}
+            className={`${index === 0 ? "bg-[#BB2FD2]" : index === 1 ? "bg-[#2B80FF]" : "bg-[#34524A]"}
+              p-1 rounded-2xl h-[350px] flex gap-3 flex-col items-center justify-center
+              w-full sm:w-[48%] md:w-[30%]`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.3, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.4 }}
+          >
+            <img src={step.icon} alt="" className="w-16" />
+            <h1
+              style={{ fontFamily: "PovetaracSansBlack" }}
+              className="text-center mt-4 text-[28px] lg:text-2xl leading-[1.1] text-white"
+            >
+              {step.title}
+            </h1>
+            <p
+              style={{ fontFamily: "PovetaracSansBold" }}
+              className="px-5 w-full max-w-[800px] text-[14px] text-center lg:text-[16px] text-white"
+            >
+              {step.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+           <div className="md:hidden pt-5 relative w-full overflow-hidden">
+  <motion.div
+    className="flex items-center gap- whitespace-nowrap w-full"
+    animate={{ x: ["-50%", "0%"] }}
+    transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+    style={{ willChange: "transform" }}
+  >
+    {items.map((feature, index) => (
+      <div
+        key={index}
+        style={{ fontFamily: "PovetaracSansBlack" }}
+        className={`shrink-0 w-auto flex items-center gap-2 ${
+          isDarkMode ? "text-white" : "text-black"
+        } hover:scale-105 border border-[#DEDEDE] py-3 px-3 rounded-2xl mx-2 overflow-hidden`}
+      >
+        <img src={feature.icon} alt={feature.title} className="w-8 flex-none" />
+        <span className="mt-1 whitespace-normal break-words [word-break:break-word] hyphens-auto">
+          {feature.title}
+        </span>
+      </div>
+    ))}
+  </motion.div>
+</div>
+
+
+      {/* Desktop/Tablet: your original flex-wrap */}
+      <div className="hidden md:flex w-full max-w-screen-xl px-5 gap-5 flex-wrap py-16 justify-center">
+        {affiliateSubFeatures.map((feature, index) => (
+          <div
+            key={index}
+            style={{ fontFamily: "PovetaracSansBlack" }}
+            className={`w-fit flex text-[14px] items-center gap-2 ${
+              isDarkMode ? "text-white" : "text-black"
+            } hover:scale-102 border border-[#DEDEDE] py-3 px-3 md:px-6 rounded-2xl`}
+          >
+            <img src={feature.icon} alt={feature.title} className="w-8" />
+            <span className="mt-1">{feature.title}</span>
+          </div>
+        ))}
+      </div>
               <div>
             </div>
         </div>
+      </div>
     </div>
   )
 }

@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { FiMenu, FiX } from 'react-icons/fi';
 import Arrowup from '../assets/Icons/Arrow-up.svg';
 import ThemeToggle from './ThemeToggle';
-import { Link, useNavigate,useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import famicons_call from '../assets/Icons/famicons_call.svg';
+import iconoir_mail_solid from '../assets/Icons/iconoir_mail-solid.svg';
 
 const menuItems = [
   {
@@ -43,62 +47,130 @@ const menuItems = [
   },
 ];
 
-
 const dropdownVariants = {
   hidden: { opacity: 0, y: -10, pointerEvents: 'none', transition: { duration: 0.2 } },
   visible: { opacity: 1, y: 0, pointerEvents: 'auto', transition: { duration: 0.3 } },
 };
 
-const Header = ({ isDarkMode, toggleTheme }) => {
-  const [openDropdown, setOpenDropdown] = useState(null);
+const drawerVariants = {
+  hidden: { x: '100%' },
+  visible: { x: 0, transition: { type: 'tween', duration: 0.25 } },
+  exit: { x: '100%', transition: { type: 'tween', duration: 0.2 } },
+};
+
+const mobileSubVariants = {
+  closed: { height: 0, opacity: 0 },
+  open: { height: 'auto', opacity: 1, transition: { duration: 0.2 } },
+};
+
+const Header = () => {
+  const [openDropdown, setOpenDropdown] = useState(null); // desktop hover
   const [selectedDropdownItem, setSelectedDropdownItem] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [expandedSection, setExpandedSection] = useState(null);
+  const [expandedSection, setExpandedSection] = useState(null); // mobile: which top-level is expanded
+  const drawerRef = useRef(null);
 
   const navigate = useNavigate();
-   const location = useLocation();
+  const location = useLocation();
 
-  const toggleSection = (label) => {
-    setExpandedSection(expandedSection === label ? null : label);
-  };
-
-  React.useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
+  // lock scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+    return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  // close drawer on route change
+  useEffect(() => {
+    setMobileOpen(false);
+    setExpandedSection(null);
+  }, [location.pathname]);
+
+  // click outside to close (on mobile)
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
+  const msg = 'Get 15% off on loan processing charges when you apply through Borrowly. Use code: FREEDOM15 | Valid till 31st August';
 
   return (
     <>
-      <div className="cursor-default sticky top-0 bg-white p-2 border border-t-0 border-l-0 border-r-0  border-b-[#d4d4d4] md:p-0 px-2 z-50  w-full">
-        <div className="px-3 max-w-screen-xl mx-auto flex justify-between items-center h-full">
-          {/* Logo */}
+      <style>{` @keyframes ticker { 0%{transform:translate3d(0,0,0)} 100%{transform:translate3d(-50%,0,0)} }`}</style>
+
+      {/* Top ticker */}
+      <div className="h-[40px] w-full bg-gradient-to-r from-[#00C2CC]/35 via-[#fff] to-[#00C2CC]/35 overflow-hidden flex items-center">
+        <div className="flex whitespace-nowrap font-medium text-black will-change-transform animate-[ticker_12s_linear_infinite] md:animate-[ticker_20s_linear_infinite]" style={{ transform: 'translateZ(0)' }} aria-label={msg}>
+          <div className="flex min-w-[200%] text-[14px]">
+            <span className="mx-10">{msg}</span>
+            <span className="mx-10">{msg}</span>
+            <span className="mx-10">{msg}</span>
+            <span className="mx-10">{msg}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Header bar */}
+      <div className="cursor-default sticky top-0 bg-white border border-t-0 border-l-0 border-r-0 pb-2 md:pb-0 border-b-[#d4d4d4] md:border-b-0 z-50 w-full">
+        <div className="max-w-screen-2xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
+          {/* Left: Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
-            <img src="/Company_icon.svg" onClick={()=>{navigate('/')}} alt="Logo" className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[90px]" />
+            <img
+              src="/Company_icon.svg"
+              onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
+              alt="Logo"
+              className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[75px]"
+            />
           </div>
 
-          {/* Main Navigation */}
-          <div className="flex-1  hidden lg:flex flex-row ">
-            <div className="px-5 py-5">
-              <div style={{ width: "2.5px", height: "40px", backgroundColor: "rgba(0, 0, 0, 0.2)" }}></div>
+          {/* Right: Desktop quick actions */}
+          <div className="w-full items-center justify-end hidden md:flex">
+            <div className="flex items-center gap-4 text-sm">
+              <div className="flex items-center space-x-1">
+                <img src={famicons_call} alt="call icon" className="w-4 h-4" />
+                <div className="flex gap-3">
+                  <a href="tel:18003134151">1800 313 4151</a>/<a href="tel:8980685509">89806 85509</a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-1">
+                <img src={iconoir_mail_solid} alt="mail icon" className="w-4 h-4" />
+                <a href="mailto:Support@Borrowly.in">Support@Borrowly.in</a>
+              </div>
+
+              {/* <button
+                style={{ fontFamily: 'PovetaracSansBold' }}
+                className="py-1 flex items-center justify-center px-4 text-[16px] cursor-pointer rounded-lg text-[#666866] border border-[#CCCCCC]"
+              >
+                <span>My account</span>
+              </button> */}
             </div>
-            
+          </div>
+
+          {/* Right: Mobile hamburger */}
+          <button
+            aria-label="Open menu"
+            className="md:hidden inline-flex items-center justify-center mt-2 p-2 rounded-lg border border-[#e5e5e5]"
+            onClick={() => setMobileOpen(true)}
+          >
+            <FiMenu className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Desktop nav row */}
+        <div className="px-3 bg-[#003478] hidden md:flex h-[60px] mx-auto justify-between items-center">
+          <div className="w-fit mx-auto hidden md:flex flex-row">
             <ul
               style={{ fontFamily: 'PovetaracSansBold' }}
-              className="flex text-[#111111] justify-left  items-center gap-6 relative"
+              className="flex text-[#111111] justify-left items-center gap-10 relative"
             >
               {menuItems.map(({ label, dropdown }) => (
                 <li
                   key={label}
-                  className={`text-[16px] py-4 cursor-pointer flex items-center gap-2 relative ${
-                    isDarkMode ? 'text-black' : 'text-black'
-                  }`}
+                  className="text-[16px] py-4 cursor-pointer text-white flex items-center gap-2 relative"
                   onMouseEnter={() => setOpenDropdown(label)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
@@ -106,10 +178,10 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                   <FaChevronDown
                     className={`w-3 h-3 stroke-[1.5] transition-transform duration-300 ${
                       openDropdown === label ? 'rotate-180' : 'rotate-0'
-                    } ${isDarkMode ? 'text-[#000]' : 'text-[#000000]'}`}
+                    }`}
                   />
 
-                  {/* Dropdown with Framer Motion */}
+                  {/* Desktop dropdown */}
                   <AnimatePresence>
                     {openDropdown === label && (
                       <motion.ul
@@ -120,17 +192,16 @@ const Header = ({ isDarkMode, toggleTheme }) => {
                         className="absolute top-full left-0 text-[16px] z-50 bg-white dark:bg-[#1a1a1a] overflow-hidden rounded-lg shadow-lg w-80 border border-[#ebf0f5] text-black dark:text-white font-normal"
                         style={{ fontFamily: 'PovetaracSansBold' }}
                       >
-                        {dropdown.map(({ title, desc,link }) => (
+                        {dropdown.map(({ title, desc, link }) => (
                           <li
                             key={title}
                             className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
                               selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
                             }`}
-                           onClick={() => {
-                             navigate(link);
-                             window.scrollTo(0, 0);
-                           }}
-                           
+                            onClick={() => {
+                              navigate(link);
+                              window.scrollTo(0, 0);
+                            }}
                           >
                             {title}
                             <p
@@ -151,163 +222,136 @@ const Header = ({ isDarkMode, toggleTheme }) => {
               ))}
             </ul>
           </div>
-
-          {/* Right Buttons */}
-          <div className="w-full max-w-[320px] items-center justify-end hidden lg:flex">
-            <div className="flex items-center gap-6">
-              {/* <Link
-                to="/login"
-                style={{ fontFamily: 'PovetaracSansBold' }}
-                className={`text-[16px] underline underline-offset-8 ${isDarkMode ? 'text-black' : 'text-black'}`}
-              >
-                Login
-              </Link> */}
-              <button
-                style={{ fontFamily: 'PovetaracSansBold' }}
-                className={`${
-                  isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#013476]'
-                } py-2 flex items-center justify-center px-6 text-[16px] cursor-pointer rounded-xl text-white`}
-              >
-                <span>Apply Now</span>
-                <img src={Arrowup} alt="Arrow Up" className="mb-1 ml-2" />
-              </button>
-              {
-                location.pathname == "/" && <ThemeToggle toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-              } 
-              
-            </div>
-          </div>
-
-          {/* Mobile Hamburger Icon */}
-          <div className="bg-gray-100 lg:hidden p-2 rounded-2xl">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`cursor-pointer ${isDarkMode ? 'text-white' : 'text-black'}`}
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              onClick={() => {
-                setMobileOpen(true);
-                window.scrollTo(0, 0);
-              }}
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </div>
         </div>
+      </div>
 
-        {/* Mobile Fullscreen Menu */}
+      {/* ===== Mobile Drawer & Overlay ===== */}
+      <AnimatePresence>
         {mobileOpen && (
-          <div className="fixed inset-0 bg-white dark:bg-[#1a1a1a] p-2 z-[100] flex flex-col">
-            {/* Top Bar */}
-            <div className="px-3 w-full mx-auto flex justify-between items-center">
-              {/* Logo */}
-              <div className="flex items-center gap-2 xl:w-full xl:max-w-[320px]">
-                <img src="/Company_icon.svg" alt="Logo" className="pt-2 h-[70px] md:h-auto" />
-              </div>
+          <>
+            {/* Overlay */}
+            <motion.div
+              className="fixed inset-0 bg-black/40 z-[60]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileOpen(false)}
+            />
 
-              {/* Close Icon */}
-              <div className="lg:hidden flex items-center">
-                <div className="bg-gray-100 p-2 rounded-2xl">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="cursor-pointer"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={isDarkMode ? 'white' : 'black'}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
+            {/* Drawer */}
+            <motion.aside
+              ref={drawerRef}
+              className="fixed right-0 top-0 bottom-0 w-full bg-white z-[70] shadow-xl flex flex-col"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile menu"
+              variants={drawerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {/* Drawer header */}
+              <div className="flex items-center justify-between px-4 py-3 border border-t-0 border-l-0 border-r-0 border-b-[#CCCCCC]">
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/Company_icon.svg"
+                    alt="Logo"
+                    className="h-16 w-auto"
+                    onClick={() => { navigate('/'); setMobileOpen(false); }}
+                  />
                 </div>
-              </div>
-            </div>
-
-            {/* Accordion Menu */}
-            <div className="flex flex-col gap-2 overflow-scroll pt-6 p-2">
-              <div
-                className={`flex justify-between items-center px-4 py-4 rounded-2xl bg-gray-50 cursor-pointer`}
-                onClick={() => {
-                  navigate('/');
-                  setMobileOpen(false);
-                }}
-              >
-                <span className="text-lg font-bold">Home</span>
-              </div>
-              {menuItems.map(({ label, dropdown }) => (
-                <div key={label} className="">
-                  <div
-                    className={`flex justify-between items-center px-4 py-4 bg-gray-50 cursor-pointer ${
-                      expandedSection === label ? 'rounded-t-xl ' : 'rounded-xl'
-                    }`}
-                    onClick={() => toggleSection(label)}
-                  >
-                    <span className="text-lg font-bold">{label}</span>
-                    <FaChevronDown
-                      className={`transition-transform duration-300 ${
-                        expandedSection === label ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </div>
-
-                  {/* Expanded Dropdown */}
-                  {expandedSection === label && (
-                    <ul className="pb-6 bg-gray-50 px-5 rounded-b-2xl space-y-2">
-                      {dropdown.map(({ title,link}) => (
-                        <li
-                          key={title}
-                          className="text-[16px] cursor-pointer hover:text-[#00C2CC]"
-                          onClick={() => {navigate(link);setMobileOpen(false)}}
-                        >
-                          {title}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-
-              {/* Buttons at Bottom */}
-              <div className="mt-6 flex flex-row gap-1.5">
-                {/* <button
-                  onClick={() => {
-                    navigate('/login');
-                    window.scrollTo(0, 0);
-                  }}
-                  style={{ fontFamily: 'PovetaracSansBlack' }}
-                  className={`${
-                    isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#00C2CC]'
-                  } flex-1 py-4 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`}
-                >
-                  <span>Login</span>
-                </button> */}
                 <button
-                  style={{ fontFamily: 'PovetaracSansBlack' }}
-                  className={`${
-                    isDarkMode ? 'bg-[#00C2CC]' : 'bg-[#013476]'
-                  } border border-[#55575B] py-4 flex-1 flex items-center justify-center px-6 text-[18px] rounded-xl text-white`}
+                  className="p-2 rounded-lg border border-[#CCCCCC]"
+                  aria-label="Close menu"
+                  onClick={() => setMobileOpen(false)}
                 >
-                  <span>Apply Now</span>
-                  <img src={Arrowup} alt="Arrow Up" className="mb-1 ml-2" />
+                  <FiX className="w-6 h-6" />
                 </button>
               </div>
-            </div>
-          </div>
+              {/* Menu list */}
+              <nav className="flex-1 overflow-y-auto">
+               <ul style={{ fontFamily: 'PovetaracSansBold' }} className="divide-y divide-[#CCCCCC]">
+                  {menuItems.map(({ label, dropdown }) => {
+                    const open = expandedSection === label;
+                    return (
+                      <li key={label} className="px-2">
+                        <button
+                          className="w-full flex items-center justify-between p-4  text-left"
+                          onClick={() =>
+                            setExpandedSection((prev) => (prev === label ? null : label))
+                          }
+                          aria-expanded={open}
+                          aria-controls={`section-${label}`}
+                        >
+                          <span className="text-[16px] font-semibold">{label}</span>
+                          <FaChevronDown
+                            className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : 'rotate-0'}`}
+                          />
+                        </button>
+
+                        {/* Sub-list */}
+                        <AnimatePresence initial={false}>
+                          {open && (
+                            <motion.ul
+                              id={`section-${label}`}
+                              initial="closed"
+                              animate="open"
+                              exit="closed"
+                              variants={mobileSubVariants}
+                              className="pl-3 pb-2"
+                            >
+                              {dropdown.map(({ title, desc, link }) => (
+                                <li key={title}>
+                                  <button
+                                    className="w-full text-left px-3 py-3 rounded-lg hover:bg-[#f5f7fb]"
+                                    onClick={() => {
+                                      navigate(link);
+                                      window.scrollTo(0, 0);
+                                      setMobileOpen(false);
+                                      setExpandedSection(null);
+                                    }}
+                                  >
+                                    <div className="text-[15px] font-medium">{title}</div>
+                                    <div className="text-[13px] text-[#666]">{desc}</div>
+                                  </button>
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+
+              {/* Footer actions */}
+              <div className="p-4 flex items-center gap-3">
+                <button
+                  style={{ fontFamily: 'PovetaracSansBlack' }}
+                  className="flex-1 py-2.5 rounded-lg border border-[#CCCCCC] text-[16px]"
+                  onClick={() => {
+                    navigate('/Contact_us');
+                    setMobileOpen(false);
+                  }}
+                >
+                  Contact
+                </button>
+                {/* <button
+                  style={{ fontFamily: 'PovetaracSansBlack' }}
+                  className="flex-1 py-2.5 rounded-lg border border-[#CCCCCC] text-[16px]"
+                  onClick={() => {
+                    navigate('/');
+                    setMobileOpen(false);
+                  }}
+                >
+                  My account
+                </button> */}
+              </div>
+            </motion.aside>
+          </>
         )}
-      </div>
+      </AnimatePresence>
     </>
   );
 };

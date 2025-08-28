@@ -8,36 +8,61 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const reviewList = [
   {
-    name: 'Lokesh',
-    age: 32,
-    quote: `“ I have been using LazyPay for a while now and the experience has just been amazing and hassle-free! Literally one-tap is all you need to checkout on apps. So whenever I'm hungry, I just skip to the ordering part. It's so fast that I'm never going back to other payment methods. “`,
-    image: Review_Image,
+    name: "Ankit Mehra",
+    age: 34,
+    loanType: "Personal Loan",
+    date: "14/03/25",
+    rating: 5,
+    quote: `“The Borrowly team made my personal loan process hassle-free. They explained everything clearly, compared lenders for me, and got me the best rate within 2 days. Truly appreciate their support.”`,
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    name: 'Anjali',
-    age: 28,
-    quote: `“ I have been using LazyPay for a while now and the experience has just been amazing and hassle-free! Literally one-tap is all you need to checkout on apps. So whenever I'm hungry, I just skip to the ordering part. It's so fast that I'm never going back to other payment methods. “`,
-    image: Review_Image,
+    name: "Ritika Bansal",
+    age: 29,
+    loanType: "Business Loan",
+    date: "10/02/25",
+    rating: 5,
+    quote: `“I needed funds to expand my retail business. Borrowly guided me through the documentation and got my loan approved quickly. Professional and reliable service!”`,
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
   },
   {
-    name: 'Rahul',
-    age: 35,
-    quote: `“ I have been using LazyPay for a while now and the experience has just been amazing and hassle-free! Literally one-tap is all you need to checkout on apps. So whenever I'm hungry, I just skip to the ordering part. It's so fast that I'm never going back to other payment methods. “`,
-    image: Review_Image,
+    name: "Manoj Reddy",
+    age: 38,
+    loanType: "Home Loan",
+    date: "22/01/25",
+    rating: 5,
+    quote: `“Getting a home loan seemed stressful now-a-days, but the Borrowly team made it simple. They helped me compare options, explained hidden charges, and got me the lowest EMI possible.”`,
+    image: "https://randomuser.me/api/portraits/men/50.jpg",
   },
   {
-    name: 'Meena',
-    age: 26,
-    quote: `“ I have been using LazyPay for a while now and the experience has just been amazing and hassle-free! Literally one-tap is all you need to checkout on apps. So whenever I'm hungry, I just skip to the ordering part. It's so fast that I'm never going back to other payment methods. “`,
-    image: Review_Image,
+    name: "Rahul Choudhary",
+    age: 27,
+    loanType: "Education Loan",
+    date: "18/12/24",
+    rating: 5,
+    quote: `“Borrowly supported me in arranging an education loan for my MBA abroad. They guided my parents through every step and made the process stress-free. Thank you!”`,
+    image: "https://randomuser.me/api/portraits/men/20.jpg",
   },
   {
-    name: 'Karthik',
-    age: 30,
-    quote: `“ I have been using LazyPay for a while now and the experience has just been amazing and hassle-free! Literally one-tap is all you need to checkout on apps. So whenever I'm hungry, I just skip to the ordering part. It's so fast that I'm never going back to other payment methods. “`,
-    image: Review_Image,
+    name: "Karan and Pargat Singh",
+    age: 31,
+    loanType: "Car Loan",
+    date: "05/01/25",
+    rating: 5,
+    quote: `“I purchased my first car with the help of Borrowly. The loan was approved quickly, the process was transparent, and I didn’t face any hidden surprises. Highly recommended.”`,
+    image: "https://randomuser.me/api/portraits/men/70.jpg",
+  },
+  {
+    name: "Sappogu Deepika",
+    age: 36,
+    loanType: "Gold Loan",
+    date: "07/12/24",
+    rating: 5,
+    quote: `“I urgently needed funds and Borrowly’s gold loan service was a lifesaver. Quick valuation, instant disbursement, and very polite customer support.”`,
+    image: "https://randomuser.me/api/portraits/women/30.jpg",
   },
 ];
+
 
 const GAP = 20;
 const VISIBLE_CARDS = 3;
@@ -220,7 +245,7 @@ const ReviewCard = () => {
             )}
 
             <div className="flex flex-row h-full">
-              <img src={review.image} alt="" className="h-full hidden md:flex" />
+              <img src={review.image} alt="" className="h-full hidden md:flex rounded-2xl" />
               <div className="flex-1 p-4 flex flex-col">
                 <div className="flex-1 flex items-center">
                   <h1 style={{ fontFamily: 'PovetaracSansBold' }}>{review.quote}</h1>
