@@ -24,7 +24,7 @@ const menuItems = [
   {
     label: 'Resources',
     dropdown: [
-      { title: 'Blog', desc: 'Latest updates and articles', link: '/' },
+      { title: 'Blog', desc: 'Latest updates and articles', link: '/Blogs' },
       { title: 'Guides', desc: 'Helpful loan guides', link: '/' },
       { title: 'Tools', desc: 'Financial calculators', link: '/Tools' },
     ],
@@ -102,9 +102,9 @@ const Header = () => {
       <style>{` @keyframes ticker { 0%{transform:translate3d(0,0,0)} 100%{transform:translate3d(-50%,0,0)} }`}</style>
 
       {/* Top ticker */}
-      <div className="h-[40px] w-full bg-gradient-to-r from-[#00C2CC]/35 via-[#fff] to-[#00C2CC]/35 overflow-hidden flex items-center">
+      <div className="h-[30px] w-full bg-gradient-to-r from-[#00C2CC]/35 via-[#fff] to-[#00C2CC]/35 overflow-hidden flex items-center">
         <div className="flex whitespace-nowrap font-medium text-black will-change-transform animate-[ticker_12s_linear_infinite] md:animate-[ticker_20s_linear_infinite]" style={{ transform: 'translateZ(0)' }} aria-label={msg}>
-          <div className="flex min-w-[200%] text-[14px]">
+          <div className="flex min-w-[200%] text-[12px]">
             <span className="mx-10">{msg}</span>
             <span className="mx-10">{msg}</span>
             <span className="mx-10">{msg}</span>
@@ -113,9 +113,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Header bar */}
-      <div className="cursor-default sticky top-0 bg-white border border-t-0 border-l-0 border-r-0 pb-2 md:pb-0 border-b-[#d4d4d4] md:border-b-0 z-50 w-full">
-        <div className="max-w-screen-2xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
+       <div className="max-w-screen-2xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
           {/* Left: Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
             <img
@@ -160,8 +158,10 @@ const Header = () => {
           </button>
         </div>
 
+      {/* Header bar */}
+      <div className="cursor-default sticky top-0 bg-white border border-t-0 border-l-0 border-r-0 pb-2 md:pb-0 border-b-[#d4d4d4] md:border-b-0 z-50 w-full">
         {/* Desktop nav row */}
-        <div className="px-3 bg-[#003478] hidden md:flex h-[60px] mx-auto justify-between items-center">
+        <div className="px-3 bg-[#003478] hidden md:flex h-[50px] mx-auto justify-between items-center">
           <div className="w-fit mx-auto hidden md:flex flex-row">
             <ul
               style={{ fontFamily: 'PovetaracSansBold' }}

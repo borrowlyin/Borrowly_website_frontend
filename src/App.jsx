@@ -11,6 +11,7 @@ import Carriers from './Pages/Carriers'
 import Calculator from './Pages/Calculator'
 import PersonalLoanEmi from './Pages/PersonalLoanEmi'
 import CarLoanEmi from './Pages/CarLoanEmi'
+import BlogPage from './Pages/BlogPage'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -35,6 +36,7 @@ function App() {
         
         <Route path="/Contact_us" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Re_contactus isDarkMode={isDarkMode}/></>} />
         <Route path="/Carriers" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Carriers isDarkMode={isDarkMode}/></>} />
+        <Route path="/Blogs" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><BlogPage isDarkMode={isDarkMode}/></>} />
       </Routes>
     </Router>
   )
