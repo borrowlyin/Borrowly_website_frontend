@@ -12,12 +12,12 @@ import Calculator from './Pages/Calculator'
 import PersonalLoanEmi from './Pages/PersonalLoanEmi'
 import CarLoanEmi from './Pages/CarLoanEmi'
 import BlogPage from './Pages/BlogPage'
+import GuidesPage from './Pages/GuidesPage'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleTheme = () => {
-    console.log("Theme toggled", isDarkMode);
     setIsDarkMode(!isDarkMode);
   };
   return (
@@ -37,6 +37,7 @@ function App() {
         <Route path="/Contact_us" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Re_contactus isDarkMode={isDarkMode}/></>} />
         <Route path="/Carriers" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Carriers isDarkMode={isDarkMode}/></>} />
         <Route path="/Blogs" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><BlogPage isDarkMode={isDarkMode}/></>} />
+        <Route path="/Guides" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><GuidesPage isDarkMode={isDarkMode}/></>} />
       </Routes>
     </Router>
   )

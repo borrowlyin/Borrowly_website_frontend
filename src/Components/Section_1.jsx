@@ -183,7 +183,7 @@ const Section_1 = ({ isDarkMode }) => {
   const selectedItem = menulist.find(item => item.id === selectedId);
 
   return (
-    <div className={` pt-8 md:pt-18 flex items-end pb-10 cursor-default justify-center`}>
+    <div className={` pt-7 flex items-end pb-4 cursor-default justify-center`}>
       <div className="w-full max-w-screen-xl mx-auto px-4">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Title  */}
@@ -199,8 +199,8 @@ const Section_1 = ({ isDarkMode }) => {
             </div>
           </div>
           {/* Selection */}
-          <div className='w-full hidden  md:block max-w-screen-xl  mx-auto mt-10'>
-             <div className='relative w-full max-w-screen-lg flex overflow-visible  h-[120px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-lg'>
+          <div className='w-full hidden  md:block max-w-screen-xl  mx-auto mt-5'>
+             <div className='relative w-full max-w-screen-lg flex overflow-visible  h-[100px] mx-auto bg-[#F4F6FA] border border-[#C5D3E5] rounded-lg'>
                 {menulist.map((item) => {
                   const isSelected = selectedId === item.id;
                   return (
@@ -208,7 +208,7 @@ const Section_1 = ({ isDarkMode }) => {
                       <div className={`flex flex-col items-center justify-center h-full gap-3 transition-all duration-300 
                       ${item.id === 1 ? 'rounded-l-lg' : ''} 
                       ${ isSelected ? 'bg-[#0CC066] text-white' : 'text-[#3C3B3B]' }`} >
-                        <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[40px] mx-auto' />
+                        <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[37.5px] mx-auto' />
                         <h1 style={{ fontFamily: 'PovetaracSansBold' }} className='text-[14px] lg:text-[16px]'> {item.name}</h1>
                       </div>
                      {isSelected && (
@@ -223,7 +223,7 @@ const Section_1 = ({ isDarkMode }) => {
                    </div>
                 </div> */}
               </div>
-              <div className='relative w-full max-w-screen-lg h-[500px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
+              <div className='relative w-full max-w-screen-lg h-[450px] flex flex-col md:flex-row overflow-visible mx-auto rounded-2xl'>
                 <div className='p-5 w-[550px] flex flex-col justify-center'>
                 <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-[#000000] text-[14px] border border-[#CFCCCC] rounded-full w-fit px-4 py-1.5 flex items-center justify-center">
                    {selectedItem?.name}

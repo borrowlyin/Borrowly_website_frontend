@@ -25,7 +25,7 @@ const menuItems = [
     label: 'Resources',
     dropdown: [
       { title: 'Blog', desc: 'Latest updates and articles', link: '/Blogs' },
-      { title: 'Guides', desc: 'Helpful loan guides', link: '/' },
+      { title: 'Guides', desc: 'Helpful loan guides', link: '/Guides' },
       { title: 'Tools', desc: 'Financial calculators', link: '/Tools' },
     ],
   },
@@ -113,14 +113,14 @@ const Header = () => {
         </div>
       </div>
 
-       <div className="max-w-screen-2xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
+       <div className="max-w-screen-xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
           {/* Left: Logo */}
           <div className="flex items-center overflow-hidden gap-2 pr-2">
             <img
               src="/Company_icon.svg"
               onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
               alt="Logo"
-              className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[75px]"
+              className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[60px] xl:h-[70px]"
             />
           </div>
 
@@ -161,7 +161,7 @@ const Header = () => {
       {/* Header bar */}
       <div className="cursor-default sticky top-0 bg-white border border-t-0 border-l-0 border-r-0 pb-2 md:pb-0 border-b-[#d4d4d4] md:border-b-0 z-50 w-full">
         {/* Desktop nav row */}
-        <div className="px-3 bg-[#003478] hidden md:flex h-[50px] mx-auto justify-between items-center">
+        <div className="px-3 bg-[#003478] hidden md:flex h-[45px] mx-auto justify-between items-center">
           <div className="w-fit mx-auto hidden md:flex flex-row">
             <ul
               style={{ fontFamily: 'PovetaracSansBold' }}
