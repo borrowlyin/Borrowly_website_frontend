@@ -1,5 +1,11 @@
 import React from 'react'
 import Footer_New from '../Components/Footer_New';
+import GuidesSection_1 from '../Components/GuidesSection_1';
+import GuidesSection_2 from '../Components/GuidesSection_2';
+import Footer_subscribe from '../Components/Footer_subscribe'
+import Section_11 from '../Components/Section_11'
+
+
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -17,6 +23,12 @@ const GuidesPage = () => {
              Step-by-step resources to understand, compare, and manage loans with confidence.
           </motion.p>
     </motion.section>
+    <div className='pb-10'>
+        <GuidesSection_1/>
+        <GuidesSection_2/>
+    </div>
+    <Section_11/>
+    <Footer_subscribe/>
     <Footer_New/>
     </>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import WaitingIcon from '../assets/Icons/WaitingIcon.svg'
+import WaitingIcon from '../assets/Images/WaitingIcon.avif'
 import Footer_New from '../Components/Footer_New';
 import { motion } from "framer-motion";
 
@@ -42,8 +42,8 @@ const BlogPage = () => {
           </motion.p>
           </div>
 
-          <div className='flex justify-center flex-1 flex-col items-center'>
-            <img src={WaitingIcon} alt='' className='mt-10' />
+          <div className='flex justify-center py-12 flex-1 flex-col items-center'>
+            <img src={WaitingIcon} alt='' className='mt-10 w-[240px]' />
             <motion.h1
             variants={fadeUp}
             style={{ fontFamily: "PovetaracSansBlack" }}
