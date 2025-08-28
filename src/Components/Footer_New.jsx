@@ -283,6 +283,20 @@ const [openSections, setOpenSections] = useState({});
          <div>
             <h1 style={{ fontFamily: "PovetaracSansBold" }}  className='flex items-center py-3 justify-center text-[#BDBDBD]/30 text-4xl lg:text-9xl '>MADE IN INDIA</h1>
          </div>
+          <div clas style={{ fontFamily: "PovetaracSansBlack" }} className='text-[#BDBDBD] pt-6 py-3 gap-3 text-[14px] md:px-5 text-center mx-auto flex items-center justify-center flex-wrap md:items-center md:gap-10'>
+             <h1 className="text-center">
+              Build with ❤️{" "}
+              <a
+                href="https://pregasusnexus.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Pregasus Nexus Pvt Ltd
+              </a>
+            </h1>
+            
+          </div>
         
        </div>
     </div>
