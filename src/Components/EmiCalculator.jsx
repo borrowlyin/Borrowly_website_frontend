@@ -99,7 +99,8 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
   );
 };
 
-const EmiCalculator = ({isDarkMode,options}) => {
+const EmiCalculator = (props) => {
+  console.log(props.options)
   const [selectedLoan, setSelectedLoan] = useState(loanOptions[0]);
   const [loanAmount, setLoanAmount] = useState(8000);
   const [interestRate, setInterestRate] = useState(8);
@@ -124,7 +125,8 @@ const totalInterest = totalPayable - principal;
       <div className='w-full overflow-x-auto hide-scrollbar'>
         <div className='flex pb-8 w-max gap-1 whitespace-nowrap'>
           {
-            options !=false &&  loanOptions.map((loan) => (
+props.options !== false  && 
+loanOptions.map((loan) => (
             <button
   key={loan.id}
   onClick={() => setSelectedLoan(loan)}
@@ -138,13 +140,19 @@ const totalInterest = totalPayable - principal;
   {loan.loanName}
 </button>
           ))
-          }
+}
+          
+
+
+
+
+
          
         </div>
       </div>
       {/* Mobile Veriosn */}
        <div className={`border border-[#C4C4C4] block lg:hidden gap-5 overflow-hidden bg-white `}>
-          <div className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white  py-8 flex flex-col items-center gap-1.5 justify-center'>
+          <div className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center'>
             <h1 className={` text-[14px] font-semibold`}>Your monthly instalment</h1>
             <h1 className='text-4xl font-bold'>₹{monthlyEMI.toLocaleString()}</h1>
           </div>

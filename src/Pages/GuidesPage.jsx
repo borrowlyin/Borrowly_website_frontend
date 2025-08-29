@@ -23,7 +23,7 @@ const GuidesPage = () => {
              Step-by-step resources to understand, compare, and manage loans with confidence.
           </motion.p>
     </motion.section>
-    <div className='pb-10'>
+    <div>
         <GuidesSection_1/>
         <GuidesSection_2/>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { FaArrowRight } from "react-icons/fa"; // ✅ Import arrow icon
 import Personal_Loan_banner from '../assets/Images/Guide_short_banner_PL.avif'
-
+import { useNavigate } from "react-router-dom";
 const GuidesSection_1 = () => {
+   const navigate = useNavigate();
   return (
     <div className='max-w-screen-lg mx-auto px-5'>
       <div className='border border-[#C4C4C4] p-3 rounded-2xl flex flex-col md:flex-row'>
@@ -14,10 +15,7 @@ const GuidesSection_1 = () => {
 
         {/* Right Content */}
         <div className='flex-1 py-4 px-2 flex flex-col justify-center md:p-4'>
-          <p 
-            style={{ fontFamily: 'PovetaracSansBold' }} 
-            className='text-[#fff] text-[14px] bg-[#3459FC] text-left rounded-full w-fit px-4 py-1.5'
-          >
+          <p style={{ fontFamily: 'PovetaracSansBold' }}  className='text-[#fff] text-[14px] bg-[#3459FC] text-left rounded-full w-fit px-4 py-1.5'>
             Personal Loan
           </p>
 
@@ -36,7 +34,7 @@ const GuidesSection_1 = () => {
           </p>
 
           {/* Read More with Arrow */}
-          <div className="mt-3 flex items-center gap-2 cursor-pointer group">
+          <div className="mt-3 flex items-center gap-2 cursor-pointer group w-fit"   onClick={() => navigate("/Guides/Personal_loan_Guides")}>
             <h1 className='text-[#1438A0] text-lg group-hover:underline'>Read More</h1>
             <FaArrowRight className="text-[#1438A0] group-hover:translate-x-1 transition-transform duration-200" />
           </div>

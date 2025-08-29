@@ -13,6 +13,11 @@ import PersonalLoanEmi from './Pages/PersonalLoanEmi'
 import CarLoanEmi from './Pages/CarLoanEmi'
 import BlogPage from './Pages/BlogPage'
 import GuidesPage from './Pages/GuidesPage'
+import GuideSubPage from './Pages/GuideSubPage '
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Team from './Pages/Team'
+import Personal_loan from './Pages/Personal_loan'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -22,6 +27,7 @@ function App() {
   };
   return (
     <Router>
+      <ToastContainer position="top-center" autoClose={2000} />
       <Routes>
         <Route path="/" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Index  isDarkMode={isDarkMode}/></>} />
         <Route path="/login" element={<><Login  isDarkMode={isDarkMode}/></>} />
@@ -30,6 +36,10 @@ function App() {
         <Route path="/About_us" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><About_us  isDarkMode={isDarkMode}/></>} />
         
         <Route path="/Tools" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <Calculator isDarkMode={isDarkMode} /></>}></Route>
+        <Route path="/Team" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <Team isDarkMode={isDarkMode} /></>}></Route>
+       
+       {/* Loan Pages */}
+        <Route path="/Personal_loan" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <Personal_loan isDarkMode={isDarkMode} /></>}></Route>
         
         <Route path="/Tools/personal-loan-emi-calculator" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <PersonalLoanEmi isDarkMode={isDarkMode} /></>} />
         <Route path="/Tools/emi-calculator-for-car-loans" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <CarLoanEmi isDarkMode={isDarkMode} /></>} />
@@ -38,6 +48,7 @@ function App() {
         <Route path="/Carriers" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Carriers isDarkMode={isDarkMode}/></>} />
         <Route path="/Blogs" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><BlogPage isDarkMode={isDarkMode}/></>} />
         <Route path="/Guides" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><GuidesPage isDarkMode={isDarkMode}/></>} />
+        <Route path="/Guides/:tab" element={ <><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /><GuideSubPage isDarkMode={isDarkMode} /></>}/>
       </Routes>
     </Router>
   )

@@ -13,7 +13,7 @@ const menuItems = [
   {
     label: 'Services',
     dropdown: [
-      { title: 'Personal Loan', desc: 'Quick funds for personal needs', link: '/' },
+      { title: 'Personal Loan', desc: 'Quick funds for personal needs', link: '/Personal_loan' },
       { title: 'Home Loan', desc: 'Finance your dream home easily', link: '/' },
       { title: 'Business Loan', desc: 'Boost your business growth', link: '/' },
       { title: 'Education Loan', desc: 'Support your educational goals', link: '' },
@@ -33,7 +33,7 @@ const menuItems = [
     label: 'About',
     dropdown: [
       { title: 'Company', desc: 'Learn about us', link: '/About_us' },
-      { title: 'Team', desc: 'Meet our team', link: '/' },
+      { title: 'Team', desc: 'Meet our team', link: '/Team' },
       { title: 'Careers', desc: 'Work with us', link: '/Carriers' },
     ],
   },
@@ -193,28 +193,30 @@ const Header = () => {
                         style={{ fontFamily: 'PovetaracSansBold' }}
                       >
                         {dropdown.map(({ title, desc, link }) => (
-                          <li
-                            key={title}
-                            className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
-                              selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
-                            }`}
-                            onClick={() => {
-                              navigate(link);
-                              window.scrollTo(0, 0);
-                            }}
-                          >
-                            {title}
-                            <p
-                              className={`text-[14px] ${
-                                selectedDropdownItem === title
-                                  ? 'text-white'
-                                  : 'text-[#707070] dark:text-gray-400 group-hover:text-white'
-                              }`}
-                            >
-                              {desc}
-                            </p>
-                          </li>
-                        ))}
+  <li
+    key={title}
+    className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
+      selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
+    }`}
+    onClick={() => {
+      navigate(link);
+      window.scrollTo(0, 0);
+      setOpenDropdown(null); // ✅ close dropdown
+    }}
+  >
+    {title}
+    <p
+      className={`text-[14px] ${
+        selectedDropdownItem === title
+          ? 'text-white'
+          : 'text-[#707070] dark:text-gray-400 group-hover:text-white'
+      }`}
+    >
+      {desc}
+    </p>
+  </li>
+))}
+
                       </motion.ul>
                     )}
                   </AnimatePresence>

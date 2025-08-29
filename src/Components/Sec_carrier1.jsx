@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/Images/imgc1.png";
+import img1 from "../assets/Images/imgc1.avif";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

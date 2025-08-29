@@ -12,7 +12,7 @@ const fadeUp = {
 const BlogPage = () => {
   return (
     <>
-    <motion.section className="text-center w-full h-[80dvh] max-w-screen-xl flex flex-col mx-auto py-10" initial="hidden" animate="show" 
+    <motion.section className="text-center w-full md:h-[80dvh] max-w-screen-xl flex flex-col mx-auto py-10" initial="hidden" animate="show" 
          variants={{
             hidden: {},
             show: { transition: { staggerChildren: 0.15 } },

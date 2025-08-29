@@ -207,7 +207,7 @@ const Section_1 = ({ isDarkMode }) => {
                     <div key={item.id} onClick={() => setSelectedId(item.id)} className={`relative cursor-pointer flex-1 h-full`}>
                       <div className={`flex flex-col items-center justify-center h-full gap-3 transition-all duration-300 
                       ${item.id === 1 ? 'rounded-l-lg' : ''} 
-                      ${ isSelected ? 'bg-[#0CC066] text-white' : 'text-[#3C3B3B]' }`} >
+                      ${ isSelected ? 'bg-[#00C2CC] text-white' : 'text-[#3C3B3B]' }`} >
                         <img  src={isSelected ? item.Selected_icon : item.Normal_icon} alt={`${item.name} Icon`} className='w-[40px] lg:w-[37.5px] mx-auto' />
                         <h1 style={{ fontFamily: 'PovetaracSansBold' }} className='text-[14px] lg:text-[16px]'> {item.name}</h1>
                       </div>
