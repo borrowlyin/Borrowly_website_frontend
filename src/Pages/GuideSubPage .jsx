@@ -13,7 +13,7 @@ import Vehical_loan from "../assets/Images/Vehicle_Loan_shortBanner.avif";
 import Personal_loan from "../assets/Images/Person_loan_shortBanner.avif";
 import Business_Loan from "../assets/Images/Business_Loan_shortBanner.avif";
 import Home_Loan from "../assets/Images/Home_Loan_shortBanner.avif";
-import Education_Loan from "../assets/Images/Education_Loan_ShortBanner.avif";
+import Education_Loan from "../assets/Images/Education_Loan_shortBanner.avif";
 import Insurance_Loan from "../assets/Images/Insurance_Loan_ShortBanner.avif";
 import { toast } from "react-toastify";
 
