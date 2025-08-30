@@ -1,183 +1,178 @@
-import tickdone from "../../assets/Icons/tickdone.svg"
-import feature_1 from '../../assets/Images/Featurn_1.avif'
+import tickdone from "../../assets/Icons/tickdone.svg";
 
 const DocItem = ({ label, children }) => (
   <p
     className="mt-2 text-[16px] text-[#474040]"
     style={{ fontFamily: "PovetaracSansBold" }}
   >
-    <span style={{ fontFamily: "PovetaracSansBlack" }} className="text-[#000]">{label}:</span> {children}
+    <span
+      style={{ fontFamily: "PovetaracSansBlack" }}
+      className="text-[#000]"
+    >
+      {label}
+    </span>{" "}
+    {children}
   </p>
 );
 
-const Section_4 = () => {
+const Section_4 = ({
+  featureImg,
+  loanType,
+  loanDetails,
+  whoCanApply,
+  whoCanApplyNote,
+  requiredDocs,
+  requiredDocsNote,
+  docSections,
+}) => {
   return (
-      <div className="bg-[#F9F9F9] max-w-screen-xl mt-8 mx-auto  rounded-4xl p-2 md:p-5"> 
-            <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-center text-black text-[24px] pb-5 py-10 lg:text-[32px] leading-[1.1]">
-                Loan Features & Benefits
-            </h1>
-            <div className="lg:px-10 lg:py-10">
-                <div className="bg-white rounded-4xl overflow-hidden flex flex-col md:flex-row gap-3">
-                    <div className="flex-1 bg-gradient-to-b flex items-end from-[#00C2CC] to-[#0153C0]">
-                        <img src={feature_1} alt="" className="w-[600px] mx-auto"/>
-                    </div>
-                    <div className="flex-1 flex flex-col justify-center p-5">
-                        <div>
-                           <h3 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-left md:mt-5 text-black text-xl leading-[1.1]">
-                             Who Can Apply?
-                           </h3>
-                           <div className="py-2 flex flex-wrap gap-1">
-                             <div style={{ fontFamily: 'PovetaracSansBlack' }} className="bg-[#0151BB]  px-2.5 py-1.5 text-[12px] md:text-[16px] flex items-center text-white gap-2 rounded-lg">
-                                 <img src={tickdone} alt="" className="w-6"/>
-                                 <h1 className="pr-3 mt-1">18-65 years</h1>
-                             </div>
-                             <div style={{ fontFamily: 'PovetaracSansBlack' }} className="bg-[#0151BB]  px-2.5  text-[12px] md:text-[16px]  py-1.5 flex items-center text-white gap-2 rounded-lg">
-                                 <img src={tickdone} alt="" className="w-6"/>
-                                 <h1 className="pr-3 mt-1">₹15,000 or more</h1>
-                             </div>
-                           </div>
-                           <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-left mt-2 text-[12px] md:text-[16px] text-[#474040]">
-                             We don’t discriminate between salaried or self-employed applicants – everyone is welcome!
-                           </p>
-                        </div>
-                         <div className="pb-5">
-                           <h3 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-left mt-5 text-black text-xl leading-[1.1]">
-                             What Documents Are Required?
-                           </h3>
-                           <div className="py-2 flex flex-wrap gap-1">
-                             <div style={{ fontFamily: 'PovetaracSansBlack' }} className="bg-[#0151BB]  text-[12px] md:text-[16px] px-2.5 py-1.5 flex items-center text-white gap-2 rounded-lg">
-                                 <img src={tickdone} alt="" className="w-6"/>
-                                 <h1 className="pr-3 mt-1">PAN Card</h1>
-                             </div>
-                             <div style={{ fontFamily: 'PovetaracSansBlack' }} className="bg-[#0151BB]   text-[12px] md:text-[16px]  px-2.5 py-1.5 flex items-center text-white gap-2 rounded-lg">
-                                 <img src={tickdone} alt="" className="w-6"/>
-                                 <h1 className="pr-3 mt-1">Aadhaar Card</h1>
-                             </div>
-                             <div style={{ fontFamily: 'PovetaracSansBlack' }} className="bg-[#0151BB]   text-[12px] md:text-[16px] px-2.5 py-1.5 flex items-center text-white gap-2 rounded-lg">
-                                 <img src={tickdone} alt="" className="w-6"/>
-                                 <h1 className="pr-3 mt-1">Income Proof</h1>
-                             </div>
-                           </div>
-                           <p style={{ fontFamily: 'PovetaracSansBold' }} className="text-left mt-2 text-[12px] md:text-[16px] text-[#474040]">
-                             Get credit easily in just 5 minutes! Keep these handy:
-                           </p>
-                        </div>
-                    </div>
-                </div>
+    <div className="bg-[#F9F9F9] max-w-screen-xl mt-8 mx-auto rounded-4xl p-2 md:p-5">
+      {/* Loan Features & Benefits */}
+      <h1
+        style={{ fontFamily: "PovetaracSansBlack" }}
+        className="text-center text-black text-[24px] pb-5 py-10 lg:text-[32px] leading-[1.1]"
+      >
+        Loan Features & Benefits
+      </h1>
+
+      <div className="lg:px-10 lg:py-10">
+        <div className="bg-white rounded-4xl overflow-hidden flex flex-col md:flex-row gap-3">
+          {/* Left Image */}
+          <div className="flex-1 bg-gradient-to-b flex items-end from-[#00C2CC] to-[#0153C0]">
+            <img src={featureImg} alt="" className="w-[600px] mx-auto" />
+          </div>
+
+          {/* Right Details */}
+          <div className="flex-1 flex flex-col justify-center p-5">
+            {/* Who can apply */}
+            <div>
+              <h3
+                style={{ fontFamily: "PovetaracSansBlack" }}
+                className="text-left md:mt-5 text-black text-xl leading-[1.1]"
+              >
+                Who Can Apply?
+              </h3>
+              <div className="py-2 flex flex-wrap gap-2">
+                {whoCanApply.map((item, i) => (
+                  <div
+                    key={i}
+                    style={{ fontFamily: "PovetaracSansBlack" }}
+                    className="bg-[#0151BB] px-3 py-2 text-[12px] md:text-[16px] flex items-center text-white gap-2 rounded-lg shadow-sm"
+                  >
+                    <img src={tickdone} alt="" className="w-5 h-5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              {whoCanApplyNote && (
+                <p
+                  className="text-sm text-[#474040] mt-2"
+                  style={{ fontFamily: "PovetaracSansBold" }}
+                >
+                  {whoCanApplyNote}
+                </p>
+              )}
             </div>
-            <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-center text-black text-[28px] pb-5 py-10 lg:text-[32px] leading-[1.1]">
-                Personal Loan Details
-            </h1>
-            <div className="w-full max-w-[1200px] px-5 py-4 md:py-10 mx-auto flex flex-wrap gap-8">
-              <div className="w-full sm:w-[45%] md:w-[22%]">
-                <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl text-[#0151BB]">Interest Rate</h1>
-                <p style={{ fontFamily: 'PovetaracSansBold' }} className="mt-1 text-[16px] text-[#474040]">
-                  Starting from 11.99% p.a. onwards
-                </p>
+
+            {/* Required Docs */}
+            <div className="pb-5 mt-6">
+              <h3
+                style={{ fontFamily: "PovetaracSansBlack" }}
+                className="text-left mt-5 text-black text-xl leading-[1.1]"
+              >
+                What Documents Are Required?
+              </h3>
+              <div className="py-2 flex flex-wrap gap-2">
+                {requiredDocs.map((doc, i) => (
+                  <div
+                    key={i}
+                    style={{ fontFamily: "PovetaracSansBlack" }}
+                    className="bg-[#0151BB] text-[12px] md:text-[16px] px-3 py-2 flex items-center text-white gap-2 rounded-lg shadow-sm"
+                  >
+                    <img src={tickdone} alt="" className="w-5 h-5" />
+                    <span>{doc}</span>
+                  </div>
+                ))}
               </div>
-              <div className="w-full sm:w-[45%] md:w-[22%]">
-                <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl text-[#0151BB]">Loan Amount</h1>
-                <p style={{ fontFamily: 'PovetaracSansBold' }} className="mt-1 text-[16px] text-[#474040]">
-                  From ₹10,000 to ₹15 lakhs
+              {requiredDocsNote && (
+                <p
+                  className="text-sm text-[#474040] mt-2"
+                  style={{ fontFamily: "PovetaracSansBold" }}
+                >
+                  {requiredDocsNote}
                 </p>
-              </div>
-              <div className="w-full sm:w-[45%] md:w-[22%]">
-                <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl text-[#0151BB]">Tenure</h1>
-                <p style={{ fontFamily: 'PovetaracSansBold' }} className="mt-1 text-[16px] text-[#474040]">
-                  Flexible terms ranging from 6 months to 5 years
-                </p>
-              </div>
-              <div className="w-full sm:w-[45%] md:w-[22%]">
-                <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl text-[#0151BB]">Processing Fees</h1>
-                <p style={{ fontFamily: 'PovetaracSansBold' }} className="mt-1 text-[16px] text-[#474040]">
-                  0.5% to 4% of loan amount (may vary across lenders)
-                </p>
-              </div>
+              )}
             </div>
-            <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-center text-black text-[28px] pb-5 py-10 lg:text-[32px] leading-[1.1]">
-               Documents You’ll Need
+          </div>
+        </div>
+      </div>
+
+      {/* Loan Details */}
+      <h1
+        style={{ fontFamily: "PovetaracSansBlack" }}
+        className="text-center text-black text-[28px] pb-5 py-10 lg:text-[32px] leading-[1.1]"
+      >
+        {loanType} Details
+      </h1>
+      <div className="w-full max-w-[1200px] px-5 py-4 md:py-10 mx-auto flex flex-wrap gap-8">
+        {loanDetails.map((detail, i) => (
+          <div key={i} className="w-full sm:w-[45%] md:w-[22%]">
+            <h1
+              style={{ fontFamily: "PovetaracSansBlack" }}
+              className="text-xl text-[#0151BB]"
+            >
+              {detail.label}
             </h1>
-           <div className="w-full max-w-[1200px] px-5 py-8 md:py-12 mx-auto">
+            <p
+              style={{ fontFamily: "PovetaracSansBold" }}
+              className="mt-1 text-[16px] text-[#474040]"
+            >
+              {detail.value}
+            </p>
+          </div>
+        ))}
+      </div>
 
-      <div className="flex flex-wrap gap-8">
+      {/* Documents You'll Need */}
+      <h1
+        style={{ fontFamily: "PovetaracSansBlack" }}
+        className="text-center text-black text-[28px] pb-5 py-10 lg:text-[32px] leading-[1.1]"
+      >
+        Documents You’ll Need
+      </h1>
+      <div className="w-full max-w-[1200px] px-5 py-4 md:py-19 mx-auto flex flex-wrap gap-12">
+        <div className="flex flex-wrap gap-8">
+          {docSections.map((section, i) => (
+            <div key={i} className="w-full sm:w-[45%] md:w-[45%]">
+              <h1
+                style={{ fontFamily: "PovetaracSansBlack" }}
+                className="text-xl text-[#0151BB]"
+              >
+                {section.title}
+              </h1>
 
-        {/* Salaried */}
-        <div className="w-full sm:w-[45%] md:w-[45%]">
-          <h1
-            style={{ fontFamily: "PovetaracSansBlack" }}
-            className="text-xl text-[#0151BB]"
-          >
-            Salaried
-          </h1>
-          <DocItem label="ID Proof">PAN / Aadhaar / Passport / DL / Voter ID</DocItem>
-          <DocItem label="Address Proof">Aadhaar / Passport / Utility bill</DocItem>
-          <DocItem label="Income Proof">
-            Last 3–6 months salary slips or bank statements (Form 16 if asked)
-          </DocItem>
-        </div>
-
-        {/* Self-Employed */}
-        <div className="w-full sm:w-[45%] md:w-[45%]">
-          <h1
-            style={{ fontFamily: "PovetaracSansBlack" }}
-            className="text-xl text-[#0151BB]"
-          >
-            Self-Employed
-          </h1>
-          <DocItem label="ID Proof">PAN / Aadhaar / Passport / DL / Voter ID</DocItem>
-          <DocItem label="Address Proof">Aadhaar / Passport / Utility bill</DocItem>
-          <DocItem label="Income Proof">
-            ITR + audited financials (last 2 yrs) and bank statements (6–12 months)
-          </DocItem>
-        </div>
-
-        {/* NRI Applicants */}
-        <div className="w-full sm:w-[45%] md:w-[45%]">
-          <h1
-            style={{ fontFamily: "PovetaracSansBlack" }}
-            className="text-xl text-[#0151BB]"
-          >
-            NRI Applicants
-          </h1>
-          <DocItem label="Passport & Visa">Required</DocItem>
-          <DocItem label="Employment proof">
-            Official work email/HR email, salary slips
-          </DocItem>
-          <DocItem label="Banking">
-            NRE/NRO and salary account statements (last 6 months)
-          </DocItem>
-          <DocItem label="KYC">ID, address, income & asset proof</DocItem>
-          <DocItem label="Photos">
-            Recent passport-size (self & guarantor, if required)
-          </DocItem>
-        </div>
-
-        {/* Pro Tips */}
-        <div className="w-full sm:w-[45%] md:w-[45%]">
-          <h1
-            style={{ fontFamily: "PovetaracSansBlack" }}
-            className="text-xl text-[#0151BB]"
-          >
-            Pro tips
-          </h1>
-          <p
-            className="mt-2 text-[16px] text-[#474040]"
-            style={{ fontFamily: "PovetaracSansBold" }}
-          >
-            Clear scans/photos are fine—no originals needed during online apply.
-          </p>
-          <p
-            className="mt-2 text-[16px] text-[#474040]"
-            style={{ fontFamily: "PovetaracSansBold" }}
-          >
-            Make sure your PAN matches your bank/KYC details.
-          </p>
+              {section.items ? (
+                section.items.map((item, j) => (
+                  <DocItem key={j} label={item.label}>
+                    {/* ✅ Support for HTML like Aadhaar / Passport / Utility bill */}
+                    <span
+                      dangerouslySetInnerHTML={{ __html: item.value }}
+                    />
+                  </DocItem>
+                ))
+              ) : (
+              section.tips?.map((tip, idx) => (
+  <p key={idx} className={tip.bold ? "font-bold" : ""}>
+    {tip.text}
+  </p>
+))
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
+  );
+};
 
-        </div>
-  )
-}
-
-export default Section_4
+export default Section_4;

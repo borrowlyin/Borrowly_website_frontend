@@ -14,11 +14,11 @@ const menuItems = [
     label: 'Services',
     dropdown: [
       { title: 'Personal Loan', desc: 'Quick funds for personal needs', link: '/Personal_loan' },
-      { title: 'Home Loan', desc: 'Finance your dream home easily', link: '/' },
-      { title: 'Business Loan', desc: 'Boost your business growth', link: '/' },
-      { title: 'Education Loan', desc: 'Support your educational goals', link: '' },
-      { title: 'Vehicle Loan', desc: 'Get your new vehicle hassle-free', link: '/' },
-      { title: 'Insurance', desc: 'Protect what matters most', link: '/' },
+      { title: 'Home Loan', desc: 'Finance your dream home easily', link: '/Home_loan' },
+      { title: 'Business Loan', desc: 'Boost your business growth', link: '/Business_loan' },
+      { title: 'Education Loan', desc: 'Support your educational goals', link: '/Education_loan' },
+      { title: 'Vehicle Loan', desc: 'Get your new vehicle hassle-free', link: '/Vehicle_loan' },
+      { title: 'Insurance', desc: 'Protect what matters most', link: '/Insurance_loan' },
     ],
   },
   {
@@ -41,7 +41,7 @@ const menuItems = [
     label: 'Contact Us',
     dropdown: [
       { title: 'Support', desc: 'Get help and support', link: '/Support' },
-      { title: 'Locations', desc: 'Find a branch near you', link: '/' },
+      { title: 'Locations', desc: 'Find a branch near you', link: '/Locations' },
       { title: 'Contact', desc: 'Tell us what you think', link: '/Contact_us' },
     ],
   },
