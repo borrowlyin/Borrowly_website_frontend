@@ -37,7 +37,7 @@ const Section_1 = ({ tag, title, description, image, loanType }) => {
               onClick={() => setIsModalOpen(true)}
               className="flex-1 py-3 bg-[#000000] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] "
             >
-              <span className="mt-1">View More</span>
+              <span className="mt-1">Apply Loan</span>
               <img
                 src={Apply_arrow}
                 alt="Apply Arrow"

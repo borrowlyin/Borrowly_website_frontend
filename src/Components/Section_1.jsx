@@ -28,6 +28,7 @@ import Vechicle_loan from '../assets/Icons/section_1Icons/Vechicle_loan.svg'
 import Downarrow from '../assets/Icons/section_1Icons/Downarrow.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg'; 
 import Download_icon from '../assets/Icons/Download_icon.svg'; 
+import { useNavigate } from 'react-router-dom';
 
 
 const MobileAccordionItem = ({ item, isExpanded, onToggle }) => {
@@ -103,6 +104,8 @@ const Section_1 = ({ isDarkMode }) => {
   const wordRef = useRef(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const interval = setInterval(() => {
       gsap.to(wordRef.current, {
@@ -126,6 +129,7 @@ const Section_1 = ({ isDarkMode }) => {
     image: Loan_image_1,
     Normal_icon: Person_loan,
     id: 1,
+    link: '/Personal_loan',
     headline: 'Smart Loan Choices, Trusted Support — Today and Always.',
     description: 'Need funds for something important? Whether it’s a personal milestone or an unexpected need, our loans are designed around you. At Borrowly, we go beyond approval — we build lasting trust. Let’s grow your financial confidence together.'
   },
@@ -135,6 +139,7 @@ const Section_1 = ({ isDarkMode }) => {
      image: Loan_image_3,
     Normal_icon: Home_Equity,
     id: 2,
+     link: '/Home_loan',
     headline: 'Turning Blueprints Into Reality — With Trust and Ease',
     description: 'At Borrowly, we believe a home loan is more than just financing — it’s the foundation of a future well-lived. Whether it’s your first home or your next big move, we make the process seamless with personalized support, transparent guidance, and rates that bring your dream home closer than ever.'
   },
@@ -144,6 +149,7 @@ const Section_1 = ({ isDarkMode }) => {
      image: Loan_image_6,
     Normal_icon: Business_Loan,
     id: 3,
+    link: '/Business_loan',
     headline: 'For Every Leap You Take, We’re Right Behind You.',
     description: `Your business deserves more than just funding — it deserves a partner. At Borrowly, our business loans are built around your goals. Whether you're expanding operations, hiring talent, or investing in equipment, we provide tailored solutions, fast approvals, and relationship-driven support that grows with you.`
   },
@@ -153,6 +159,7 @@ const Section_1 = ({ isDarkMode }) => {
      image: Loan_image_4,
     Normal_icon:  Education_loan_icon,
     id: 4,
+     link: '/Education_loan',
     headline: 'Turning Study Abroad Plans Into Reality.',
     description: 'Studying overseas is a life-changing experience — we make it financially possible. At Borrowly, our Foreign Education Loans cover tuition, living costs, travel, and more, with fast approvals and expert guidance every step of the way. Start your global journey with us.'
   },
@@ -162,6 +169,7 @@ const Section_1 = ({ isDarkMode }) => {
     Normal_icon: Vechicle_loan,
      image: Loan_image_2,
     id: 5,
+     link: '/Vehicle_loan',
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   },
@@ -171,6 +179,7 @@ const Section_1 = ({ isDarkMode }) => {
      image: Loan_image_5,
     Normal_icon: Insurance,
     id: 6,
+    link: '/Insurance_loan',
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
   }
@@ -247,10 +256,11 @@ const Section_1 = ({ isDarkMode }) => {
                   </p>
                   <div className='flex items-center gap-2 mt-4'>
                     <button
+                      onClick={()=>{navigate(`${selectedItem?.link}`)}}
                       style={{ fontFamily: 'PovetaracSansHeavy' }}
                       className='flex-1 py-3 bg-[#0CC066] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] '
                     >
-                      <span className='mt-1'>Apply Loan</span>
+                      <span className='mt-1'>View More</span>
                       <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
                     </button>
                     <button
