@@ -19,6 +19,7 @@ const BusinessLoan = () => {
       <div className="px-3 max-w-screen-2xl mx-auto">
         <Breadcrumbs/>
         <Section_1 
+          loanType="Business Loan"
           tag="Business Loans"
           title="For Every Leap You Take, We’re Right Behind You."
           description="Your business deserves more than just funding — it deserves a partner. At Borrowly, our business loans are built around your goals. Whether you're expanding operations, hiring talent, or investing."

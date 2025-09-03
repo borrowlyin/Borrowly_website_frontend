@@ -19,6 +19,7 @@ const PersonalLoan = () => {
       <div className="px-3 max-w-screen-2xl mx-auto">
         <Breadcrumbs/>
         <Section_1 
+          loanType="Personal Loan"
           tag="Personal Loans"
           title="Find the right personal Loan rate for you"
           description="Need to consolidate debt or make a large purchase? we bring the lenders to you so you can shop and compare personal loan offers in minutes."

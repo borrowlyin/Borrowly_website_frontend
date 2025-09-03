@@ -19,6 +19,7 @@ const VehicleLoan = () => {
       <div className="px-3 max-w-screen-2xl mx-auto">
         <Breadcrumbs/>
         <Section_1 
+          loanType="Vehicle Loans"
           tag="Vehicle Loans"
           title="From First Ride to Dream Drive — We Make It Easy."
           description="From your dream car to a daily two-wheeler or even commercial vehicles for your business — Borrowly makes it simple. Get fast approvals, competitive rates, and flexible tenures with a hassle-free loan experience."

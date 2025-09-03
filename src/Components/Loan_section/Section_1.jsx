@@ -5,7 +5,6 @@ import LoanFormModal from "../Apply_loan"; // import popup form
 
 const Section_1 = ({ tag, title, description, image, loanType }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <div className="lg:h-[65dvh] bg-gradient-to-br cursor-default flex flex-col-reverse md:flex-row from-[#003479] rounded-4xl to-[#0160DD]">
       <div className="flex-1 flex items-center md:px-10">

@@ -19,6 +19,7 @@ const EducationLoan = () => {
       <div className="px-3 max-w-screen-2xl mx-auto">
         <Breadcrumbs/>
         <Section_1 
+          loanType="Education Loan"
           tag="Education loan"
           title="Turning Study Abroad Plans Into Reality."
           description="Studying overseas is a life-changing experience — we make it financially possible. At Borrowly, our Foreign Education Loans cover tuition, living costs, travel, and more, with fast approvals."

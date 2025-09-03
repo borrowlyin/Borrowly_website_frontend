@@ -19,6 +19,7 @@ const HomeLoan = () => {
       <div className="px-3 max-w-screen-2xl mx-auto">
         <Breadcrumbs/>
         <Section_1 
+          loanType="Home Loan"
           tag="Home Loan"
           title="Turning Blueprints Into Reality — With Trust and Ease"
           description="At Borrowly, we believe a home loan is more than just financing — it’s the foundation of a future well-lived. Whether it’s your first home or your next big move, we make the process seamless."
