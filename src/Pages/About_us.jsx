@@ -18,7 +18,7 @@ const About_us = () => {
        <div className=" mx-auto cursor-default">
             <Aboutus_section4 />
       </div>
-      <Aboutus_section5 />
+     
        <div className="bg-[#111111] w-full">
         <Footer_New/>
       </div>
