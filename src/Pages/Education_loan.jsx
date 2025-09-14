@@ -52,25 +52,25 @@ Key Benefits:
   title="⚡ Get Your Loan in Just 3 Simple Steps"
   slides={[
     {
-      title: "👉 1. Install & Choose",
+      title: "1. Install & Choose",
       text: "Download the Borrowly app, select your loan amount, and set a repayment tenure that works best for you.",
       image: img1,
       light: true,
     },
     {
-      title: "👉 2. Verify & Apply",
+      title: "2. Verify & Apply",
       text: "Complete quick verification by entering your mobile number and filling in basic details to submit your loan application.",
       image: img2,
       light: true,
     },
     {
-      title: "👉 3.Get Your Eligible Loan Amount",
+      title: "3.Get Your Eligible Loan Amount",
       text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
       image: img3,
       light: true,
     },
     {
-      title: "🎉 Congratulations!",
+      title: "Congratulations!",
       text: "Your Borrowly loan will be disbursed directly to your bank account—quick, simple, and stress-free.",
       image: congrt,
       light: false,

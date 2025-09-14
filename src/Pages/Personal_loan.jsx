@@ -16,7 +16,6 @@ import img1 from '../assets/Images/Person_loan_appscreen_1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
 import img3 from '../assets/Images/Person_loan_appscreen_3.avif';
 
-import Tick from '../assets/Icons/tick_Send.svg';
 import congrt from '../assets/Images/Congrt.avif';
 
 const PersonalLoan = () => {
@@ -37,32 +36,31 @@ const PersonalLoan = () => {
      
         
         <Section_2 
-          description="At Borrowly Loan, we provide smarter financial solutions to help you manage life’s important expenses—whether it’s for a wedding, medical emergency, travel, home renovation, education, or even purchasing a car.With quick approvals, transparent terms, and customized EMI options, Borrowly ensures you find the right loan offer in one place—without the stress of multiple applications.
-👉Explore trusted lenders, compare offers, and choose the personal loan that works best for you today."
+          description="At Borrowly Loan, we provide smarter financial solutions to help you manage life’s important expenses—whether it’s for a wedding, medical emergency, travel, home renovation, education, or even purchasing a car.With quick approvals, transparent terms, and customized EMI options, Borrowly ensures you find the right loan offer in one place—without the stress of multiple applications. Explore trusted lenders, compare offers, and choose the personal loan that works best for you today."
 /> 
         <Section_3
-  title="🚀 3 Steps. Instant Loan. Zero Hassle."
+  title="3 Steps. Instant Loan. Zero Hassle."
   slides={[
     {
-      title: "👉 1. Install & Choose",
+      title: "1. Install & Choose",
       text: "Download the Borrowly app, enter your loan requirement, and pick a repayment tenure that fits your lifestyle.",
       image: img1,
       light: true,
     },
     {
-      title: "👉 2. Verify & Apply",
+      title: "2. Verify & Apply",
       text: "Verify your mobile number, complete a quick KYC, and submit your application securely in just a few minutes.",
       image: img2,
       light: true,
     },
     {
-      title: "👉 3.Get Money in Your Account",
+      title: "3.Get Money in Your Account",
       text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
       image: img3,
       light: true,
     },
     {
-      title: "🎉 Congratulations!",
+      title: "Congratulations!",
       text: "With Borrowly, borrowing is now effortless—simple steps, quick approvals, and transparent terms.",
       image: congrt,
       light: false,

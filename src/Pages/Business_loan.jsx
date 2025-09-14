@@ -42,28 +42,28 @@ const BusinessLoan = () => {
           From working capital and equipment purchases to shop renovations and business expansion, Borrowly helps you choose the best loan, EMI, and repayment option that fits your goals.
 At Borrowly, we go beyond funding—we deliver smarter financial solutions to power your growth.'/>
                 <Section_3
-  title="🚀 Get Your Business Loan in 4 Easy Steps"
+  title="Get Your Business Loan in 4 Easy Steps"
   slides={[
     {
-      title: "👉 1. Install & Choose",
+      title: "1. Install & Choose",
       text: "Download the Borrowly app, select your business loan amount, and set a tenure that works for your cash flow.",
       image: img1,
       light: true,
     },
     {
-      title: "👉 2. Verify & Apply",
+      title: "2. Verify & Apply",
       text: "Complete a simple verification with your mobile number, KYC, and business details to apply instantly.",
       image: img2,
       light: true,
     },
     {
-      title: "👉 3. Check Eligibility",
+      title: "3. Check Eligibility",
       text: "Based on your profile and credit check, view eligible loan offers from 30+ banks & NBFCs with competitive rates and flexible repayment options.",
       image: img3,
       light: true,
     },
     {
-      title: "🎉 4.Instant Disbursement",
+      title: "Instant Disbursement",
       text: "Once approved, your loan is directly credited to your bank account—helping you access funds quickly for expansion, working capital, or investments.",
       image: congrt,
       light: false,

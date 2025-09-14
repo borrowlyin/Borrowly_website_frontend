@@ -67,10 +67,10 @@ const Section_3 = ({ slides = [], title }) => {
       </h1>
 
       {/* --- Mobile (<md) carousel --- */}
-      <div className="md:hidden mt-5">
+      <div className="md:hidden  mt-5">
         <div
           ref={scrollerRef}
-          className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex gap-3  overflow-x-auto pb-2 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none]"
           style={{ scrollBehavior: "smooth" }}
         >
           {slides.map((s, i) => (
@@ -141,13 +141,13 @@ const Section_3 = ({ slides = [], title }) => {
                 : "bg-gradient-to-b from-[#014094] to-[#015FDA] text-white flex flex-col"
             }`}
           >
-            <div className="px-5 py-5 flex-1 flex flex-col items-center justify-center">
+            <div className="p-8 flex flex-col items-center justify-center">
               {!s.light && <img src={Tick} alt="" className="mb-4" />}
               <h3
                 style={{ fontFamily: "PovetaracSansBlack" }}
                 className={`mt-2 ${
-                  s.light ? "text-black" : "text-white"
-                } text-xl leading-[1.1] text-center`}
+                  s.light ? "text-black text-left" : "text-white"
+                } text-xl w-full leading-[1.1] text-center`}
               >
                 {s.title}
               </h3>

@@ -46,25 +46,25 @@ Borrowly provides smarter financial protection for your health, life, vehicle, a
   title="🚀 3 Steps. Instant Loan. Zero Hassle."
   slides={[
     {
-      title: "👉 1. Install & Choose",
+      title: "1. Install & Choose",
       text: "Download the Borrowly app, enter your loan requirement, and pick a repayment tenure that fits your lifestyle.",
       image: img1,
       light: true,
     },
     {
-      title: "👉 2. Verify & Apply",
+      title: "2. Verify & Apply",
       text: "Verify your mobile number, complete a quick KYC, and submit your application securely in just a few minutes.",
       image: img2,
       light: true,
     },
     {
-      title: "👉 3. Get Money in Your Account",
+      title: "3. Get Money in Your Account",
       text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
       image: img3,
       light: true,
     },
     {
-      title: "🎉 Congratulations!",
+      title: "Congratulations!",
       text: "With Borrowly, borrowing is now effortless—simple steps, quick approvals, and transparent terms.",
       image: congrt,
       light: false,

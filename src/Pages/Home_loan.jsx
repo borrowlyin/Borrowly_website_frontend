@@ -42,28 +42,28 @@ That’s why we combine professional expertise with a customer-first approach, m
           description='Buying, renovating, or investing in a home should be exciting, not stressful. At Borrowly, we make it effortless. Compare pre-approved offers from 30+ trusted banks and NBFCs, choose flexible EMIs, and enjoy competitive interest rates — all at your fingertips.
           We combine professional expertise with a customer-first approach, ensuring your journey from dream to address is seamless, supportive, and stress-free.'/>
     <Section_3
-  title="🚀 3 Steps. Instant Loan. Zero Hassle."
+  title="3 Steps. Instant Loan. Zero Hassle."
   slides={[
     {
-      title: "👉 1. Install & Choose",
+      title: "1. Install & Choose",
       text: "Get the Borrowly app, explore our home loan options, select your preferred loan amount, and set a repayment tenure that aligns with your financial goals.",
       image: img1,
       light: true,
     },
     {
-      title: "👉 2. Verify & Apply",
+      title: "2. Verify & Apply",
       text: "Verify your mobile number, complete your KYC, and provide a few essential details to securely proceed with your home loan application.",
       image: img2,
       light: true,
     },
     {
-      title: "👉 3. Eligible Loan Amount",
+      title: "3. Eligible Loan Amount",
       text: `After KYC and credit assessment, view your eligible home loan amount and select repayment terms that best suit your needs.`,
       image: img3,
       light: true,
     },
     {
-      title: "🎉 Loan Disbursement",
+      title: "Loan Disbursement",
       text: "Once approved, your Borrowly Home Loan will be disbursed directly to your bank account—bringing you closer to your dream home with ease and confidence.",
       image: congrt,
       light: false,

@@ -40,7 +40,7 @@ const VehicleLoan = () => {
 
 Borrowly makes it easy to finance your dream car, a two-wheeler for daily rides, or commercial vehicles to grow your business. Whether it’s your first bike, a family car, or a fleet upgrade, find the best offers, interest rates, and EMI options—all online." />
                <Section_3
-  title="Get Your Vehicle Loan in 3 Easy Steps 🚀."
+  title="Get Your Vehicle Loan in 3 Easy Steps."
   slides={[
     {
       title: "Step 1: Apply Online",
@@ -61,7 +61,7 @@ Borrowly makes it easy to finance your dream car, a two-wheeler for daily rides,
       light: true,
     },
     {
-      title: "🎉 Congratulations!",
+      title: "Congratulations!",
       text: "With Borrowly, borrowing is now effortless—simple steps, quick approvals, and transparent terms.",
       image: congrt,
       light: false,
@@ -134,7 +134,7 @@ loandesc="Get your dream vehicle with flexible loans, competitive rates, and a s
   {
     title:"Check Eligibility",
     items:[  
-      {label:"✅ Benefits of Borrowly Vehicle Loans"},
+      {label:"Benefits of Borrowly Vehicle Loans"},
         {label:"⚡ Quick online approval "},
           {label:"💰 Flexible repayment options"},
           {label: "📉 Competitive interest rates"},
