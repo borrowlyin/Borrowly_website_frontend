@@ -8,9 +8,9 @@ const ContactusBanner = () => {
     <div className='w-full py-10 px-5'>
       <div className='w-full max-w-screen-2xl overflow-hidden mx-auto bg-[#00C2CC] rounded-4xl'>
         <div className='py-10 md:pt-12 lg:pt-24 text-white text-center'>
-            <h1 style={{ fontFamily: "PovetaracSansBlack" }} className="mt-4 text-[30px] md:text-[36px] xl:text-[48px] leading-[1.1]">Meet the Experts Who Power Borrowly</h1>
+            <h1 style={{ fontFamily: "PovetaracSansBlack" }} className="mt-4 text-[30px] md:text-[36px] xl:text-[48px] leading-[1.1]">Meet the Experts Behind Borrowly</h1>
           <p  style={{ fontFamily: "PovetaracSansBold" }} className="mt-2 px-5 w-full max-w-[800px] mx-auto text-[12px] md:text-xl">
-             A team dedicated to simplifying borrowing—connecting people with the right lenders, ensuring transparency, and building trust every step of the way.
+            A passionate team working to simplify your financial journey—offering clear guidance, honest options, and trusted support all the way.
           </p>
            <div className='w-fit mx-auto'>
                        <button style={{ fontFamily: 'PovetaracSansHeavy' }} onClick={() => {

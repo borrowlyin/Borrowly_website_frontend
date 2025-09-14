@@ -15,7 +15,9 @@ const DocItem = ({ label, children }) => (
   </p>
 );
 
+
 const Section_4 = ({
+  ftype,
   featureImg,
   loanType,
   loanDetails,
@@ -24,6 +26,9 @@ const Section_4 = ({
   requiredDocs,
   requiredDocsNote,
   docSections,
+  docdesc,
+  loandesc,
+  whodesc
 }) => {
   return (
     <div className="bg-[#F9F9F9] max-w-screen-xl mt-8 mx-auto rounded-4xl p-2 md:p-5">
@@ -32,13 +37,13 @@ const Section_4 = ({
         style={{ fontFamily: "PovetaracSansBlack" }}
         className="text-center text-black text-[24px] pb-5 py-10 lg:text-[32px] leading-[1.1]"
       >
-        Loan Features & Benefits
+        {ftype}
       </h1>
 
       <div className="lg:px-10 lg:py-10">
         <div className="bg-white rounded-4xl overflow-hidden flex flex-col md:flex-row gap-3">
           {/* Left Image */}
-          <div className="flex-1 bg-gradient-to-b flex items-end from-[#00C2CC] to-[#0153C0]">
+          <div className="flex-1 bg-gradient-to-b flex items-center from-[#00C2CC] to-[#0153C0] text-center">
             <img src={featureImg} alt="" className="w-[600px] mx-auto" />
           </div>
 
@@ -52,6 +57,7 @@ const Section_4 = ({
               >
                 Who Can Apply?
               </h3>
+              <p>{whodesc}</p>
               <div className="py-2 flex flex-wrap gap-2">
                 {whoCanApply.map((item, i) => (
                   <div
@@ -114,6 +120,7 @@ const Section_4 = ({
       >
         {loanType} Details
       </h1>
+      <p>{loandesc}</p>
       <div className="w-full max-w-[1200px] px-5 py-4 md:py-10 mx-auto flex flex-wrap gap-8">
         {loanDetails.map((detail, i) => (
           <div key={i} className="w-full sm:w-[45%] md:w-[22%]">
@@ -124,7 +131,7 @@ const Section_4 = ({
               {detail.label}
             </h1>
             <p
-              style={{ fontFamily: "PovetaracSansBold" }}
+              style={{ fontFamily: "PovetaracSansBold", whiteSpace: "pre-line" }}
               className="mt-1 text-[16px] text-[#474040]"
             >
               {detail.value}
@@ -138,9 +145,10 @@ const Section_4 = ({
         style={{ fontFamily: "PovetaracSansBlack" }}
         className="text-center text-black text-[28px] pb-5 py-10 lg:text-[32px] leading-[1.1]"
       >
-        Documents You’ll Need
-      </h1>
-      <div className="w-full max-w-[1200px] px-5 py-4 md:py-19 mx-auto flex flex-wrap gap-12">
+        📑 Documents You’ll Need
+      </h1><br></br>
+      <p>{docdesc}</p>
+      <div className="w-full max-w-[1200px] px-5  md:py-10 mx-auto flex flex-wrap gap-12">
         <div className="flex flex-wrap gap-8">
           {docSections.map((section, i) => (
             <div key={i} className="w-full sm:w-[45%] md:w-[45%]">

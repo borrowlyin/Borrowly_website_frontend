@@ -143,9 +143,9 @@ const [openSections, setOpenSections] = useState({});
             </h1>
             <div className="flex flex-col gap-1 text-[#BDBDBD] text-[14px] ">
               {[
-                "+91-9148380504",
-                "help@smartcoin.co.in",
-                "SmartCoin Financials Pvt. Ltd.Indiqube Gamma, No.293/154/172 2nd floor, Outer Ring Road,Kadubeesanahalli, Bengaluru,Karnataka 560103.GSTIN: 29AAWCS4288F1ZICIN: U67110KA2015PTC084272",
+                "📞 +91-9494545792 | +91-9494545137",
+                "✉️ support@borrowly.in",
+                "Borrowly®️ is powered by Wiseway Consultants Private Limited, Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016, CIN: U70200KA2023PTC176224",
               ]
               .map((item, i) => (
                 <p className='cursor-pointer  w-fit'  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
@@ -157,7 +157,7 @@ const [openSections, setOpenSections] = useState({});
               For Grievance Redressal Contact:
             </h1>
             <div className="flex flex-col gap-1 text-[#BDBDBD] text-[14px] ">
-              {['Moushumi Mukherjee', '+91-9986640571', 'SmartCoin Financials Pvt. Ltd. Indiqube Gamma, No.293/154/172 2nd floor, Outer Ring Road, Kadubeesanahalli, Bengaluru, Karnataka 560103.'].map((item, i) => (
+              {['Consumer Grievance Officer', '📞 +91-7760657415', 'Borrowly®️ (Registered Trademark of Wiseway Consultants Private Limited)','Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016, CIN: U70200KA2023PTC176224'].map((item, i) => (
                 <p className='cursor-pointer  w-fit'  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
               ))}
             </div>
