@@ -13,9 +13,9 @@ import Check_1_1 from '../assets/Images/check_1_.avif';
 import Check_2_1 from '../assets/Images/check_2_.avif';
 import Featurn from '../assets/Images/Featurn_4.avif';
 
-import img1 from '../assets/Images/edu_1.jpg';
+import img1 from '../assets/Images/Education_loan_appscreen_1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
-import img3 from '../assets/Images/edu_3.jpg';
+import img3 from '../assets/Images/Education_loan_appscreen_3.avif';
 
 import Tick from '../assets/Icons/tick_Send.svg';
 import congrt from '../assets/Images/Congrt.avif';
