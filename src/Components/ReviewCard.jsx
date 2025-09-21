@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const reviewList = [
   {
-    name: "Ankit Singh",
+    name: "Singh brothers",
     age: 34,
     loanType: "Personal Loan",
     date: "14/03/25",

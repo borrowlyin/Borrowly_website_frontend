@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import Team_1 from '/Co-founder.avif'
 import Team_2 from '/founder.avif'
+import Team_3 from '/Co-2.avif'
 
 import Team_section2 from '../Components/Team_section2'
 import ContactusBanner from '../Components/ContactusBanner';
@@ -22,20 +23,27 @@ const Team = () => {
             </motion.p>
       </motion.section>
       <div className='text-center pb-10 w-full max-w-screen-xl px-5 mx-auto'>
-         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-2'>
+         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 lg:gap-2'>
             
-             <div className='bg-[#ffe9d6] rounded-2xl lg:rounded-0 flex items-end relative'>
-                 <img src={Team_2} alt='' className='h-[500px] mx-auto pt-10'/>
+             <div className='bg-[#ffe9d6] rounded-2xl lg:rounded-tl-4xl flex items-end relative'>
+                 <img src={Team_2} alt='' className='h-[430px] mx-auto pt-10'/>
                 <div className="absolute -bottom-8 py-4 left-1/2 flex items-center justify-center flex-col -translate-x-1/2 bg-white rounded-xl w-[80%] shadow-lg">
                    <h1  style={{ fontFamily: "PovetaracSansBlack" }} className='text-xl'>Founder & Director</h1>
                    <h1 style={{ fontFamily: "PovetaracSansBlack" }} className='text-[16px]'>Divya sappogu</h1>
                 </div>
             </div>
-             <div className="bg-[#E9F4FF]  rounded-2xl lg:rounded-tl-4xl flex items-end relative">
+             <div className="bg-[#E9F4FF]  rounded-2xl lg:rounded-0 flex items-end relative">
                 <img src={Team_1} alt='' className='w-[500px] mx-auto pt-10'/>
                 <div className="absolute -bottom-8 py-4 left-1/2 flex items-center justify-center flex-col -translate-x-1/2 bg-white rounded-xl w-[80%] shadow-lg">
                    <h1  style={{ fontFamily: "PovetaracSansBlack" }} className='text-xl'>Mahendra B M</h1>
                    <h1 style={{ fontFamily: "PovetaracSansBlack" }} className='text-[16px]'>Director and CEO</h1>
+                </div>
+             </div>
+              <div className="bg-[#F2EEFF]  rounded-2xl lg:rounded-tr-4xl flex items-end relative">
+                <img src={Team_3} alt='' className='w-[390px] mx-auto pt-10'/>
+                <div className="absolute -bottom-8 py-4 left-1/2 flex items-center justify-center flex-col -translate-x-1/2 bg-white rounded-xl w-[80%] shadow-lg">
+                   <h1  style={{ fontFamily: "PovetaracSansBlack" }} className='text-xl'>Komari Naga Maddilety</h1>
+                   <h1 style={{ fontFamily: "PovetaracSansBlack" }} className='text-[16px]'>Director & Co-founder</h1>
                 </div>
              </div>
          </div>
