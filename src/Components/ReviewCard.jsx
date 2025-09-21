@@ -8,13 +8,13 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const reviewList = [
   {
-    name: "Ankit Mehra",
+    name: "Ankit Singh",
     age: 34,
     loanType: "Personal Loan",
     date: "14/03/25",
     rating: 5,
     quote: `“The Borrowly team made my personal loan process hassle-free. They explained everything clearly, compared lenders for me, and got me the best rate within 2 days. Truly appreciate their support.”`,
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "/review_1.avif",
   },
   {
     name: "Ritika Bansal",

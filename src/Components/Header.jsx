@@ -130,7 +130,7 @@ const Header = () => {
               <div className="flex items-center space-x-1">
                 <img src={famicons_call} alt="call icon" className="w-4 h-4" />
                 <div className="flex gap-3">
-                  <a href="tel:18003134151">1800 313 4151</a>/<a href="tel:8980685509">89806 85509</a>
+                  <a href="tel:18003134151">+91-9494545792</a>/<a href="tel:8980685509">+91-9494545137</a>
                 </div>
               </div>
 

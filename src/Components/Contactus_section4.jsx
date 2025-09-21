@@ -65,7 +65,7 @@ const Contactus_section4 = () => {
           If you need assistance regarding Loans call us at
           <span className="font-medium">
             {" "}
-            080 4132 9075 (Landline) or +91 96060 45890 (Cell Phone),
+            +91-9494545792 | +91-9494545137
           </span>
           or write to us at{" "}
           <a
@@ -94,8 +94,7 @@ const Contactus_section4 = () => {
           style={{ fontFamily: "PovetaracSansbold" }}
           className="text-[#838383] text-sm mt-1"
         >
-          #617, 1st Floor, 80 Feet Road, 6th Block, Koramangala, Bangalore, India –
-          560095.
+          No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016.
         </p>
 
         <motion.button
