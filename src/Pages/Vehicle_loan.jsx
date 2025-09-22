@@ -13,9 +13,9 @@ import Check_1_1 from '../assets/Images/check_1_.avif';
 import Check_2_1 from '../assets/Images/check_2_.avif';
 import Featurn from '../assets/Images/Featurn_2.avif';
 
-import img1 from '../assets/Images/Vechial_loan_appscreen_1.avif';
+import img1 from '../assets/borrowly.avif/vehicleloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
-import img3 from '../assets/Images/Vechial_loan_appscreen_3.avif';
+import img3 from '../assets/borrowly.avif/vehicleloan2.avif';
 
 import congrt from '../assets/Images/Congrt.avif';
 
@@ -55,7 +55,7 @@ Borrowly makes it easy to finance your dream car, a two-wheeler for daily rides,
     },
     {
       title: "Step 3: Receive Funds & Drive",
-      text: "Choose your loan offer, finalize the documentation, and get the funds in your account. Your dream vehicle is ready to hit the road!",
+      text: "Choose your loan offer,finalize the documentation. Your dream vehicle is ready to hit the road!",
       image: img3,
       light: true,
     },

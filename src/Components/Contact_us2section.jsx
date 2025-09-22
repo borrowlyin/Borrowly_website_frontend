@@ -132,7 +132,7 @@ export default function ContactUs() {
             <div className="flex flex-col gap-4">
               <div>
                 <p className="text-[#797979] font-semibold">CIN</p>
-                <p className="text-black">U67100HR2015PTC068942</p>
+                <p className="text-black">U70200KA2023PTC176224</p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Company Name</p>
@@ -143,17 +143,16 @@ export default function ContactUs() {
                   Registered Office Address
                 </p>
                 <p className="text-black max-w-[450px]">
-                  7th Floor, Vatika Triangle, Mehrauli-Gurgaon Road, Block B,
-                  Sushant Lok Phase I, Gurugram, Haryana - 122002
+                 Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016.
                 </p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Email ID</p>
-                <p className="text-black">Offical@Borrowly.in</p>
+                <p className="text-black">Support@Borrowly.in</p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Contact No</p>
-                <p className="text-black">0124-6914100</p>
+                <p className="text-black">+91-9494545792</p>
               </div>
             </div>
           </motion.div>
@@ -164,28 +163,26 @@ export default function ContactUs() {
               style={{ fontFamily: "PovetaracSansBlack" }}
               className="text-3xl font-semibold mb-3"
             >
-              Nodal Grievance Redressal Officer
+              Grievance Redressal Officer
             </h2>
             <div className="flex flex-col gap-4">
               <div>
                 <p className="text-[#797979] font-semibold">Name</p>
-                <p className="text-black">Mr. Gurjent Deol</p>
+                <p className="text-black">Borrowly</p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Address</p>
                 <p className="text-black max-w-[450px]">
-                  Moneymitra IT Solutions Private Limited, 7th Floor, Vatika
-                  Triangle, Mehrauli-Gurgaon Road, Block B, Sushant Lok Phase I,
-                  Gurugram, Haryana - 122002
+                 Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016.
                 </p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Contact No</p>
-                <p className="text-black">0124-4699111</p>
+                <p className="text-black">+91-7760657415</p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Email ID</p>
-                <p className="text-black">Offical@Borrowly.in</p>
+                <p className="text-black">Support@Borrowly.in</p>
               </div>
             </div>
           </motion.div>

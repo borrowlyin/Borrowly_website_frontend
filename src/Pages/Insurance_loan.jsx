@@ -13,9 +13,9 @@ import Check_1_1 from '../assets/Images/check_1_.avif';
 import Check_2_1 from '../assets/Images/check_2_.avif';
 import Featurn from '../assets/Images/Featurn_6.avif';
 
-import img1 from '../assets/Images/Insurance_loan_appscreen_1.avif';
+import img1 from '../assets/borrowly.avif/insuranceloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
-import img3 from '../assets/Images/Insurance_loan_appscreen_3.avif';
+import img3 from '../assets/borrowly.avif/insuranceloan2.avif';
 
 import Tick from '../assets/Icons/tick_Send.svg';
 import congrt from '../assets/Images/Congrt.avif';
@@ -59,7 +59,7 @@ Borrowly provides smarter financial protection for your health, life, vehicle, a
     },
     {
       title: "3. Get Money in Your Account",
-      text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
+      text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, stress-free.",
       image: img3,
       light: true,
     },

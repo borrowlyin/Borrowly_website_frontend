@@ -13,9 +13,9 @@ import Check_1_1 from '../assets/Images/check_1_.avif';
 import Check_2_1 from '../assets/Images/check_2_.avif';
 import Featurn from '../assets/Images/Featurn_4.avif';
 
-import img1 from '../assets/Images/Education_loan_appscreen_1.avif';
+import img1 from '../assets/borrowly.avif/educationloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
-import img3 from '../assets/Images/Education_loan_appscreen_3.avif';
+import img3 from '../assets/borrowly.avif/educationloan2.avif';
 
 import Tick from '../assets/Icons/tick_Send.svg';
 import congrt from '../assets/Images/Congrt.avif';
@@ -65,7 +65,7 @@ Key Benefits:
     },
     {
       title: "3.Get Your Eligible Loan Amount",
-      text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
+      text: "Once approved,your eligible loan amount is instantly credited to your bank account—fast, simple, stress-free.",
       image: img3,
       light: true,
     },

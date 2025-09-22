@@ -13,9 +13,9 @@ import Check_1_1 from '../assets/Images/check_1_.avif';
 import Check_2_1 from '../assets/Images/check_2_.avif';
 import Featurn from '../assets/Images/Featurn_5.avif';
 
-import img1 from '../assets/Images/Business_loan_appscreen.avif';
+import img1 from '../assets/borrowly.avif/businessloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
-import img3 from '../assets/Images/Business_loan_appscreen_3.avif';
+import img3 from '../assets/borrowly.avif/businessloan2.avif';
 
 import Tick from '../assets/Icons/tick_Send.svg';
 import congrt from '../assets/Images/Congrt.avif';
@@ -58,7 +58,7 @@ At Borrowly, we go beyond funding—we deliver smarter financial solutions to po
     },
     {
       title: "3. Check Eligibility",
-      text: "Based on your profile and credit check, view eligible loan offers from 30+ banks & NBFCs with competitive rates and flexible repayment options.",
+      text: "Based on your profile and credit check,view eligible loan offers from 30+ banks & flexible repayment options.",
       image: img3,
       light: true,
     },

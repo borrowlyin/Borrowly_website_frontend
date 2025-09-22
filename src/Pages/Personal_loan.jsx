@@ -55,7 +55,7 @@ const PersonalLoan = () => {
     },
     {
       title: "3.Get Money in Your Account",
-      text: "Once approved, your eligible loan amount is instantly credited to your bank account—fast, safe, and stress-free.",
+      text: "Once approved,your eligible loan amount is instantly credited to your bank account—fast,safe,stress-free.",
       image: img3,
       light: true,
     },

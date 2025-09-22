@@ -109,34 +109,76 @@ const [openSections, setOpenSections] = useState({});
             <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px] md:text-lg mb-2">
               Home
             </h1> 
-            <div className="flex flex-col gap-1 text-[#BDBDBD] text-[14px] ">
-              {['About Us', 'Products', 'Blogs', 'Legal'].map((item, i) => (
-                <p className='cursor-pointer '  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
-              ))}
-            </div>
+           <div className="flex flex-col gap-1 text-[#BDBDBD] text-[14px] ">
+  {[
+    { name: 'About Us', link: '/About_us' },
+    { name: 'Guides', link: '/Guides' },
+    { name: 'Blogs', link: '/blogs' },
+    { name: 'Privacy Policy', link: '/privacy_policy' },
+  ].map((item, i) => (
+    <a
+      key={i}
+      href={item.link}
+      className="cursor-pointer hover:underline hover:text-white"
+      style={{ fontFamily: 'PovetaracSansBold' }}
+    >
+      {item.name}
+    </a>
+  ))}
+</div>
+
           </div>
-          <div className="flex-1 min-w-[130px] md:px-5 mb-4 text-white">
-            <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px] md:text-lg mb-2">
-              Company
-            </h1>
-            <div className="flex flex-col text-[#BDBDBD] gap-1 text-[14px] ">
-              {
-              [
-                "Company",
-                "Lending Partners",
-                "Digital Lead Partners",
-                "Collection Agencies",
-                "Fair Practices Code",
-                "Grievance Redressal",
-                "RBI Sachet Portal",
-                "Privacy Policy",
-                "Gold refund & cancelation policy",
-                "Contact Us"
-              ].map((item, i) => (
-                <p className='cursor-pointer '  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
-              ))}
-            </div>
-          </div>
+         {/* ================== Company Section (commented out) ================== */}
+{/*
+<div className="flex-1 min-w-[130px] md:px-5 mb-4 text-white">
+  <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px] md:text-lg mb-2">
+    Company
+  </h1>
+  <div className="flex flex-col text-[#BDBDBD] gap-1 text-[14px] ">
+    {[
+      "Company",
+      "Lending Partners",
+      "Digital Lead Partners",
+      "Collection Agencies",
+      "Fair Practices Code",
+      "Grievance Redressal",
+      "RBI Sachet Portal",
+      "Privacy Policy",
+      "Gold refund & cancelation policy",
+      "Contact Us"
+    ].map((item, i) => (
+      <p className='cursor-pointer '  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
+    ))}
+  </div>
+</div>
+*/}
+
+{/* ================== Services Section (new) ================== */}
+<div className="flex-1 min-w-[130px] md:px-5 mb-4 text-white">
+  <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px] md:text-lg mb-2">
+    Services
+  </h1>
+  <div className="flex flex-col text-[#BDBDBD] gap-1 text-[14px] ">
+    {[
+      { name: "Personal Loan", link: "/personal_loan" },
+      { name: "Business Loan", link: "/business_loan" },
+      { name: "Education Loan", link: "/education_loan" },
+      { name: "Home Loan", link: "/home_loan" },
+      { name: "Vehicle Loan", link: "/vehicle_loan" },
+      { name: "Insurance", link: "/insurance_loan" },
+    ].map((service, i) => (
+      <a
+        key={i}
+        href={service.link}
+        className="cursor-pointer hover:underline hover:text-white"
+        style={{ fontFamily: 'PovetaracSansBold' }}
+      >
+        {service.name}
+      </a>
+    ))}
+  </div>
+</div>
+
           <div className="flex-1 min-w-[130px] md:px-5  mb-4 text-white">
             <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[16px] md:text-lg mb-2">
               Keep in touch with us
@@ -145,7 +187,7 @@ const [openSections, setOpenSections] = useState({});
               {[
                 "📞 +91-9494545792 | +91-9494545137",
                 "✉️ support@borrowly.in",
-                "Borrowly®️ is powered by Wiseway Consultants Private Limited, Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016, CIN: U70200KA2023PTC176224",
+                "Borrowly®️ is powered by Wiseway Consultants Private Limited, Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016.",
               ]
               .map((item, i) => (
                 <p className='cursor-pointer  w-fit'  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
@@ -157,7 +199,7 @@ const [openSections, setOpenSections] = useState({});
               For Grievance Redressal Contact:
             </h1>
             <div className="flex flex-col gap-1 text-[#BDBDBD] text-[14px] ">
-              {['Consumer Grievance Officer', '📞 +91-7760657415', 'Borrowly®️ (Registered Trademark of Wiseway Consultants Private Limited)','Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016, CIN: U70200KA2023PTC176224'].map((item, i) => (
+              {['Consumer Grievance Officer', '📞 +91-7760657415', 'Borrowly®️ (Registered Trademark of Wiseway Consultants Private Limited)','Site No. 2, H.L No. 786, First Floor, Near Bharath Petrol Bunk, Dhargha Mohalla, Old Madras Road, Dooravani Nagar, Bengaluru – 560016.'].map((item, i) => (
                 <p className='cursor-pointer  w-fit'  key={i} style={{ fontFamily: 'PovetaracSansBold' }}>{item}</p>
               ))}
             </div>
@@ -225,7 +267,7 @@ const [openSections, setOpenSections] = useState({});
               {items.map((item, i) => (
                 <span key={item}>
                   <a
-                    href="#"
+                    href="/personal_loan"
                     className="hover:underline underline-offset-8 hover:text-white"
                   >
                     {item}
@@ -243,7 +285,7 @@ const [openSections, setOpenSections] = useState({});
                 {items.map((item) => (
                   <a
                     key={item}
-                    href="#"
+                    href="personal_loan"
                     className="block hover:underline text-white underline-offset-8"
                     style={{ whiteSpace: "normal", wordBreak: "break-word" }}
                   >
