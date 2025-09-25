@@ -145,6 +145,15 @@ const Header = () => {
               >
                 <span>My account</span>
               </button> */}
+
+               {/* ✅ Login Button */}
+    <button
+      onClick={() => navigate('/loginnew')}
+      style={{ fontFamily: 'PovetaracSansBold' }}
+      className="py-1 px-4 text-[16px] cursor-pointer rounded-lg text-white bg-[#00C2CC] hover:bg-[#009da5] transition-colors"
+    >
+      Login
+    </button>
             </div>
           </div>
 
