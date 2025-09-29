@@ -17,6 +17,7 @@ import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selecte
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 import Vechicle_loan_icon from '../assets/Icons/section_1Icons/Vechicle_loan_selected.svg'
+import Gold_loan_icon from '../assets/Icons/section_1Icons/Gold_loan_icon.png'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Education_loan from '../assets/Icons/section_1Icons/Education_Loans_selected.svg'
@@ -153,12 +154,22 @@ const Section_1 = ({ isDarkMode }) => {
     headline: 'For Every Leap You Take, We’re Right Behind You.',
     description: `Your business deserves more than just funding — it deserves a partner. At Borrowly, our business loans are built around your goals. Whether you're expanding operations, hiring talent, or investing in equipment, we provide tailored solutions, fast approvals, and relationship-driven support that grows with you.`
   },
+   {
+    name: 'Gold Loan',
+    Selected_icon: Gold_loan_icon,
+     image: Loan_image_6,
+    Normal_icon: Business_Loan,
+    id: 4,
+    link: '/Gold_loan',
+    headline: 'For Every Leap You Take, We’re Right Behind You.',
+    description: `Your business deserves more than just funding — it deserves a partner. At Borrowly, our business loans are built around your goals. Whether you're expanding operations, hiring talent, or investing in equipment, we provide tailored solutions, fast approvals, and relationship-driven support that grows with you.`
+  },
   {
     name: 'Education Loan',
     Selected_icon: Education_loan,
      image: Loan_image_4,
     Normal_icon:  Education_loan_icon,
-    id: 4,
+    id: 5,
      link: '/Education_loan',
     headline: 'Turning Study Abroad Plans Into Reality.',
     description: 'Studying overseas is a life-changing experience — we make it financially possible. At Borrowly, our Foreign Education Loans cover tuition, living costs, travel, and more, with fast approvals and expert guidance every step of the way. Start your global journey with us.'
@@ -168,7 +179,7 @@ const Section_1 = ({ isDarkMode }) => {
     Selected_icon: Vechicle_loan_icon,
     Normal_icon: Vechicle_loan,
      image: Loan_image_2,
-    id: 5,
+    id: 6,
      link: '/Vehicle_loan',
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
@@ -178,7 +189,7 @@ const Section_1 = ({ isDarkMode }) => {
     Selected_icon: Insurance_icon,
      image: Loan_image_5,
     Normal_icon: Insurance,
-    id: 6,
+    id: 7,
     link: '/Insurance_loan',
     headline: 'From First Rides to Fleet Upgrades — We Make It Easy',
     description: 'Whether it’s your dream car, a two-wheeler for daily travel, or commercial vehicles to grow your business — Borrowly’s vehicle loans are tailored for speed, simplicity, and support. Enjoy competitive rates, flexible tenures, and a seamless experience from application to approval.'
@@ -260,7 +271,7 @@ const Section_1 = ({ isDarkMode }) => {
                       style={{ fontFamily: 'PovetaracSansHeavy' }}
                       className='flex-1 py-3 bg-[#0CC066] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] '
                     >
-                      <span className='mt-1'>View More</span>
+                      <span className='mt-1'>Apply Loan</span>
                       <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
                     </button>
                     <button

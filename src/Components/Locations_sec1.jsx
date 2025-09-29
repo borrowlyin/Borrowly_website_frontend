@@ -26,7 +26,10 @@ const Locations = () => {
           Locations
         </button>
         <h2 className="text-3xl font-semibold text-black mt-4">Available in 100+ cities</h2>
-        <p className="text-gray-600 mt-2">We offer loans in all the major cities across India</p>
+        <p className="text-gray-600 mt-2">
+          We offer loans in all the major cities across India<br />
+          <span className="font-medium text-green-600">All rural + urban areas covered</span>
+        </p>
       </div>
 
       <div className="flex flex-col lg:flex-row items-start justify-between mt-8 gap-8">
@@ -34,17 +37,35 @@ const Locations = () => {
         <div className="w-full lg:w-[70%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-4">
           {sets.map((set, index) => (
             <div key={index} className="flex flex-col space-y-4">
-              {set.map((location, locIndex) => (
-                <div key={locIndex} className="text-lg text-gray-700 font-bold flex items-center">
-                  <span className="mr-2">•</span>{location}
-                </div>
-              ))}
+              {set.map((location, locIndex) => {
+                // Custom styles for highlighted cities
+                let customStyle = "text-lg text-gray-700 font-bold flex items-center";
+                let extraNote = null;
+
+                if (location === "Bengaluru") {
+                  customStyle += " text-red-800";
+                }
+
+                if (location === "Delhi" || location === "Mumbai") {
+                  extraNote = (
+                    <span className="text-sm text-gray-500 ml-1">→ 3 Months</span>
+                  );
+                }
+
+                return (
+                  <div key={locIndex} className={customStyle}>
+                    <span className="mr-2">•</span>
+                    {location}
+                    {extraNote}
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>
 
         {/* Image (India Map) */}
-        <div className="w-full lg:w-[30%] mt-8 lg:mt-0">
+        <div className="w-full lg:w-[25%] mt-8 lg:mt-0">
           <img src={img} alt="India map" className="w-full" />
         </div>
       </div>

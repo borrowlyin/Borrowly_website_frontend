@@ -52,6 +52,14 @@ const GuidesSection_2 = () => {
       description: "Insurance isn’t just paperwork—it’s financial protection. Learn the basics here.",
        link:'/insurance_loan_Guides'
     },
+     {
+      id: 6,
+      image: Loan_6,
+      tag: "Gold Loan",
+      title: "Gold Loan Guide: Unlock Cash with Your Gold",
+      description: "Gold loans aren’t just about borrowing—they’re a quick and secure way to get funds using your gold as collateral. Learn how you can access cash without selling your valuables.",
+       link:'/gold_loan_Guides'
+    },
   ];
 
   return (

@@ -4,12 +4,59 @@ import SeachIcon from "../assets/Icons/SeachIcon.svg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const jobs = [
-  { role: "Growth Analyst", team: "Data Analytics", location: "Chennai, India", description: "We are looking for an experienced Growth Analyst to be a central part of the operational side of the Growth team, specifically within our Delivery & Rides vertical, as we embark on an amazing journey to take Bolt to new heights!" },
-  { role: "Frontend Developer", team: "Engineering", location: "Bangalore, India", description: "Join our product engineering team to build seamless, scalable, and delightful user experiences using React, TypeScript, and modern web technologies." },
-  { role: "Product Designer", team: "Design", location: "Remote", description: "We are seeking a creative Product Designer who can turn complex problems into simple, intuitive, and engaging design solutions for our mobile and web apps." },
-  { role: "HR Business Partner", team: "Human Resources", location: "Mumbai, India", description: "Work closely with leadership and employees to shape culture, drive engagement, and build talent strategies that scale with the company’s growth." },
-  { role: "Marketing Specialist", team: "Growth & Marketing", location: "Hyderabad, India", description: "We’re looking for a results-driven Marketing Specialist to plan campaigns, analyze performance, and help expand our brand presence across India." },
+  /* CA & Legal Department */
+  { role: "Chartered Accountants (CA)", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Join our CA & Legal team to handle auditing, compliance, and taxation tasks." },
+  { role: "Tax Consultants", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Provide expert tax advisory services and ensure regulatory compliance." },
+  { role: "Company Secretary (CS)", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Manage corporate governance, secretarial functions, and legal documentation." },
+  { role: "Legal Advisors (Business & Compliance)", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Advise the business on legal and compliance matters." },
+  { role: "Auditors", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Perform internal and external audits to ensure financial accuracy." },
+  { role: "GST & Income Tax Experts", team: "CA & Legal Department", location: "Bangalore, Karnataka", description: "Handle GST filings, income tax, and related financial compliance." },
+
+  /* Loan & Finance Department */
+  { role: "Loan Officers (Personal, Business, Gold, Education, Vehicle)", team: "Loan & Finance Department", location: "Bangalore, Karnataka", description: "Assist customers with loan applications and approvals." },
+  { role: "Credit Analysts", team: "Loan & Finance Department", location: "Bangalore, Karnataka", description: "Analyze credit data and financial statements to evaluate risk." },
+  { role: "CIBIL Score Improvement Advisors", team: "Loan & Finance Department", location: "Bangalore, Karnataka", description: "Provide guidance to improve customers' credit scores." },
+  { role: "Relationship Managers (Customer Loan Guidance)", team: "Loan & Finance Department", location: "Bangalore, Karnataka", description: "Maintain strong client relationships and provide loan guidance." },
+  { role: "Risk & Compliance Officers", team: "Loan & Finance Department", location: "Bangalore, Karnataka", description: "Monitor financial and operational risks and ensure compliance." },
+
+  /* Operations & Support Department */
+  { role: "Telecallers (Inbound/Outbound)", team: "Operations & Support Department", location: "Bangalore, Karnataka", description: "Handle customer calls, queries, and follow-ups." },
+  { role: "KYC Verification Officers", team: "Operations & Support Department", location: "Bangalore, Karnataka", description: "Verify customer identity and ensure KYC compliance." },
+  { role: "Customer Support Executives", team: "Operations & Support Department", location: "Bangalore, Karnataka", description: "Provide customer support and resolve issues efficiently." },
+  { role: "Document Collection & Processing Team", team: "Operations & Support Department", location: "Bangalore, Karnataka", description: "Collect and process client documents for loan and legal operations." },
+  { role: "Back-Office Executives", team: "Operations & Support Department", location: "Bangalore, Karnataka", description: "Handle administrative and operational support tasks." },
+
+  /* Technology Department */
+  { role: "Full Stack Developers", team: "Technology Department", location: "Bangalore, Karnataka", description: "Build and maintain scalable web applications using modern technologies." },
+  { role: "Mobile App Developers (Android/iOS)", team: "Technology Department", location: "Bangalore, Karnataka", description: "Develop and optimize mobile applications for Android and iOS." },
+  { role: "Frontend & Backend Developers", team: "Technology Department", location: "Bangalore, Karnataka", description: "Implement frontend and backend solutions with high performance." },
+  { role: "UI/UX Designers", team: "Technology Department", location: "Bangalore, Karnataka", description: "Design intuitive user interfaces and seamless user experiences." },
+  { role: "Software Testers (QA)", team: "Technology Department", location: "Bangalore, Karnataka", description: "Test software for bugs and ensure product quality." },
+  { role: "IT Support & Maintenance Engineers", team: "Technology Department", location: "Bangalore, Karnataka", description: "Provide IT support and maintain system infrastructure." },
+
+  /* Business Development & Marketing Department */
+  { role: "Business Development Managers (BDM)", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Identify new business opportunities and expand client base." },
+  { role: "Sales Executives (Loans & Legal Services)", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Promote and sell loan and legal service offerings." },
+  { role: "Digital Marketing Specialists", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Run digital campaigns and optimize online presence." },
+  { role: "SEO/SEM Experts", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Optimize websites for search engines and manage paid campaigns." },
+  { role: "Social Media Managers", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Manage social media channels and content strategy." },
+  { role: "Content Writers / Copywriters", team: "Business Development & Marketing Department", location: "Bangalore, Karnataka", description: "Create compelling content for marketing campaigns." },
+
+  /* Administration & HR Department */
+  { role: "HR Manager (Recruitment & Training)", team: "Administration & HR Department", location: "Bangalore, Karnataka", description: "Manage recruitment, training, and employee relations." },
+  { role: "Office Administrator", team: "Administration & HR Department", location: "Bangalore, Karnataka", description: "Ensure smooth office operations and administration." },
+  { role: "Payroll & Accounts Manager", team: "Administration & HR Department", location: "Bangalore, Karnataka", description: "Handle payroll, accounting, and financial operations." },
+  { role: "Legal Compliance Manager", team: "Administration & HR Department", location: "Bangalore, Karnataka", description: "Ensure organizational compliance with laws and regulations." },
+
+  /* Management & Leadership */
+  { role: "Founder & Director(s)", team: "Management & Leadership", location: "Bangalore, Karnataka", description: "Lead and oversee company vision and strategy." },
+  { role: "Chief Executive Officer (CEO)", team: "Management & Leadership", location: "Bangalore, Karnataka", description: "Drive overall business strategy and operations." },
+  { role: "Chief Operating Officer (COO)", team: "Management & Leadership", location: "Bangalore, Karnataka", description: "Oversee day-to-day business operations." },
+  { role: "Chief Financial Officer (CFO)", team: "Management & Leadership", location: "Bangalore, Karnataka", description: "Manage financial strategy, planning, and reporting." },
+  { role: "Chief Technology Officer (CTO)", team: "Management & Leadership", location: "Bangalore, Karnataka", description: "Lead technology strategy and innovation." },
 ];
+
+
 
 /* ---------- helpers ---------- */
 const useClickOutside = (refs, onClose) => {

@@ -136,7 +136,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Company Name</p>
-                <p className="text-black">BORROWLY PRIVATE LIMITED</p>
+                <p className="text-black">Wiseway Consultants Private Limited</p>
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">
@@ -152,7 +152,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <p className="text-[#797979] font-semibold">Contact No</p>
-                <p className="text-black">+91-9494545792</p>
+                <p className="text-black">+91-9494545792 | +91-9494545137</p>
               </div>
             </div>
           </motion.div>

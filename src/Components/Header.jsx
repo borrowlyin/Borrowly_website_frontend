@@ -16,6 +16,7 @@ const menuItems = [
       { title: 'Personal Loan', desc: 'Quick funds for personal needs', link: '/Personal_loan' },
       { title: 'Home Loan', desc: 'Finance your dream home easily', link: '/Home_loan' },
       { title: 'Business Loan', desc: 'Boost your business growth', link: '/Business_loan' },
+      { title: 'Gold Loan', desc: 'Protect what matters most', link: '/Gold_loan' },
       { title: 'Education Loan', desc: 'Support your educational goals', link: '/Education_loan' },
       { title: 'Vehicle Loan', desc: 'Get your new vehicle hassle-free', link: '/Vehicle_loan' },
       { title: 'Insurance', desc: 'Protect what matters most', link: '/Insurance_loan' },
@@ -45,6 +46,41 @@ const menuItems = [
       { title: 'Contact', desc: 'Tell us what you think', link: '/Contact_us' },
     ],
   },
+  {
+    label: 'Follow Us Online',
+    dropdown: [
+      {
+        title: 'Facebook',
+        desc: 'Follow us on Facebook',
+        link: 'https://www.facebook.com/profile.php?id=61578687491185',
+      },
+      {
+        title: 'Instagram',
+        desc: 'Follow us on Instagram',
+        link: 'https://www.instagram.com/borrowly.in/',
+      },
+      {
+        title: 'X',
+        desc: 'Follow us on X',
+        link: 'https://x.com/BorrowlyIn',
+      },
+      {
+        title: 'WhatsApp',
+        desc: 'Follow us on WhatsApp',
+        link: 'https://wa.me/<YOUR_NUMBER>', // replace <YOUR_NUMBER> with your WhatsApp number
+      },
+      {
+        title: 'LinkedIn',
+        desc: 'Follow us on LinkedIn',
+        link: 'https://www.linkedin.com/in/borrowly-in-7b650b385/',
+      },
+      {
+        title: 'YouTube',
+        desc: 'Follow us on YouTube',
+        link: 'https://www.youtube.com/@borrowly',
+      },
+    ],
+  },
 ];
 
 const dropdownVariants = {
@@ -65,7 +101,6 @@ const mobileSubVariants = {
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null); // desktop hover
-  const [selectedDropdownItem, setSelectedDropdownItem] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null); // mobile: which top-level is expanded
   const drawerRef = useRef(null);
@@ -75,8 +110,7 @@ const Header = () => {
 
   // lock scroll when mobile drawer is open
   useEffect(() => {
-    if (mobileOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
@@ -86,16 +120,23 @@ const Header = () => {
     setExpandedSection(null);
   }, [location.pathname]);
 
-  // click outside to close (on mobile)
+  // close drawer on ESC key
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === 'Escape') setMobileOpen(false);
-    };
+    const onKey = (e) => { if (e.key === 'Escape') setMobileOpen(false); };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
   const msg = 'Get 15% off on loan processing charges when you apply through Borrowly. Use code: FREEDOM15 | Valid till 31st August';
+
+  // Handle link click: external opens in new tab, internal navigates
+  const handleLinkClick = (link) => {
+    if (link.startsWith('http')) window.open(link, '_blank');
+    else { navigate(link); window.scrollTo(0, 0); }
+    setMobileOpen(false);
+    setExpandedSection(null);
+    setOpenDropdown(null);
+  };
 
   return (
     <>
@@ -113,63 +154,43 @@ const Header = () => {
         </div>
       </div>
 
-       <div className="max-w-screen-xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
-          {/* Left: Logo */}
-          <div className="flex items-center overflow-hidden gap-2 pr-2">
-            <img
-              src="/Company_icon.svg"
-              onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
-              alt="Logo"
-              className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[60px] xl:h-[70px]"
-            />
-          </div>
+      <div className="max-w-screen-xl mx-auto px-3 md:px-10 flex justify-between items-center h-full">
+        <div className="flex items-center overflow-hidden gap-2 pr-2">
+          <img
+            src="/Company_icon.svg"
+            onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
+            alt="Logo"
+            className="pt-2 cursor-pointer h-[60px] md:-mt-2.5 md:h-[60px] xl:h-[70px]"
+          />
+        </div>
 
-          {/* Right: Desktop quick actions */}
-          <div className="w-full items-center justify-end hidden md:flex">
-            <div className="flex items-center gap-4 text-sm">
-              <div className="flex items-center space-x-1">
-                <img src={famicons_call} alt="call icon" className="w-4 h-4" />
-                <div className="flex gap-3">
-                  <a href="tel:18003134151">+91-9494545792</a>/<a href="tel:8980685509">+91-9494545137</a>
-                </div>
+        <div className="w-full items-center justify-end hidden md:flex">
+          <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center space-x-1">
+              <img src={famicons_call} alt="call icon" className="w-4 h-4" />
+              <div className="flex gap-3">
+                <a href="tel:18003134151">+91-9494545792</a>/<a href="tel:8980685509">+91-9494545137</a>
               </div>
+            </div>
 
-              <div className="flex items-center space-x-1">
-                <img src={iconoir_mail_solid} alt="mail icon" className="w-4 h-4" />
-                <a href="mailto:Support@Borrowly.in">Support@Borrowly.in</a>
-              </div>
-
-              {/* <button
-                style={{ fontFamily: 'PovetaracSansBold' }}
-                className="py-1 flex items-center justify-center px-4 text-[16px] cursor-pointer rounded-lg text-[#666866] border border-[#CCCCCC]"
-              >
-                <span>My account</span>
-              </button> */}
-
-               {/* ✅ Login Button */}
-    <button
-      onClick={() => navigate('/loginnew')}
-      style={{ fontFamily: 'PovetaracSansBold' }}
-      className="py-1 px-4 text-[16px] cursor-pointer rounded-lg text-white bg-[#00C2CC] hover:bg-[#009da5] transition-colors"
-    >
-      Login
-    </button>
+            <div className="flex items-center space-x-1">
+              <img src={iconoir_mail_solid} alt="mail icon" className="w-4 h-4" />
+              <a href="mailto:Support@Borrowly.in">Support@Borrowly.in</a>
             </div>
           </div>
-
-          {/* Right: Mobile hamburger */}
-          <button
-            aria-label="Open menu"
-            className="md:hidden inline-flex items-center justify-center mt-2 p-2 rounded-lg border border-[#e5e5e5]"
-            onClick={() => setMobileOpen(true)}
-          >
-            <FiMenu className="w-6 h-6" />
-          </button>
         </div>
+
+        <button
+          aria-label="Open menu"
+          className="md:hidden inline-flex items-center justify-center mt-2 p-2 rounded-lg border border-[#e5e5e5]"
+          onClick={() => setMobileOpen(true)}
+        >
+          <FiMenu className="w-6 h-6" />
+        </button>
+      </div>
 
       {/* Header bar */}
       <div className="cursor-default sticky top-0 bg-white border border-t-0 border-l-0 border-r-0 pb-2 md:pb-0 border-b-[#d4d4d4] md:border-b-0 z-50 w-full">
-        {/* Desktop nav row */}
         <div className="px-3 bg-[#003478] hidden md:flex h-[45px] mx-auto justify-between items-center">
           <div className="w-fit mx-auto hidden md:flex flex-row">
             <ul
@@ -190,7 +211,6 @@ const Header = () => {
                     }`}
                   />
 
-                  {/* Desktop dropdown */}
                   <AnimatePresence>
                     {openDropdown === label && (
                       <motion.ul
@@ -202,30 +222,17 @@ const Header = () => {
                         style={{ fontFamily: 'PovetaracSansBold' }}
                       >
                         {dropdown.map(({ title, desc, link }) => (
-  <li
-    key={title}
-    className={`group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white ${
-      selectedDropdownItem === title ? 'bg-[#00C2CC] text-white dark:text-white' : ''
-    }`}
-    onClick={() => {
-      navigate(link);
-      window.scrollTo(0, 0);
-      setOpenDropdown(null); // ✅ close dropdown
-    }}
-  >
-    {title}
-    <p
-      className={`text-[14px] ${
-        selectedDropdownItem === title
-          ? 'text-white'
-          : 'text-[#707070] dark:text-gray-400 group-hover:text-white'
-      }`}
-    >
-      {desc}
-    </p>
-  </li>
-))}
-
+                          <li
+                            key={title}
+                            className="group px-4 py-3 cursor-pointer hover:bg-[#00C2CC] hover:text-white"
+                            onClick={() => handleLinkClick(link)}
+                          >
+                            {title}
+                            <p className="text-[14px] text-[#707070] dark:text-gray-400 group-hover:text-white">
+                              {desc}
+                            </p>
+                          </li>
+                        ))}
                       </motion.ul>
                     )}
                   </AnimatePresence>
@@ -240,7 +247,6 @@ const Header = () => {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            {/* Overlay */}
             <motion.div
               className="fixed inset-0 bg-black/40 z-[60]"
               initial={{ opacity: 0 }}
@@ -249,7 +255,6 @@ const Header = () => {
               onClick={() => setMobileOpen(false)}
             />
 
-            {/* Drawer */}
             <motion.aside
               ref={drawerRef}
               className="fixed right-0 top-0 bottom-0 w-full bg-white z-[70] shadow-xl flex flex-col"
@@ -261,16 +266,13 @@ const Header = () => {
               animate="visible"
               exit="exit"
             >
-              {/* Drawer header */}
               <div className="flex items-center justify-between px-4 py-3 border border-t-0 border-l-0 border-r-0 border-b-[#CCCCCC]">
-                <div className="flex items-center gap-2">
-                  <img
-                    src="/Company_icon.svg"
-                    alt="Logo"
-                    className="h-16 w-auto"
-                    onClick={() => { navigate('/'); setMobileOpen(false); }}
-                  />
-                </div>
+                <img
+                  src="/Company_icon.svg"
+                  alt="Logo"
+                  className="h-16 w-auto"
+                  onClick={() => { navigate('/'); setMobileOpen(false); }}
+                />
                 <button
                   className="p-2 rounded-lg border border-[#CCCCCC]"
                   aria-label="Close menu"
@@ -279,28 +281,23 @@ const Header = () => {
                   <FiX className="w-6 h-6" />
                 </button>
               </div>
-              {/* Menu list */}
+
               <nav className="flex-1 overflow-y-auto">
-               <ul style={{ fontFamily: 'PovetaracSansBold' }} className="divide-y divide-[#CCCCCC]">
+                <ul style={{ fontFamily: 'PovetaracSansBold' }} className="divide-y divide-[#CCCCCC]">
                   {menuItems.map(({ label, dropdown }) => {
                     const open = expandedSection === label;
                     return (
                       <li key={label} className="px-2">
                         <button
                           className="w-full flex items-center justify-between p-4  text-left"
-                          onClick={() =>
-                            setExpandedSection((prev) => (prev === label ? null : label))
-                          }
+                          onClick={() => setExpandedSection((prev) => (prev === label ? null : label))}
                           aria-expanded={open}
                           aria-controls={`section-${label}`}
                         >
                           <span className="text-[16px] font-semibold">{label}</span>
-                          <FaChevronDown
-                            className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : 'rotate-0'}`}
-                          />
+                          <FaChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : 'rotate-0'}`} />
                         </button>
 
-                        {/* Sub-list */}
                         <AnimatePresence initial={false}>
                           {open && (
                             <motion.ul
@@ -315,12 +312,7 @@ const Header = () => {
                                 <li key={title}>
                                   <button
                                     className="w-full text-left px-3 py-3 rounded-lg hover:bg-[#f5f7fb]"
-                                    onClick={() => {
-                                      navigate(link);
-                                      window.scrollTo(0, 0);
-                                      setMobileOpen(false);
-                                      setExpandedSection(null);
-                                    }}
+                                    onClick={() => handleLinkClick(link)}
                                   >
                                     <div className="text-[15px] font-medium">{title}</div>
                                     <div className="text-[13px] text-[#666]">{desc}</div>
@@ -336,28 +328,14 @@ const Header = () => {
                 </ul>
               </nav>
 
-              {/* Footer actions */}
               <div className="p-4 flex items-center gap-3">
                 <button
                   style={{ fontFamily: 'PovetaracSansBlack' }}
                   className="flex-1 py-2.5 rounded-lg border border-[#CCCCCC] text-[16px]"
-                  onClick={() => {
-                    navigate('/Contact_us');
-                    setMobileOpen(false);
-                  }}
+                  onClick={() => { navigate('/Contact_us'); setMobileOpen(false); }}
                 >
                   Contact
                 </button>
-                {/* <button
-                  style={{ fontFamily: 'PovetaracSansBlack' }}
-                  className="flex-1 py-2.5 rounded-lg border border-[#CCCCCC] text-[16px]"
-                  onClick={() => {
-                    navigate('/');
-                    setMobileOpen(false);
-                  }}
-                >
-                  My account
-                </button> */}
               </div>
             </motion.aside>
           </>

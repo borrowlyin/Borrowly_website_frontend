@@ -2,8 +2,11 @@ import React,{useState} from 'react'
 
 import social_1 from '../assets/Icons/Social_1.svg'
 import social_2 from '../assets/Icons/Social_2.svg'
-import social_3 from '../assets/Icons/Social_3.svg'
+import social_3 from '../assets/Icons/Social_3.png'
 import social_4 from '../assets/Icons/Social_4.svg'
+import social_5 from '../assets/Icons/Social_5.png'
+import social_6 from '../assets/Icons/Social_6.jpg'
+import social_7 from '../assets/Icons/Social_7.png'
 
 const Footer_New = ({isDarkMode}) => {
     const sections = [
@@ -164,6 +167,7 @@ const [openSections, setOpenSections] = useState({});
       { name: "Business Loan", link: "/business_loan" },
       { name: "Education Loan", link: "/education_loan" },
       { name: "Home Loan", link: "/home_loan" },
+      { name: "Gold Loan", link: "/gold_loan" },
       { name: "Vehicle Loan", link: "/vehicle_loan" },
       { name: "Insurance", link: "/insurance_loan" },
     ].map((service, i) => (
@@ -307,12 +311,34 @@ const [openSections, setOpenSections] = useState({});
              <h1 className=''>Terms</h1>
              <h1  className=''>© 2025 Borrowly</h1>
              <h1  className=''>Borrowly will act as a lending service provider as per RBI classification</h1>
-             <div className='flex-1 md:justify-end flex flex-wrap gap-2'>
-                 <img src={social_1} alt='' className='w-6'/>
-                 <img src={social_2} alt='' className='w-6'/>
-                 <img src={social_3} alt='' className='w-6'/>
-                 <img src={social_4} alt='' className='w-6'/>
-             </div>
+            <div className="flex-1 md:justify-end flex flex-wrap gap-2">
+  <a href="https://www.instagram.com/borrowly.in/" target="_blank" rel="noopener noreferrer">
+    <img src={social_1} alt="Instagram" className="w-6" />
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61578687491185" target="_blank" rel="noopener noreferrer">
+    <img src={social_3} alt="Facebook" className="w-6" />
+  </a>
+
+  <a href="https://x.com/BorrowlyIn" target="_blank" rel="noopener noreferrer">
+    <img src={social_5} alt="X" className="w-6" />
+  </a>
+
+  <a href="https://www.linkedin.com/in/borrowly-in-7b650b385/" target="_blank" rel="noopener noreferrer">
+    <img src={social_2} alt="LinkedIn" className="w-6" />
+  </a>
+
+  <a href="https://www.youtube.com/@borrowly" target="_blank" rel="noopener noreferrer">
+    <img src={social_4} alt="YouTube" className="w-6" />
+  </a>
+
+  <a href="https://www.threads.com/@borrowly.in?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer">
+    <img src={social_6} alt="Threads" className="w-6" />
+  </a>
+
+
+</div>
+
          </div>
          <div clas style={{ fontFamily: "PovetaracSansBold" }} className='md:px-5 text-justify'>
              <p className='text-[10px] md:text-[12px] text-[#BDBDBD]'>
@@ -327,15 +353,7 @@ const [openSections, setOpenSections] = useState({});
          </div>
           <div clas style={{ fontFamily: "PovetaracSansBlack" }} className='text-[#BDBDBD] pt-6 py-3 gap-3 text-[14px] md:px-5 text-center mx-auto flex items-center justify-center flex-wrap md:items-center md:gap-10'>
              <h1 className="text-center">
-              Build with ❤️{" "}
-              <a
-                href="https://pregasusnexus.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                Pregasus Nexus Pvt Ltd
-              </a>
+             © 2025 Borrowly Technologies. All copy rights are reserved.
             </h1>
             
           </div>

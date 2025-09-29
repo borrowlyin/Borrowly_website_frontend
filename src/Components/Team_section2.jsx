@@ -20,7 +20,7 @@ const Team_section2 = () => {
   navigate('/Carriers');
   window.scrollTo(0, 0);
 }} className='flex-1 mt-5 py-3 px-5 bg-[#0CC066] flex items-center cursor-pointer hover:scale-102 justify-center text-white text-[16px] lg:text-[18px] '>
-                <span className='mt-1'>Join Our Toam</span>
+                <span className='mt-1'>Join Our Team</span>
                 <img src={Apply_arrow} alt='Apply Arrow' className='inline w-[22px] ml-2' />
              </button>
            </div>

@@ -124,9 +124,11 @@ const Contactus_section5 = () => {
           >
             For support, contact us at{" "}
             <a href="mailto:Support@Borrowly.in" className="text-blue-600 underline">
-              Support@Borrowly.in
+              Support@Borrowly.in <br/>
             </a>{" "}
-            or call <span className="font-medium">+91 96060 45890</span>
+            or call <span className="font-medium">
++91-9494545792 |   +91-9494545137
+</span>
           </p>
 
           <p className="text-gray-600 mb-6 text-sm sm:text-base">

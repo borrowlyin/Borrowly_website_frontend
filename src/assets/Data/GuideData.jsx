@@ -1,318 +1,593 @@
-import PersonLoanimage from '../Images/Person_Loan_Banner.avif'
-import homeimage from '../Images/Home_Banner.avif'
-import BusinessLoan from '../Images/business_loan_banner.avif'
-import Educationloan from '../Images/Education_Banner.avif'
-import VehicalLoan from '../Images/vehicle_banner.avif'
-import insurance from '../Images/insurance_banner.avif'
+import PersonLoanimage from '../Images/Person_Loan_Banner.avif';
+import homeimage from '../Images/Home_Banner.avif';
+import BusinessLoan from '../Images/business_loan_banner.avif';
+import Educationloan from '../Images/Education_Banner.avif';
+import VehicalLoan from '../Images/vehicle_banner.avif';
+import insurance from '../Images/insurance_banner.avif';
 
 const Guide_data = {
   Personal_loan_Guides: {
-    image:PersonLoanimage,
-    title: "Personal Loan Guide: Everything You Need to Know Before Borrowing",
-    subitlte: "Personal Loan",
-    EstComplete: "10 mins",
-    CreatedAt: "29/08/2025",
-    Content: `
-There are various situations in life when we need personal loans. Consider a medical emergency that may strike suddenly, requiring hospitalization. Alternatively, an urgent financial commitment or debt may need to be repaid swiftly. Some may have financial requirements for taking care of immediate home renovations or repairs, while some may need them for taking vacations with their loved ones. Whatever your needs, there are instant loans that are available these days across several banks and financial institutions. You can easily apply for the same and receive the funds in your account without any hassles.
-
-This article will guide you on instant personal loans and how they are a simple yet effective way to meet your financial requirements.
-<br/><br/>
-<strong  style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
-
-Instant loans are personal loans that enable customers to get funds swiftly via mobile apps or digital platforms. In most cases, there is minimal documentation and faster approval mechanisms. They are useful whenever there is a quick monetary requirement, especially in urgent situations. It is a convenient way to obtain funds without going through a lengthy application process and other formalities. The best part is that these loans are unsecured. Hence, you do not have to put up any security or collateral to get them.
-<br/><br/>
-Instant personal loans have numerous advantages, including the following:<br/>
-- Apply for these loans quickly on mobile apps or websites of lenders.<br/>
-- The application process is comfortable and easy-to-understand. It mostly takes a few minutes.<br/>
-- The processing times are usually quicker for instant loans.<br/>
-- Funds are disbursed swiftly to your bank account upon loan approval.<br/>
-- Loan tenures usually start from a few months and may be increased up to five years.<br/>
-- You can flexibly select your loan amount and tenure. It helps you create a better repayment plan.<br/>
-- Many financial institutions often offer attractive interest rates which make the overall cost manageable for borrowers.<br/><br/>
-
-It may sound surprising but these loans can also help you boost your credit score at times. Wondering how? Taking out a loan swiftly and repaying it on time will improve your credit score considerably. It will also help you access loans and other funding more conveniently for future requirements.
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong>
-
-How do you take or manage your instant personal loan responsibly? Here are some tips worth noting in this regard.<br/><br/>
-
-<strong>Choose the right loan amount -</strong> Do not apply for an amount that is more than what you require. Understand your financial situation and the purpose of taking an instant personal loan. The foundation of responsible borrowing rests on applying for just the right loan amount. Avoid the temptation to opt for a higher sum that will only lead to more debt in the long run.
-<br/><br/>
-<strong>Keep your credit score in mind -</strong>While applying for an instant personal loan, check your credit score beforehand. Evaluate your credit report for any errors or inaccuracies. These may otherwise lower your credit score without any defaults or financial mismanagement on your part. Try to increase your credit score by paying off smaller debts and repaying other loans on time before submitting your application. Credit scores of 750 and above are usually sufficient for instant personal loans. Aim for this benchmark to get more favorable loan terms and conditions.
-<br/><br/>
-<strong>Compare loan offers -</strong> It is important to avoid rushing into any instant loan deal without comparing multiple lenders. Check for available loan offers based on the interest rates, tenures, fees, prepayment penalties, and other parameters.
-<br/><br/>
-<strong>Have a proper repayment strategy -</strong> Is your monthly income sufficient to help you repay the loan? Use EMI calculators to estimate your monthly installments and interest outgo. Your loan EMI should be easy to repay, considering your monthly earnings and other costs. Confirm this before you apply.
-<br/><br/>
-<strong>Do not neglect the agreement -</strong> You should never sign any loan agreement without going through the terms first. Check things like prepayment policies and penalties, any other hidden fees, and other policies. Clarify points that you do not understand with your lender.
-<br/><br/>
-It may be comparatively simpler to obtain an instant personal loan. Yet, responsible borrowing is always the way forward for a healthier financial future. These tips will be of help in this regard.
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>
-
-Remember these pointers whenever you need personal loans quickly for any purpose. Always check your loan options before applying, and strive to fulfill the lender’s eligibility criteria. You may also consider checking out available digital personal loans from Unity Small Finance Bank. These loans can often be a godsend, helping you mitigate a financial crisis, realize a long- pending aspiration, or tackle a crisis without depleting your savings.
-    `
-  },
-  Home_loan_Guides: {
-    image:homeimage,
-    title: "Home Loan Guide: A Complete Beginner’s Handbook",
-    subitlte: "Home loan",
+    image: PersonLoanimage,
+    title: "Personal Loans with Borrowly",
+    subtitle: "Personal Loan",
     EstComplete: "5 mins",
     CreatedAt: "29/08/2025",
     Content: `
-There are many occasions in life when people look forward to owning their dream home. However, with rising property prices, purchasing a house often requires financial assistance in the form of a home loan. Whether you are planning to buy your first house, upgrade to a bigger property, or invest in real estate, home loans can make the process more convenient and financially manageable. 
-
-These loans are offered by banks and financial institutions at competitive interest rates, with flexible repayment options to suit your budget and long-term goals. Instead of depleting your savings, you can buy your property and repay the amount in easy installments over a longer tenure.  
-
-This article will guide you on home loans and how they can help you achieve your goal of home ownership.  
-<br/><br/>
-<strong style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
-
-A home loan is a secured loan that banks and financial institutions provide for purchasing, constructing, or renovating residential property. Since it is a secured loan, the property being bought usually serves as collateral. These loans come with longer repayment periods compared to other forms of borrowing, making them more affordable through manageable EMIs.  
-
-Here are some key benefits of taking a home loan:<br/>  
-- You can buy your dream home without exhausting your savings.<br/>  
-- Repayment is spread across long tenures (up to 20–30 years in many cases).<br/>  
-- EMIs can be structured flexibly to suit your income and future earning potential.<br/>  
-- You may enjoy tax benefits on both the principal and interest paid under Sections 80C and 24(b) of the Income Tax Act.<br/>  
-- Banks often provide attractive interest rates, especially for salaried applicants with a stable income.<br/>  
-- Home loans help you build an asset that can appreciate in value over time.<br/><br/>  
-
-Owning a home not only provides financial security but also a sense of stability and accomplishment. By managing your loan properly, you can enjoy all the benefits of home ownership without financial strain.  
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong><br/><br/>
-
-<strong>Assess your affordability -</strong> Before applying, calculate how much you can comfortably repay each month. Use home loan EMI calculators to estimate your monthly outgo, and ensure it does not exceed 30–40% of your income.<br/><br/>  
-
-<strong>Choose the right tenure -</strong> Longer tenures lower your EMI but increase the total interest payout. Shorter tenures mean higher EMIs but quicker repayment and less interest. Strike a balance based on your income and future plans.<br/><br/>  
-
-<strong>Check your credit profile -</strong> A good credit score (750 and above) will improve your chances of getting a home loan at a lower interest rate. Clear small debts and maintain financial discipline before applying.<br/><br/>  
-
-<strong>Compare multiple lenders -</strong> Do not settle for the first loan offer. Compare interest rates, processing fees, prepayment options, and customer service across banks and housing finance companies.<br/><br/>  
-
-<strong>Understand the fine print -</strong> Read the loan agreement carefully. Clarify points related to foreclosure charges, balance transfer facilities, insurance requirements, and hidden fees before signing.<br/><br/>  
-
-<strong>Keep a repayment buffer -</strong> Always maintain an emergency fund that covers at least 3–6 months of EMIs. This ensures you don’t default in case of temporary income disruptions.<br/><br/>  
-
-With proper planning and responsible borrowing, a home loan can be the stepping stone to fulfilling your dream of home ownership.  
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>  
-
-A home loan is one of the most important financial decisions of your life. Take time to evaluate your needs, compare offers, and plan repayment carefully. With the right approach, you can enjoy the comfort of your own home without unnecessary financial burden.  
-
-You may also consider exploring home loan options from Unity Small Finance Bank and other reputed lenders. With competitive rates and digital application processes, these loans can help you turn your dream of owning a home into reality while keeping your finances stable.  
-`
-
+<h2>What Exactly is a Personal Loan?</h2>
+<p>Think of a personal loan as a helpful financial boost you can use for almost anything important—whether it’s handling unexpected bills, sprucing up your home, or just covering everyday expenses. With Borrowly, you don’t need to stress about collateral or complicated paperwork. It’s a simple, unsecured loan designed to fit your lifestyle and budget.</p>
+<br>
+<h2>Why Borrowly? Because It’s Simple, Fast, and Tailored for You</h2>
+<p>Borrowly is all about making borrowing personal loans easy and hassle-free. No long bank lines or mountains of papers—just a smooth app experience that gets you funds quickly and securely. It’s like having a helpful financial friend right in your pocket, ready whenever you need it.</p>
+<br>
+<h2>How to Get Your Personal Loan with Borrowly</h2>
+<ol>
+  <li><strong>See If You Qualify:</strong> Just open the app and check your eligibility in minutes.</li>
+  <li><strong>Pick Your Loan Details:</strong> Choose the amount you need and how long you want to take to pay it back.</li>
+  <li><strong>Snap and Submit Your Documents:</strong> Upload your ID, proof of income, and address—all digitally.</li>
+  <li><strong>Get Quick Approval:</strong> Borrowly’s smart system reviews your info fast, so you’re not left waiting.</li>
+  <li><strong>Get Your Money:</strong> Once approved, your loan lands in your bank account—often the same day!</li>
+</ol>
+<br>
+<h2>What Makes Borrowly Personal Loans Stand Out?</h2>
+<ul>
+  <li>Flexible Loan Amounts: Borrow exactly what you need, no more, no less.</li>
+  <li>Clear, Fixed Rates: Know your payments upfront with no hidden surprises.</li>
+  <li>Easy Monthly Payments: Manageable EMIs designed to keep your finances stress-free.</li>
+  <li>No Collateral Needed: No need to pledge your belongings.</li>
+  <li>100% Online: Apply from the comfort of your home or anywhere.</li>
+  <li>Support When You Need It: Friendly customer care is just a message away.</li>
+</ul>
+<br>
+<h2>Tips for a Smooth Loan Experience</h2>
+<ul>
+  <li>Keep your credit report healthy for better chances.</li>
+  <li>Double-check your documents for accuracy.</li>
+  <li>Borrow responsibly—take what feels right to your budget.</li>
+  <li>Read your loan terms carefully before you say yes.</li>
+</ul>
+<br>
+<h2>What Can You Use Your Borrowly Loan For?</h2>
+<ul>
+  <li>Clear up existing debts to regain control.</li>
+  <li>Manage unexpected emergencies like health bills or repairs.</li>
+  <li>Fund home renovations or dream projects.</li>
+  <li>Celebrate a special occasion or a memorable trip.</li>
+</ul>
+<br>
+<p>With Borrowly, borrowing money isn’t just straightforward—it’s a stress-free journey that fits your life. Whether it’s a small urgent need or a bigger plan, Borrowly’s got you covered with simple, friendly support every step of the way.</p>
+    `
   },
+
+  insurance_loan_Guides: {
+    image: insurance,
+    title: "Insurance with Borrowly",
+    subtitle: "Insurance",
+    EstComplete: "5 mins",
+    CreatedAt: "29/08/2025",
+    Content: `
+
+<p>When you borrow with Borrowly, it’s smart to protect your loan and your loved ones with insurance. Think of it as peace of mind in a policy—covering your loan repayments if life throws a curveball.
+</p>
+<br>
+<h2>Why Get Loan Insurance?</h2>
+<p>Loan insurance is a safety net that covers your EMIs if you face illness, job loss, or the unexpected. It ensures your family won’t be left with your loan burden, letting you borrow with confidence.
+</p>
+<br>
+<h2>Types of Insurance Offered</h2>
+<ul>
+  <li><strong>Life Insurance:</strong> Covers your loan if you pass away unexpectedly.</li>
+  <li><strong>Loan Protection Insurance:</strong> Helps pay EMIs if you’re unable to work due to disability or unemployment.</li>
+  <li><strong>Asset Insurance:</strong> Protects your vehicle or home against damage or theft (linked to your loan).</li>
+</ul>
+<br>
+<h2>How to Get Insurance on Borrowly</h2>
+<p>Simply choose your insurance option while applying for your loan through the app. Borrowly bundles it with your loan—no extra hassle!</p>
+<br>
+<h2>Documents to Prove Insurance Coverage</h2>
+<p>To show you have insurance when applying on Borrowly, keep these handy:
+</p>
+<ul>
+  <li>Original insurance policy document detailing coverage.</li>
+  <li>Proof of premium payment.</li>
+  <li>Identity and address proofs (Aadhaar, PAN, utility bills).</li>
+  <li>Insurance surrender certificate (if applicable).</li>
+  <li>Other KYC documents as required.</li>
+</ul>
+<br>
+<p>
+These documents prove your insurance is valid and linked to your loan, ensuring smooth processing.
+</p>
+<h2>Tips for a Smooth Insurance Experience</h2>
+<ul>
+  <li>Read your policy carefully to know what’s covered and what’s not.</li>
+  <li>Keep your premium payments up to date to keep the coverage active.
+</li>
+  <li>Use Borrowly’s support if you have any questions about insurance options.
+</li>
+  <li>Treat insurance as an essential part of your borrowing plan for added security.
+</li>
+</ul>
+<br>
+<p>Borrowly makes insurance simple, transparent, and stress-free so you can focus on your goals without worries.
+
+Ready to borrow confidently? Borrowly’s here to give you protection and peace of mind every step of the way!</p>
+    `
+  },
+
   Businees_loan_Guides: {
-    image:BusinessLoan,
-    title: "Business Loan Guide: Fuel Your Business Growth",
-    subitlte: "Businees loan",
+    image: BusinessLoan,
+    title: "Business Loan with Borrowly",
+    subtitle: "Business Loan",
     EstComplete: "7 mins",
     CreatedAt: "29/08/2025",
     Content: `
-Every business, whether small or large, requires capital at some stage to grow, sustain operations, or manage unforeseen expenses. For entrepreneurs, startups, and established businesses alike, business loans provide the necessary financial support to meet working capital needs, purchase equipment, expand operations, or manage day-to-day cash flow.  
+<h2>Grow Your Business with Borrowly</h2>
+<p>Looking to grow your business or manage day-to-day expenses? <br>Borrowly makes getting a business loan simple, fast, and transparent. Here’s everything you need to know to get started on your loan journey.
+</p>
+<br>
+<h2>1. Understand Your Business Needs</h2>
+<p>First, identify why you need the loan—is it for expansion, buying equipment, inventory, or managing cash flow? Knowing your exact needs helps you choose the right type of loan, whether it’s a working capital loan, term loan, or machinery loan.
+</p>
+<br>
+<h2>2. Check Your Eligibility</h2>
+<p>Make sure you meet the basic requirements:
+</p>
+<ul>
+  <li>Minimum 3 years of business operations</li>
+  <li>Indian nationality</li>
+  <li>CIBIL score of 685+</li>
+  <li>Self-employed</li>
+  <li>Age 24–80</li>
+</ul>
 
-With banks and financial institutions offering a variety of business loan options, entrepreneurs can access funds without dipping into personal savings or disrupting business continuity. These loans are designed to empower businesses to scale and thrive in today’s competitive environment.  
+<p>Borrowly’s quick eligibility tool helps you see if you qualify within seconds.
+</p>
+<br>
+<h2>3. Prepare Your Documents</h2>
+Having the right documents ready speeds up approval:
 
-This article will guide you on business loans and how they can become a valuable resource for your enterprise.  
-<br/><br/>
-<strong style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
+<ul>
+  <li>Identity proof (Aadhaar, PAN, Passport, Voter’s ID)
+</li>
+  <li>Business proof (Certificate of Incorporation, GST registration)
+</li>
+  <li> Financials (Tax returns, bank statements, profit & loss statements)
+</li>
+  <li>Credit reports and business valuation documents
 
-A business loan is a type of financing offered by banks, NBFCs, and fintech lenders to businesses for meeting their professional and operational needs. These loans can be secured (requiring collateral like property or assets) or unsecured (based on creditworthiness and business performance).  
+</li>
+</ul>
+<br>
+<h2>4. Apply Online</h2>
+<p>Fill out Borrowly’s easy online form with your personal and business details, upload your documents, and submit. Everything happens digitally for your convenience.</p>
+<br>
+<h2>5. Application Review & Approval</h2>
+<p>Lenders will verify your documents, assess creditworthiness, and review your business plan. With Borrowly’s digital process, approvals can come within days, so no long waits.
+</p>
+<br>
+<h2>6. Receive Funds & Grow</h2>
+<p>Once approved, funds are typically disbursed directly into your account, ready for you to use for your business needs.
+</p>
+<br>
+<h2>Pro Tips for Success</h2>
+<ul>
+  <li>Maintain a healthy credit score to unlock better rates.
+</li>
+  <li>Have a clear business plan ready to showcase growth potential.
+</li>
+  <li>Compare lenders for the best interest rates and flexible repayment options.
+</li>
+  <li> Use Borrowly’s calculators to plan your EMI comfortably.
+</li>
+  <li>Reach out to Borrowly’s support anytime for guidance.
+</li>
+</ul>
+<br>
+<p>Borrowly makes borrowing for business easy and efficient, empowering you to grow your venture with confidence and clarity.
 
-Here are the major benefits of business loans:<br/>  
-- Quick access to funds for expansion, working capital, or emergencies.<br/>  
-- Flexible loan tenures ranging from 1 to 10 years depending on the lender.<br/>  
-- Both secured and unsecured options are available.<br/>  
-- Competitive interest rates based on credit profile and business health.<br/>  
-- Helps maintain smooth cash flow and avoid disruptions in operations.<br/>  
-- Opportunity to build business credit, making it easier to secure future financing.<br/>  
-- Can be tailored to specific business needs like machinery loans, SME loans, or overdraft facilities.<br/><br/>  
-
-Business loans can be the backbone for entrepreneurs looking to take their ventures to the next level.  
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong><br/><br/>
-
-<strong>Assess your business needs -</strong> Clearly define the purpose of the loan—whether it is for expansion, inventory purchase, or working capital. Avoid borrowing more than required, as it adds unnecessary debt burden.<br/><br/>  
-
-<strong>Check your credit profile -</strong> Both personal and business credit scores matter for approval. A score of 750+ improves your chances of getting better terms and lower interest rates.<br/><br/>  
-
-<strong>Compare lenders -</strong> Explore business loan offers from banks, NBFCs, and fintech platforms. Compare interest rates, processing fees, repayment flexibility, and additional features.<br/><br/>  
-
-<strong>Understand collateral requirements -</strong> For secured business loans, ensure you are comfortable with the assets being pledged. For unsecured loans, check the eligibility criteria carefully.<br/><br/>  
-
-<strong>Maintain a repayment plan -</strong> Use EMI calculators to plan repayment in line with your business’s cash flow. Avoid over-leveraging that can strain future operations.<br/><br/>  
-
-<strong>Read the loan agreement carefully -</strong> Go through all terms related to foreclosure, penalties, hidden charges, and prepayment options. Clarify doubts with the lender beforehand.<br/><br/>  
-
-A disciplined approach to borrowing ensures that your loan becomes a tool for growth instead of a financial burden.  
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>  
-
-Business loans are an excellent way to secure financial support for growth, expansion, or managing operations. By borrowing responsibly and comparing multiple offers, you can find the right financing solution tailored to your enterprise’s needs.  
-
-You may also explore business loan options from Unity Small Finance Bank and other reputed institutions. With easy applications, quick disbursement, and flexible repayment structures, these loans can empower your business to scale new heights with confidence.  
+Ready to take your business to the next level? Apply with Borrowly today and get moving!</p>
 `
-
   },
-  insurance_loan_Guides: {
-    image:insurance,
-    title: "Insurance Guide: Protect What Matters Most",
-    subitlte: "Insurance",
+
+  Vehical_loan_Guides: {
+    image: VehicalLoan,
+    title: "Vehicle Loans with Borrowly",
+    subtitle: "Vehicle Loan",
     EstComplete: "10 mins",
     CreatedAt: "29/08/2025",
     Content: `
-There are times when you may need urgent funds but do not want to liquidate your long-term investments. In such cases, an insurance loan can come to your rescue. Many people are unaware that you can borrow against the surrender value of your life insurance policies. This allows you to access funds without breaking your investment or affecting your long-term financial planning.  
+    <h2>Vehicle Loans with Borrowly</h2>
+<p>
+  Buying your dream ride should be exciting, not stressful. Borrowly makes
+  getting a vehicle loan quick, easy, and tailored just for you. Here’s your
+  complete guide to conquer every step—like a helpful friend lending a hand.
+</p>
+<br />
 
-Insurance loans are a convenient way to meet short-term financial needs, as they typically come with lower interest rates compared to unsecured loans. They also provide flexibility while ensuring that your insurance policy continues to remain active.  
+<h2>1. See What You’re Eligible For</h2>
+<p>
+  Wondering if you can get a vehicle loan? Simply enter basic details like age,
+  income, and employment status on Borrowly. Generally:
+</p>
+<ul>
+  <li>You should be between 18 and 80 years old (maximum age at loan maturity).</li>
+  <li>Salaried individuals typically need a minimum monthly salary of ₹25,000.</li>
+  <li>Self-employed individuals must provide proof of income via tax returns for the last 2 years.</li>
+  <li>A minimum credit score of 700 increases your chances.</li>
+</ul>
+<p>
+  Borrowly simplifies eligibility checks and gives you a clear view of how much
+  you can borrow.
+</p>
+<br />
 
-This article will guide you on insurance loans and how they can help you manage your financial requirements efficiently.  
-<br/><br/>
-<strong style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
+<h2>2. Choose Your Loan Amount and Repayment Style</h2>
+<p>
+  Decide your loan amount based on the vehicle cost and your budget. Usually,
+  you can finance up to 85% of the price.
+</p>
+<p>
+  Pick a repayment tenure that suits you, generally up to 48 months, but some
+  lenders allow longer. Longer tenure means lower EMIs but more interest
+  overall.
+</p>
+<br />
 
-An insurance loan is a loan that you can avail against the surrender value of your life insurance policy. Instead of surrendering the policy and losing its benefits, you can pledge it as collateral to obtain funds. The insurance company or lending bank provides the loan, usually at a reasonable interest rate, and your policy continues to provide coverage as long as premiums are paid on time.  
+<h2>3. Gather Your Docs — No Stress!</h2>
+<p>Common required documents include:</p>
+<ul>
+  <li>Identity and address proof (Aadhaar, PAN, driving license)</li>
+  <li>Salary slips for last 3 months or ITR for self-employed</li>
+  <li>Bank statements for 3–6 months</li>
+  <li>Vehicle details (registration certificate, insurance)</li>
+</ul>
+<p>Upload everything easily through the Borrowly app.</p>
+<br />
 
-Here are some advantages of taking an insurance loan:<br/>  
-- Quick access to funds without liquidating your policy.<br/>  
-- Interest rates are generally lower than unsecured personal loans.<br/>  
-- Minimal documentation since your insurance policy serves as collateral.<br/>  
-- Flexible repayment options, often linked to the loan amount and tenure.<br/>  
-- Your life insurance cover continues as long as you pay the policy premiums.<br/>  
-- You retain the benefits of your long-term savings plan while solving short-term financial needs.<br/><br/>  
+<h2>4. Apply Quickly and Easily</h2>
+<p>
+  Fill in your details, upload docs, and submit online. Borrowly connects you
+  to trusted lenders and updates you throughout the process.
+</p>
+<br />
 
-An insurance loan is especially useful during emergencies when you need liquidity but do not wish to disturb your investments.  
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong><br/><br/>
+<h2>5. Fast Approval and Verification Conducted</h2>
+<p>
+  Your application is reviewed, documents verified, and vehicle details checked.
+  Most approvals happen within a few days, letting you plan your purchase.
+</p>
+<br />
 
-<strong>Check the eligibility of your policy -</strong> Not all policies qualify for loans. Loans are generally available on traditional life insurance plans (like endowment or money-back plans) after they have acquired a surrender value. Term plans usually do not offer this facility.<br/><br/>  
+<h2>6. Sign Digitally & Drive Away</h2>
+<p>
+  Once approved, sign documents digitally—no paperwork hassle. The loan amount
+  is transferred to the seller so you can focus on enjoying your new ride.
+</p>
+<br />
 
-<strong>Borrow only what you need -</strong> Although you may be eligible for a higher amount, avoid borrowing more than required. This ensures easier repayment and reduces the chances of policy lapse.<br/><br/>  
+<h2>7. Repay with Easy Monthly EMIs</h2>
+<p>
+  Pay back your loan in comfortable EMIs covering principal and interest.
+  Borrowly even sends reminders to keep you on track.
+</p>
+<br />
 
-<strong>Understand the interest rate -</strong> Different insurers and banks may charge varying rates on insurance loans. Compare the rates and terms before applying.<br/><br/>  
+<h2>Different Vehicle Loan Types with Borrowly</h2>
+<ul>
+  <li>New cars and two-wheelers</li>
+  <li>Used or pre-owned vehicles (with age restrictions)</li>
+  <li>Commercial vehicles for business use</li>
+</ul>
+<br />
 
-<strong>Repay on time -</strong> Delayed payments can reduce the surrender value of your policy or even cause it to lapse. Make sure you have a clear repayment plan in place.<br/><br/>  
+<h2>Why Choose Borrowly?</h2>
+<ul>
+  <li>Fast, transparent loan processing</li>
+  <li>Flexible loan tenures and competitive interest rates</li>
+  <li>User-friendly app with instant eligibility checks and EMI calculators</li>
+  <li>Supportive customer service at your fingertips</li>
+</ul>
+<br />
 
-<strong>Continue paying premiums -</strong> Do not neglect your regular insurance premiums while servicing the loan. If premiums are missed, your policy and the loan both may get impacted.<br/><br/>  
+<h2>Pro Tips for Borrowly Borrowers:</h2>
+<ul>
+  <li>Keep your credit score healthy (700+ ideal) for the best terms.</li>
+  <li>Plan a slightly bigger down payment to reduce EMIs.</li>
+  <li>Read terms for any processing fees or prepayment penalties.</li>
+  <li>Upload clear, complete documents to speed up approval.</li>
+</ul>
+<br />
 
-<strong>Know the risks -</strong> If you fail to repay the loan, the outstanding amount (including interest) will be deducted from the policy’s maturity value or death benefit, reducing the amount received by you or your beneficiaries.<br/><br/>  
-
-Responsible usage of an insurance loan ensures you get the funds you need without compromising your family’s financial security.  
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>  
-
-Insurance loans are a smart way to unlock funds from your existing policies without giving up long-term protection. They offer quick access, lower interest rates, and flexibility compared to unsecured borrowing. However, careful planning and disciplined repayment are essential to ensure your policy continues to serve its purpose.  
-
-You may also explore insurance loan options from Unity Small Finance Bank and other reputed insurers. These solutions can help you address urgent financial needs while keeping your long-term goals intact.  
-`
+<p>
+  With Borrowly, your journey to owning your vehicle is smooth, clear, and
+  supportive—no confusing jargon or hidden surprises. Ready to hit the road
+  with Borrowly? Let’s get started today!
+</p>`
 
   },
-   Vehical_loan_Guides: {
-    image:VehicalLoan,
-    title: "Vehicle Loan Guide: Drive Your Dream Car with Confidence",
-    subitlte: "Vehicle Loan",
-    EstComplete: "10 mins",
-    CreatedAt: "29/08/2025",
-    Content: `
-Buying a new car or two-wheeler is a dream for many, but the high upfront cost can make it difficult to afford immediately. A vehicle loan helps bridge this gap by enabling you to purchase your desired car, bike, or commercial vehicle while repaying the amount in affordable monthly installments.  
 
-These loans are widely offered by banks, NBFCs, and financial institutions, often with competitive interest rates and flexible repayment options. Whether it’s a personal vehicle for daily use or a commercial vehicle for business, a vehicle loan ensures you don’t have to delay your purchase due to financial constraints.  
-
-This article will guide you on vehicle loans and how they can help you achieve your mobility goals smoothly.  
-<br/><br/>
-<strong style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
-
-A vehicle loan is a secured loan provided by banks and NBFCs for purchasing vehicles, where the vehicle itself serves as collateral until the loan is repaid. Depending on the lender and your profile, you may get financing for up to 85–100% of the on-road price of the vehicle.  
-
-Here are the main benefits of vehicle loans:<br/>  
-- Buy your dream car, bike, or commercial vehicle without full upfront payment.<br/>  
-- Flexible repayment tenures, generally ranging from 1 to 7 years.<br/>  
-- Quick approval and disbursement, especially for salaried applicants.<br/>  
-- Competitive interest rates depending on your credit profile and the type of vehicle.<br/>  
-- Some lenders offer zero down payment schemes.<br/>  
-- Convenient repayment through EMIs tailored to your monthly budget.<br/>  
-- Opportunity to build your credit history with timely repayment.<br/><br/>  
-
-With a vehicle loan, you can drive home your dream vehicle without exhausting your savings.  
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong><br/><br/>
-
-<strong>Evaluate your budget -</strong> Before applying, check how much EMI you can afford comfortably. Ensure it does not strain your monthly income or affect other financial obligations.<br/><br/>  
-
-<strong>Check loan-to-value (LTV) ratio -</strong> Different lenders finance different percentages of the vehicle’s price. Know how much down payment you need to arrange beforehand.<br/><br/>  
-
-<strong>Compare loan offers -</strong> Interest rates, processing fees, prepayment options, and insurance bundles vary between lenders. Compare offers carefully before finalizing.<br/><br/>  
-
-<strong>Maintain a good credit score -</strong> A higher credit score (750+) increases your chances of getting a lower interest rate and better loan terms.<br/><br/>  
-
-<strong>Understand foreclosure terms -</strong> Some lenders may charge penalties for early repayment. Clarify this if you plan to close your loan early.<br/><br/>  
-
-<strong>Insure your vehicle adequately -</strong> Vehicle insurance is mandatory, but consider comprehensive coverage to safeguard against financial loss in case of accidents or theft.<br/><br/>  
-
-Being mindful of these factors ensures that your vehicle loan remains a helpful tool rather than a financial burden.  
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>  
-
-A vehicle loan makes it easier to own a car, bike, or commercial vehicle without draining your savings. With proper planning, disciplined repayment, and smart comparison of offers, you can enjoy the benefits of ownership while keeping your finances balanced.  
-
-You may also explore vehicle loan options from Unity Small Finance Bank and other reputed lenders. With quick approvals, competitive rates, and digital applications, they can help you hit the road in your dream vehicle sooner than you think.  
-`
-
-  },
   Education_loan_Guides: {
-    image:Educationloan,
-    title: "Education Loan Guide: Invest in Your Future",
-    subitlte: "Education Loan",
+    image: Educationloan,
+    title: "Education Loans with Borrowly",
+    subtitle: "Education Loan",
     EstComplete: "8 mins",
     CreatedAt: "29/08/2025",
-    Content: `
-Higher education is a significant investment for students and their families. Whether it’s pursuing a degree in India or studying abroad, the cost of tuition, accommodation, travel, and living expenses can be overwhelming. Education loans are designed to make quality education accessible without putting an immediate financial burden on families.  
+    Content:  `<h2>Education Loans with Borrowly</h2>
+<p>
+  Dreaming big shouldn’t come with a price tag that holds you back. Education
+  loans in 2025 bridge the gap between ambition and affordability, with
+  interest rates starting as low as 4.00% p.a.
+</p>
+<br />
 
-These loans help students achieve their academic aspirations while allowing parents to manage expenses more efficiently. With flexible repayment options and benefits like tax deductions, education loans are one of the most effective ways to fund higher studies.  
+<h2>Section 1: Launching Your Ambition (The Loan Basics)</h2>
+<h3>What is an Education Loan, Really?</h3>
+<p>
+  An education loan is more than just money; it's the crucial financial tool
+  that allows you to pursue your educational goals without putting your family
+  under immediate stress.
+</p>
+<p>
+  It covers the full cost of your studies — from tuition and accommodation to
+  essential expenses like books and laptops.
+</p>
+<p>
+  <strong>Borrowly's Promise:</strong> We offer a simple, online solution,
+  making the financing process easy so you can focus on getting ready for
+  school, not struggling with paperwork.
+</p>
+<br />
 
-This article will guide you on education loans and how they can support your academic journey.  
-<br/><br/>
-<strong style={{ fontFamily: 'PovetaracSansBlack' }}>Explanation And Benefits</strong><br/><br/>
+<h3>Who Can Apply? (Eligibility)</h3>
+<ul>
+  <li>You must be an Indian citizen.</li>
+  <li>You must be at least 18 years old.</li>
+  <li>You must have confirmed admission to a recognized institution in India or abroad.</li>
+  <li>A parent or guardian may need to join as a co-applicant for certain loan amounts.</li>
+</ul>
+<br />
 
-An education loan is a financial product offered by banks and financial institutions to cover expenses related to higher studies. These loans can cover tuition fees, hostel charges, examination fees, equipment, books, travel expenses (for abroad studies), and other allied costs.  
+<h3>Key Features That Support Your Journey</h3>
+<ul>
+  <li>100% Digital Process: Apply, manage, and track your loan entirely online from your phone.</li>
+  <li>Collateral Flexibility: Loans up to ₹4 lakh may not require any security (collateral), depending on the scheme.</li>
+  <li>Comprehensive Coverage: Covers university fees, hostel charges, laptops, and books.</li>
+  <li>Flexible Repayment: Grace period after course completion; start repayment once you’ve secured a job.</li>
+</ul>
+<br />
 
-Here are the major benefits of education loans:<br/>  
-- Covers a wide range of expenses, from tuition to accommodation and travel.<br/>  
-- Moratorium period available (repayment begins after course completion + 6–12 months).<br/>  
-- Flexible repayment tenures, usually ranging from 5 to 15 years.<br/>  
-- Interest subsidy schemes available for eligible students under government programs.<br/>  
-- Tax benefits under Section 80E of the Income Tax Act for interest paid on education loans.<br/>  
-- Enables students to pursue courses in India and abroad without financial stress.<br/>  
-- Builds credit history early when repaid responsibly.<br/><br/>  
+<h2>Section 2: Your Path to Approval (The Application Steps)</h2>
+<h3>Application Checklist (Documents)</h3>
+<p>Be ready with digital copies of these essential documents (for you and your co-applicant):</p>
+<ul>
+  <li>Identity Proof: Aadhaar, PAN card, or passport</li>
+  <li>Academic Proof: Latest mark sheets and certificates</li>
+  <li>Course Proof: Admission letter from your institution</li>
+  <li>Financial Proof (Co-applicant): Salary slips or bank statements</li>
+  <li>Address Proof: Aadhaar or utility bill with current residence</li>
+</ul>
+<br />
 
-Education loans make it possible to access top universities and courses without sacrificing dreams due to financial constraints.  
-<br/><br/>
-<strong>Tips For Responsible Borrowing</strong><br/><br/>
+<h3>The 5 Steps to Your Loan Disbursement</h3>
+<ol>
+  <li>Online Application: Choose 'Education Loan' in the Borrowly app and fill out the digital form.</li>
+  <li>Digital Submission: Upload your documents for review.</li>
+  <li>Quick Review: Borrowly verifies your application and may request missing details.</li>
+  <li>The Offer: If approved, you’ll receive a Sanction Letter with the loan amount, rate, and terms.</li>
+  <li>Disbursement: Funds are sent directly to your institution.</li>
+</ol>
+<br />
 
-<strong>Borrow only what is necessary -</strong> Calculate your total course cost and other expenses carefully. Avoid over-borrowing, as higher loans mean higher repayment obligations in the future.<br/><br/>  
+<h2>Section 3: Smart Repayment (Life After Graduation)</h2>
+<h3>Repayment Made Simple</h3>
+<p>We understand you can't pay while you're studying. That’s why our plans include:</p>
+<ul>
+  <li>Grace Period: Full repayment begins 6–12 months after finishing your course, or 6 months after getting your job.</li>
+  <li>EMI Calculation: Use Borrowly’s in-app calculator to estimate payments across up to 15 years.</li>
+  <li>Tax Benefits: Interest paid may qualify for deductions under Section 80E, reducing your tax burden.</li>
+  <li>Prepay Without Penalty: Clear your loan early with minimal or no charges.</li>
+</ul>
+<br />
 
-<strong>Understand repayment terms -</strong> Education loans usually come with a moratorium, but interest may accrue during this period. Clarify with your lender whether it is simple or compound interest.<br/><br/>  
+<h3>Pro Tips for Success</h3>
+<ul>
+  <li>Borrow Wisely: Take only what you genuinely need.</li>
+  <li>Read the Fine Print: Understand rates, fees, and repayment terms before signing.</li>
+  <li>Plan for the Unexpected: Keep a small emergency fund for unforeseen costs.</li>
+  <li>Stay Connected: Track repayment and get reminders through the Borrowly app.</li>
+  <li>We're Here for You: Use the in-app chat or helpline for questions at any step.</li>
+</ul>
+<br />
 
-<strong>Compare lenders -</strong> Interest rates, processing fees, moratorium policies, and loan coverage differ across banks. Compare offers to get the best deal.<br/><br/>  
+<p>
+  With Borrowly, your education loan journey is smooth, supportive, and
+  transparent. We’re here to ensure your focus stays on your studies, while we
+  take care of the finances.
+</p>
 
-<strong>Maintain academic performance -</strong> Some lenders may link disbursements to continued enrollment or academic performance. Stay informed about such conditions.<br/><br/>  
-
-<strong>Check eligibility and co-applicant requirements -</strong> Most lenders require a parent/guardian as a co-applicant. Ensure their income profile and credit score are strong enough for smooth approval.<br/><br/>  
-
-<strong>Plan for repayment early -</strong> Use EMI calculators to estimate future repayments. Once employed, prioritize loan repayment to avoid high interest accumulation.<br/><br/>  
-
-By borrowing responsibly, students can benefit from financial support today while securing their financial independence tomorrow.  
-<br/><br/>
-<strong>Conclusion</strong><br/><br/>  
-
-Education loans open doors to quality education and global opportunities. With the right planning and responsible repayment, students can achieve their academic and career goals without burdening their families financially.  
-
-You may also explore education loan options from Unity Small Finance Bank and other reputed lenders. With simple digital applications, quick approvals, and student-friendly repayment structures, these loans can help you turn your academic aspirations into reality.  
-`
-
+    `
   },
 
-};
+  Home_loan_Guides: {
+    image: homeimage,
+    title: "Home Loans with Borrowly",
+    subtitle: "Home Loan",
+    EstComplete: "5 mins",
+    CreatedAt: "29/08/2025",
+    Content:  `
 
+     <h2>Home Loans with Borrowly</h2>
+<p>
+  Getting a home loan can seem overwhelming, but with Borrowly, it’s smooth and straightforward. 
+  Here’s everything you need to know—step by step—to make your dream home a reality.
+</p>
+<br />
+
+<h2>1. Find Out How Much You Can Borrow</h2>
+<p>
+  Wondering if you qualify? Borrowly helps you quickly check your eligibility based on your income, 
+  age, job type, and credit score. It’s like a quick eligibility checkup to see how much home loan 
+  you can get.
+</p>
+<br />
+
+<h2>2. Pick the Right Loan Amount and Repayment Plan</h2>
+<p>
+  Decide how much you want to borrow and how long you want to take to repay it. Typically, loans cover 
+  <strong>75–90% of your property’s value</strong>. You can choose a repayment tenure that fits your budget—from a few years up to 20 years or more. 
+  Longer tenure means smaller monthly payments but more interest overall.
+</p>
+<br />
+
+<h2>3. Gather Easy-to-Find Documents</h2>
+<p>
+  Don’t worry, Borrowly makes document submission hassle-free. You’ll just need basic stuff like 
+  ID proof, address proof, salary slips or bank statements, and property papers. Upload everything 
+  right from your phone!
+</p>
+<br />
+
+<h2>4. Submit Your Application & Get Approved</h2>
+<p>
+  Once you apply, Borrowly takes care of forwarding your documents to the lender. They’ll review everything 
+  and send you a <strong>sanction letter</strong> if all looks good. This letter outlines your loan amount, 
+  interest rate, and terms.
+</p>
+<br />
+
+<h2>5. Property Verification</h2>
+<p>
+  Before going ahead, the lender will double-check your property legally and technically—just to be sure it’s all legit.
+</p>
+<br />
+
+<h2>6. Sign the Papers & Get Your Loan</h2>
+<p>
+  After verification, you’ll sign the loan agreement. Easy! The loan amount usually goes straight to your 
+  builder or property seller.
+</p>
+<br />
+
+<h2>7. Start Repaying with Easy EMIs</h2>
+<p>
+  Pay back your loan in small monthly installments called <strong>EMIs</strong>, covering both principal and interest. 
+  Some loans even offer flexible pre-EMI options during construction.
+</p>
+<br />
+
+<h2>Pro Tips for Borrowly Borrowers:</h2>
+<ul>
+  <li>Get <strong>pre-approved</strong> on Borrowly before house hunting to save time and negotiate better.</li>
+  <li>Keep an eye on your <strong>credit score</strong> (aim for 750+) to score the best interest rates.</li>
+  <li>Use Borrowly’s calculators to estimate your <strong>EMI</strong> and loan eligibility.</li>
+  <li>Watch out for extra charges like processing fees or prepayment penalties.</li>
+  <li>Need help? Borrowly’s support team and FAQs are there to guide you 24/7.</li>
+</ul>
+<br />
+
+<p>
+  With Borrowly, home loans don’t have to be complicated! This friendly, step-by-step guide will make your 
+  borrowing journey easy and confident, putting you a step closer to your dream home.
+</p>
+<br />
+
+<p>
+  <strong>Ready to get started?</strong> Borrowly’s here to help you every step of the way!
+</p>
+
+
+    `
+  },
+  
+     gold_loan_Guides: {
+    image: insurance,
+    title: "Gold Loan with Borrowly",
+    subtitle: "Gold Loan",
+    EstComplete: "5 mins",
+    CreatedAt: "29/08/2025",
+    Content: `
+    <h2>Gold Loans with Borrowly</h2>
+<p>
+  Ready to unlock the hidden power of your gold? With Borrowly, getting quick cash through a gold loan 
+  is easier—and safer—than ever before. Turn your precious possessions into instant funds without stress or surprises.
+</p>
+<br />
+
+<h2>Why Choose a Gold Loan on Borrowly?</h2>
+<p>
+  If fast approval, minimal paperwork, and convenience are what you need, gold loans are ideal. 
+  Just pledge your gold jewelry or coins as collateral, and Borrowly helps turn that into a cash cushion for emergencies, big dreams, or last-minute opportunities.
+</p>
+<br />
+
+<h2>Who Can Apply?</h2>
+<ul>
+  <li>Anyone 21 years or older with Indian citizenship.</li>
+  <li>Owns gold items (18–22 karat jewelry or coins).</li>
+  <li>Has valid KYC: Aadhaar, PAN, Voter ID, Passport, or Driving License.</li>
+</ul>
+<br />
+
+<h2>How to Get Your Gold Loan on Borrowly</h2>
+<ol>
+  <li>
+    <strong>Kick Off in Minutes:</strong> Download Borrowly, sign up with your phone, and upload your KYC within minutes.
+  </li>
+  <li>
+    <strong>Apply for a Gold Loan:</strong> Enter the ‘Gold Loan’ section, share details, enter the loan amount needed, and choose your tenure.
+  </li>
+  <li>
+    <strong>Easy Gold Valuation:</strong> Pick a trusted partner branch or opt for doorstep evaluation. The gold is checked for purity and weight to get the best loan offer.
+  </li>
+  <li>
+    <strong>Offer and Approval:</strong> View your custom loan offer with the amount, interest rate, and repayment schedule. Approve it with one tap.
+  </li>
+  <li>
+    <strong>Receive Funds Instantly:</strong> Funds are transferred to your bank account, often within hours.
+  </li>
+  <li>
+    <strong>Repay and Reclaim:</strong>  Pay using UPI, net-banking, or EMIs—your way. Once paid off, the gold comes home, safe and hassle-free.
+
+</ol>
+<br />
+
+<h2>Perks and Handy Details</h2>
+<ul>
+  <li>Super Quick: Approval and disbursal in hours, not days.</li>
+  <li>Flexible: Loan amount depends on gold purity and weight, with terms to suit your situation.</li>
+  <li>Transparent: Real interest rates, no hidden charges.</li>
+  <li>Secure: Gold kept in top-security vaults until full repayment.</li>
+  <li>Choice: Repay in monthly EMIs, bullet payments, or a one-time payment at the end—whatever fits best.
+
+</li>
+</ul>
+<br />
+
+<h2>What’s Needed?</h2>
+<ul>
+  <li>Basic KYC (ID and address proof).</li>
+  <li>Passport-size photo (sometimes required).</li>
+  <li>Gold jewelry or coins for evaluation.</li>
+</ul>
+<br />
+
+<h2>Top Tips for a Smooth Ride</h2>
+<ul>
+  <li>Check today’s gold price to estimate loan eligibility.</li>
+  <li>Use Borrowly’s in-app calculator to preview loan amount and potential repayments.</li>
+  <li>Read through the loan terms before tapping ‘Accept.’</li>
+  <li>Keep all receipts secure—digital or paper.</li>
+</ul>
+<br />
+
+<p>
+  Borrowly combines speed, transparency, and a simple process so financial peace is always within reach. 
+  Let your gold work a little magic—now's the time to shine. Download Borrowly and turn your gold into opportunity with a tap!
+</p>
+
+
+  `
+     }
+};
 
 export default Guide_data;
