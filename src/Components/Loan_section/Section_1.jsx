@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Apply_arrow from "../../assets/Icons/Apply_arrow.svg";
 import Download_icon from "../../assets/Icons/Download_icon.svg";
-import LoanFormModal from "../Apply_loan"; // import popup form
+import LoanFormModal from "../Apply_loan"; 
 
 const Section_1 = ({ tag, title, description, image, loanType }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

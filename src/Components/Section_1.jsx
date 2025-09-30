@@ -17,7 +17,7 @@ import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selecte
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 import Vechicle_loan_icon from '../assets/Icons/section_1Icons/Vechicle_loan_selected.svg'
-import Gold_loan_icon from '../assets/Icons/section_1Icons/Gold_loan_icon.png'
+import Gold_loan_icon from '../assets/Icons/section_1Icons/Gold_Loan_icon.png'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Education_loan from '../assets/Icons/section_1Icons/Education_Loans_selected.svg'
