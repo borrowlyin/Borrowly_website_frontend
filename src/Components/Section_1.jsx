@@ -10,6 +10,7 @@ import Loan_image_3 from '../assets/Images/Loan_image_3.avif'
 import Loan_image_4 from '../assets/Images/Loan_image_4.avif'
 import Loan_image_5 from '../assets/Images/Loan_image_5.avif'
 import Loan_image_6 from '../assets/Images/Loan_image_6.avif'
+import Gold_loan_image from '../assets/Images/Goldloanimage.avif'
 
 
 import Education_loan_icon from '../assets/Icons/section_1Icons/Education_Loans.svg'
@@ -17,7 +18,7 @@ import Home_equity_icon from '../assets/Icons/section_1Icons/Home_equity_selecte
 import Insurance_icon from '../assets/Icons/section_1Icons/Insurance_selected.svg'
 import Business_loan_icon from '../assets/Icons/section_1Icons/Business_Loans_selected.svg'
 import Vechicle_loan_icon from '../assets/Icons/section_1Icons/Vechicle_loan_selected.svg'
-import Gold_loan_icon from '../assets/Icons/section_1Icons/Gold_Loan_icon.png'
+import Gold_loan_icon from '../assets/Icons/section_1Icons/Goldloan_icon.svg'
 
 import Business_Loan from '../assets/Icons/section_1Icons/Business_Loans.svg';
 import Education_loan from '../assets/Icons/section_1Icons/Education_Loans_selected.svg'
@@ -25,6 +26,7 @@ import Home_Equity from '../assets/Icons/section_1Icons/Home_equity.svg';
 import Insurance from '../assets/Icons/section_1Icons/Insurance.svg';
 import Person_loan from '../assets/Icons/section_1Icons/Person_loan.svg';
 import Vechicle_loan from '../assets/Icons/section_1Icons/Vechicle_loan.svg'
+import Gold_loan from '../assets/Icons/section_1Icons/Gold_loan_icon.png'
 
 import Downarrow from '../assets/Icons/section_1Icons/Downarrow.svg';
 import Apply_arrow from '../assets/Icons/Apply_arrow.svg'; 
@@ -156,9 +158,9 @@ const Section_1 = ({ isDarkMode }) => {
   },
    {
     name: 'Gold Loan',
-    Selected_icon: Gold_loan_icon,
-     image: Loan_image_6,
-    Normal_icon: Business_Loan,
+    Selected_icon: Gold_loan,
+     image: Gold_loan_image,
+    Normal_icon: Gold_loan_icon,
     id: 4,
     link: '/Gold_loan',
     headline: 'For Every Leap You Take, We’re Right Behind You.',

@@ -25,6 +25,7 @@ import Business_loan from './Pages/Business_loan'
 import Insurance_loan from './Pages/Insurance_loan'
 import Gold_loan from './Pages/Gold_loan'
 import Location from './Pages/Locations'
+import Carrier_form from './Pages/Carriers_form'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -42,7 +43,7 @@ function App() {
         <Route path="/Support" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Contact_us  isDarkMode={isDarkMode}/></>} />
         <Route path="/About_us" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><About_us  isDarkMode={isDarkMode}/></>} />
         <Route path="/Locations" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Location  isDarkMode={isDarkMode}/></>} />
-        
+        <Route path="/Carriers_form" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode}/><Carrier_form  isDarkMode={isDarkMode}/></>} />
         
         <Route path="/Tools" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <Calculator isDarkMode={isDarkMode} /></>}></Route>
         <Route path="/Team" element={<><Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} /> <Team isDarkMode={isDarkMode} /></>}></Route>

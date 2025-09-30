@@ -115,17 +115,21 @@ const Slider = ({ min, max, step = 1, value, setValue, unit }) => {
   }, [min, max, setValue, step]);
 
   return (
-    <div className='py-5'>
-      <div ref={barRef} className='w-full h-3 bg-gray-200 rounded-full relative cursor-pointer '>
-        <div ref={fillRef} className='h-3 bg-[#08315C] rounded-full' style={{ width: `${((value - min) / (max - min)) * 100}%` }}></div>
+    <div className="py-5">
+      <div ref={barRef} className="w-full h-3 bg-gray-200 rounded-full relative cursor-pointer">
+        <div ref={fillRef} className="h-3 bg-[#08315C] rounded-full" style={{ width: `${((value - min) / (max - min)) * 100}%` }}></div>
         <div ref={thumbRef} className="w-7 h-7 bg-white border-6 border-[#0CC066] rounded-full absolute top-1/2 -translate-y-1/2"></div>
       </div>
     </div>
   );
 };
 
-const EmiCalculator = () => {
-  const [selectedLoan, setSelectedLoan] = useState(loanOptions[0]);
+const EmiCalculator = ({ options = true, selectedLoanId = 'personal' }) => {
+  const [selectedLoan, setSelectedLoan] = useState(() => {
+    const loan = loanOptions.find((loan) => loan.id === selectedLoanId);
+    return loan || loanOptions[0];
+  });
+
   const [loanAmount, setLoanAmount] = useState(selectedLoan.minAmount);
   const [interestRate, setInterestRate] = useState(selectedLoan.minRate);
   const [emiMonths, setEmiMonths] = useState(selectedLoan.minMonths);
@@ -150,95 +154,96 @@ const EmiCalculator = () => {
   const totalInterest = totalPayable - principal;
 
   return (
-    <div className='px-5'>
-     <div className="w-full overflow-x-auto hide-scrollbar">
-  <div className="flex pb-10 w-max gap-4 whitespace-nowrap mx-auto justify-center">
-    {loanOptions.map((loan) => (
-      <button
-        key={loan.id}
-        onClick={() => setSelectedLoan(loan)}
-        style={{ fontFamily: 'PovetaracSansBold' }}
-        className={`flex items-center justify-center py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-lg transition-all duration-200 ${
-          selectedLoan.id === loan.id
-            ? 'bg-[#1E6491] border border-[#1E6491] text-white'
-            : 'border border-[#C4C4C4] bg-white cursor-pointer text-black'
-        }`}
-      >
-        {loan.loanName}
-      </button>
-    ))}
-  </div>
-</div>
-
+    <div className="px-5">
+      {/* Loan Type Switcher (visible only on main page) */}
+      {options && (
+        <div className="w-full overflow-x-auto hide-scrollbar">
+          <div className="flex pb-10 w-max gap-4 whitespace-nowrap mx-auto justify-center">
+            {loanOptions.map((loan) => (
+              <button
+                key={loan.id}
+                onClick={() => setSelectedLoan(loan)}
+                style={{ fontFamily: 'PovetaracSansBold' }}
+                className={`flex items-center justify-center py-3 md:py-3 px-4 md:px-8 text-[14px] md:text-sm lg:text-[16px] rounded-lg transition-all duration-200 ${
+                  selectedLoan.id === loan.id
+                    ? 'bg-[#1E6491] border border-[#1E6491] text-white'
+                    : 'border border-[#C4C4C4] bg-white cursor-pointer text-black'
+                }`}
+              >
+                {loan.loanName}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Mobile Version */}
-      <div className={`border border-[#C4C4C4] block lg:hidden gap-5 overflow-hidden bg-white `}>
-        <div className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center'>
-          <h1 className={` text-[14px] font-semibold`}>Your monthly instalment</h1>
-          <h1 className='text-4xl font-bold'>₹{monthlyEMI.toLocaleString()}</h1>
+      <div className="border border-[#C4C4C4] block lg:hidden gap-5 overflow-hidden bg-white">
+        <div className="bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center">
+          <h1 className=" text-[14px] font-semibold">Your monthly instalment</h1>
+          <h1 className="text-4xl font-bold">₹{monthlyEMI.toLocaleString()}</h1>
         </div>
-        <div className='flex-1 flex flex-col gap-6 py-4 px-3 md:px-5'>
-
+        <div className="flex-1 flex flex-col gap-6 py-4 px-3 md:px-5">
           {/* Loan Amount */}
           <div>
-            <div className='flex items-center'>
-              <h1 className='text-[16px] md:text-xl font-bold'>Loan amount</h1>
-              <div style={{ fontFamily: 'PovetaracSansBold' }} className='border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full'>
+            <div className="flex items-center">
+              <h1 className="text-[16px] md:text-xl font-bold">Loan amount</h1>
+              <div style={{ fontFamily: 'PovetaracSansBold' }} className="border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full">
                 ₹{formatAmount(loanAmount)}
               </div>
             </div>
             <Slider min={selectedLoan.minAmount} max={selectedLoan.maxAmount} value={loanAmount} setValue={setLoanAmount} step={10000} />
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between text-[#838383] text-[14px] md:text-[18px]">
               <span>₹{formatAmount(selectedLoan.minAmount)}</span><span>₹{formatAmount(selectedLoan.maxAmount)}</span>
             </div>
           </div>
 
           {/* Interest Rate */}
           <div>
-            <div className='flex items-center'>
-              <h1 className='text-[16px] md:text-xl font-bold'>Interest rate</h1>
-              <div style={{ fontFamily: 'PovetaracSansBold' }} className='border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full'>
+            <div className="flex items-center">
+              <h1 className="text-[16px] md:text-xl font-bold">Interest rate</h1>
+              <div style={{ fontFamily: 'PovetaracSansBold' }} className="border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full">
                 {interestRate}%
               </div>
             </div>
             <Slider min={selectedLoan.minRate} max={selectedLoan.maxRate} value={interestRate} setValue={setInterestRate} step={0.1} />
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between text-[#838383] text-[14px] md:text-[18px]">
               <span>{selectedLoan.minRate}%</span><span>{selectedLoan.maxRate}%</span>
             </div>
           </div>
 
           {/* EMI Duration */}
           <div>
-            <div className='flex items-center'>
-              <h1 className='text-[16px] md:text-xl font-bold'>Select EMI option</h1>
-              <div style={{ fontFamily: 'PovetaracSansBold' }} className='border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full'>
+            <div className="flex items-center">
+              <h1 className="text-[16px] md:text-xl font-bold">Select EMI option</h1>
+              <div style={{ fontFamily: 'PovetaracSansBold' }} className="border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full">
                 {emiMonths} Months
               </div>
             </div>
             <Slider min={selectedLoan.minMonths} max={selectedLoan.maxMonths} value={emiMonths} setValue={setEmiMonths} step={1} />
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between text-[#838383] text-[14px] md:text-[18px]">
               <span>{selectedLoan.minMonths} Months</span><span>{selectedLoan.maxMonths} Months</span>
             </div>
           </div>
         </div>
 
         {/* Summary */}
-        <div className='py-6 px-5 bg-[#fafcff]'>
-          <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between mb-2'>
-            <span className='text-[#838383] text-[16px]'>Total interest</span>
-            <h1 className='text-[16px] md:text-[20px] font-bold'>₹{formatAmount(totalInterest)}</h1>
+        <div className="py-6 px-5 bg-[#fafcff]">
+          <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between mb-2">
+            <span className="text-[#838383] text-[16px]">Total interest</span>
+            <h1 className="text-[16px] md:text-[20px] font-bold">₹{formatAmount(totalInterest)}</h1>
           </div>
-          <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between'>
-            <span className='text-[#838383] text-[16px]'>Principal amount</span>
-            <h1 className='text-[16px] md:text-[20px] font-bold'>₹{formatAmount(loanAmount)}</h1>
+          <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between">
+            <span className="text-[#838383] text-[16px]">Principal amount</span>
+            <h1 className="text-[16px] md:text-[20px] font-bold">₹{formatAmount(loanAmount)}</h1>
           </div>
-          <hr className='my-4 border-dashed border-[#C4C4C4]' />
-          <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between'>
-            <span className='text-[18px] font-bold'>Total amount</span>
-            <h1 className='text-[20px] font-bold'>₹{formatAmount(totalPayable)}</h1>
+          <hr className="my-4 border-dashed border-[#C4C4C4]" />
+          <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between">
+            <span className="text-[18px] font-bold">Total amount</span>
+            <h1 className="text-[20px] font-bold">₹{formatAmount(totalPayable)}</h1>
           </div>
-          <div className='pt-5'>
-            <button className='w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold'>
+          <div className="pt-5">
+            <button className="w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold">
               Apply Now
             </button>
           </div>
@@ -246,75 +251,74 @@ const EmiCalculator = () => {
       </div>
 
       {/* Desktop view */}
-      <div className={`border border-[#C4C4C4] bg-white hidden lg:flex h-[470px] gap-5 p-5`}>
-        <div className='flex-1 flex flex-col gap-6 py-4 px-5'>
-
+      <div className="border border-[#C4C4C4] bg-white hidden lg:flex h-[470px] gap-5 p-5">
+        <div className="flex-1 flex flex-col gap-6 py-4 px-5">
           {/* Loan Amount */}
           <div>
-            <div className='flex items-center'>
-              <h1 className='text-[16px] md:text-xl font-bold'>Loan amount</h1>
-              <div style={{ fontFamily: 'PovetaracSansBold' }} className='border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full'>
+            <div className="flex items-center">
+              <h1 className="text-[16px] md:text-xl font-bold">Loan amount</h1>
+              <div style={{ fontFamily: 'PovetaracSansBold' }} className="border ml-auto border-[#e6e6e6] py-1 md:py-2 px-4 md:px-8 text-[16px] rounded-full">
                 ₹{formatAmount(loanAmount)}
               </div>
             </div>
             <Slider min={selectedLoan.minAmount} max={selectedLoan.maxAmount} value={loanAmount} setValue={setLoanAmount} step={10000} />
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex justify-between text-[#838383] text-[14px] md:text-[18px]'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex justify-between text-[#838383] text-[14px] md:text-[18px]">
               <span>₹{formatAmount(selectedLoan.minAmount)}</span><span>₹{formatAmount(selectedLoan.maxAmount)}</span>
             </div>
           </div>
 
           {/* Interest Rate */}
           <div>
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex items-center'>
-              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className='text-xl'>Interest rate</h1>
-              <div className='border ml-auto border-[#e6e6e6] pt-2 pb-1 px-8 text-[18px] rounded-full'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex items-center">
+              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl">Interest rate</h1>
+              <div className="border ml-auto border-[#e6e6e6] pt-2 pb-1 px-8 text-[18px] rounded-full">
                 {interestRate}%
               </div>
             </div>
             <Slider min={selectedLoan.minRate} max={selectedLoan.maxRate} value={interestRate} setValue={setInterestRate} step={0.1} />
-            <div className='flex justify-between text-[#838383] text-[18px]'>
+            <div className="flex justify-between text-[#838383] text-[18px]">
               <span>{selectedLoan.minRate}%</span><span>{selectedLoan.maxRate}%</span>
             </div>
           </div>
 
           {/* EMI Duration */}
           <div>
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='flex items-center'>
-              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className='text-xl'>Select EMI option</h1>
-              <div className='border ml-auto border-[#e6e6e6] pt-2 pb-1 px-8 text-[18px] rounded-full'>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="flex items-center">
+              <h1 style={{ fontFamily: 'PovetaracSansBlack' }} className="text-xl">Select EMI option</h1>
+              <div className="border ml-auto border-[#e6e6e6] pt-2 pb-1 px-8 text-[18px] rounded-full">
                 {emiMonths} Months
               </div>
             </div>
             <Slider min={selectedLoan.minMonths} max={selectedLoan.maxMonths} value={emiMonths} setValue={setEmiMonths} step={1} />
-            <div className='flex justify-between text-[#838383] text-[18px]'>
+            <div className="flex justify-between text-[#838383] text-[18px]">
               <span>{selectedLoan.minMonths} Months</span><span>{selectedLoan.maxMonths} Months</span>
             </div>
           </div>
         </div>
 
         {/* Summary */}
-        <div className='w-full max-w-[325px]'>
-          <div className='border border-[#C4C4C4] overflow-hidden'>
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center'>
-              <h1 className='text-[14px]'>Your monthly instalment</h1>
-              <h1 className='text-5xl mt-2'>₹{monthlyEMI.toLocaleString()}</h1>
+        <div className="w-full max-w-[325px]">
+          <div className="border border-[#C4C4C4] overflow-hidden">
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="bg-gradient-to-b from-[#062D57] to-[#1E6592] py-8 text-white flex flex-col items-center gap-1.5 justify-center">
+              <h1 className="text-[14px]">Your monthly instalment</h1>
+              <h1 className="text-5xl mt-2">₹{monthlyEMI.toLocaleString()}</h1>
             </div>
-            <div style={{ fontFamily: 'PovetaracSansBold' }} className='py-6 px-5'>
-              <div className='flex justify-between mb-2'>
-                <span className='text-[#838383] text-[16px]'>Total interest</span>
-                <h1 className='text-[20px]'>₹{formatAmount(totalInterest)}</h1>
+            <div style={{ fontFamily: 'PovetaracSansBold' }} className="py-6 px-5">
+              <div className="flex justify-between mb-2">
+                <span className="text-[#838383] text-[16px]">Total interest</span>
+                <h1 className="text-[20px]">₹{formatAmount(totalInterest)}</h1>
               </div>
-              <div className='flex justify-between'>
-                <span className='text-[#838383] text-[16px]'>Principal amount</span>
-                <h1 className='text-[20px]'>₹{formatAmount(loanAmount)}</h1>
+              <div className="flex justify-between">
+                <span className="text-[#838383] text-[16px]">Principal amount</span>
+                <h1 className="text-[20px]">₹{formatAmount(loanAmount)}</h1>
               </div>
-              <hr className='my-4 border-dashed border-[#C4C4C4]' />
-              <div className='flex justify-between'>
-                <span style={{ fontFamily: 'PovetaracSansBlack' }} className='text-[18px]'>Total amount</span>
-                <h1 className='text-[20px] font-bold'>₹{formatAmount(totalPayable)}</h1>
+              <hr className="my-4 border-dashed border-[#C4C4C4]" />
+              <div className="flex justify-between">
+                <span style={{ fontFamily: 'PovetaracSansBlack' }} className="text-[18px]">Total amount</span>
+                <h1 className="text-[20px] font-bold">₹{formatAmount(totalPayable)}</h1>
               </div>
-              <div className='pt-5'>
-                <button className='w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold'>
+              <div className="pt-5">
+                <button className="w-full text-lg py-4 text-white cursor-pointer bg-[#0CC066] font-bold">
                   Apply Now
                 </button>
               </div>

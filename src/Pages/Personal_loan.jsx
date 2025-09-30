@@ -16,6 +16,11 @@ import img1 from '../assets/Images/Person_loan_appscreen_1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
 import img3 from '../assets/Images/Person_loan_appscreen_3.avif';
 
+import PersonalLoanRate from '../Components/Personal_loan_rate';
+import Borrow from '../Components/Borrowbest';
+import Bank from '../Components/Bankvsborrow';
+import Fees from '../Components/Feestable';
+
 import congrt from '../assets/Images/Congrt.avif';
 
 const PersonalLoan = () => {
@@ -125,12 +130,24 @@ const PersonalLoan = () => {
 
       </div>
 
+      <div className="pt-10 gap-3 w-[85%] mx-auto my-auto ">
+       
+       <PersonalLoanRate/>
+       <Borrow/>
+       <Bank/>
+       <Fees/>
+      </div>
+
       <div className="pt-10 px-5 w-fit mx-auto">
         <img src={Check_2_1} alt="" className="w-full max-w-[800px]"/>
       </div>
 
       <div className="mt-5">
-        <EmiCalculator options={false} title="Personal Loan Calculators" subtitle="Find the ideal loan plan for you using our easy-to-use Personal Loan Calculator." />
+ <EmiCalculator
+  options={false}
+  selectedLoanId="personal"
+/>
+
       </div>
 
       <div className="pt-10 px-5 w-fit mx-auto">

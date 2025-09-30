@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import SeachIcon from "../assets/Icons/SeachIcon.svg";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate
+
 
 const jobs = [
   /* CA & Legal Department */
@@ -169,6 +171,7 @@ const Sec_carrier2 = () => {
   const [search, setSearch] = useState("");
   const [team, setTeam] = useState(null);
   const [location, setLocation] = useState(null);
+    const navigate = useNavigate();
 
   const teamOptions = useMemo(() => {
     const set = new Set(jobs.map((j) => j.team));
@@ -301,14 +304,16 @@ const Sec_carrier2 = () => {
                 <p style={{ fontFamily: "PovetaracSansBold" }} className="mt-2 py-4 text-gray-500 text-[16px]">
                   {job.description}
                 </p>
-                <motion.button
-                  className="flex items-center gap-2 mt-4 bg-black text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 cursor-pointer"
-                  whileHover={{ y: -2, boxShadow: "0 12px 28px rgba(0,0,0,0.12)" }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 340, damping: 22 }}
-                >
-                  Apply Now <IoIosArrowForward />
-                </motion.button>
+               <motion.button
+  onClick={() => navigate("/Carriers_form")} // ✅ Navigate to application form
+  className="flex items-center gap-2 mt-4 bg-black text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-800 cursor-pointer"
+  whileHover={{ y: -2, boxShadow: "0 12px 28px rgba(0,0,0,0.12)" }}
+  whileTap={{ scale: 0.98 }}
+  transition={{ type: "spring", stiffness: 340, damping: 22 }}
+>
+  Apply Now <IoIosArrowForward />
+</motion.button>
+
               </motion.div>
             ))
           )}

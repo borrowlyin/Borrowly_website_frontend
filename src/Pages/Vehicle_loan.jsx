@@ -17,6 +17,10 @@ import img1 from '../assets/borrowly.avif/vehicleloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
 import img3 from '../assets/borrowly.avif/vehicleloan2.avif';
 
+import Borrow from '../Components/Borrowbest';
+import Bank from '../Components/Bankvsborrow';
+import Fees from '../Components/Feestable';
+
 import congrt from '../assets/Images/Congrt.avif';
 
 const VehicleLoan = () => {
@@ -156,13 +160,23 @@ loandesc="Get your dream vehicle with flexible loans, competitive rates, and a s
     />
       </div>
 
+       <div className="pt-10 gap-3 w-[85%] mx-auto my-auto ">
+       
+       
+       <Borrow/>
+       <Bank/>
+       <Fees/>
+      </div>
+
       <div className="pt-10 px-5 w-fit mx-auto">
         <img src={Check_2_1} alt="" className="w-full max-w-[800px]"/>
       </div>
 
       <div className="mt-5">
-        <EmiCalculator options={false} title="Vehicle Loan Calculators" subtitle="Find the ideal loan plan for you using our easy-to-use Vehicle Loan Calculator." />
-      </div>
+<EmiCalculator
+  options={false}
+  selectedLoanId="vehicle"
+/>      </div>
 
       <div className="pt-10 px-5 w-fit mx-auto">
         <img src={Check_1_1} alt="" className="w-full max-w-[800px]"/>

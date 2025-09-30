@@ -17,6 +17,10 @@ import img1 from '../assets/borrowly.avif/homeloan1.avif';
 import img2 from '../assets/Images/Person_loan_appscreen_2.avif';
 import img3 from '../assets/borrowly.avif/homeloan2.avif';
 
+import Borrow from '../Components/Borrowbest';
+import Bank from '../Components/Bankvsborrow';
+import Fees from '../Components/Feestable';
+
 import congrt from '../assets/Images/Congrt.avif';
 
 const HomeLoan = () => {
@@ -146,13 +150,25 @@ That’s why we combine professional expertise with a customer-first approach, m
 
       </div>
 
+       <div className="pt-10 gap-3 w-[85%] mx-auto my-auto ">
+       
+       
+       <Borrow/>
+       <Bank/>
+       <Fees/>
+      </div>
+
       <div className="pt-10 px-5 w-fit mx-auto">
         <img src={Check_2_1} alt="" className="w-full max-w-[800px]"/>
       </div>
 
       <div className="mt-5">
-        <EmiCalculator options={false} title="Home Loan Calculators" subtitle="Take the guesswork out of borrowing — calculate your perfect home loan in minutes." />
-      </div>
+<EmiCalculator
+  options={false}
+  selectedLoanId="home"
+/>
+
+    </div>
 
       <div className="pt-10 px-5 w-fit mx-auto">
         <img src={Check_1_1} alt="" className="w-full max-w-[800px]"/>
